@@ -7,9 +7,9 @@ import AdminPage from './components/AdminPage'
 import DoctorPage from './components/DoctorPage'
 import { history } from './utils'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
-import { PrivateRoute } from './components/PrivateRoute';
-
+import { useDispatch } from 'react-redux'
+import { PrivateRoute } from './components/PrivateRoute'
+import ForgotPasswordPage from './Components/ForgotPasswordPage';
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
                 <PrivateRoute path="/patient" component={PatientPage}></PrivateRoute>
                 <PrivateRoute path="/doctor" component={DoctorPage}></PrivateRoute>
                 <PrivateRoute path="/admin" component={AdminPage}></PrivateRoute>
+                <Route path = "/resetPassword" component={ForgotPasswordPage}></Route>
                 <Route path="/login" exact component={LoginPage}></Route>
                 <Route path="/register" component={RegisterPage}></Route>
             </Switch>

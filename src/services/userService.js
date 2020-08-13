@@ -3,7 +3,8 @@ const BASE_SERVICE_URL = "http://localhost:8080/auth"
 export const userService = {
     login,
     logout,
-    register
+    register,
+    forgotPassword
 }
 
 function login(username, password) {
@@ -34,7 +35,18 @@ function logout() {
     localStorage.removeItem('user');
 }
 
-function getAll() {
-
+function forgotPassword(email) {
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            email: email
+        })
+    }
+    return fetch(`${BASE_SERVICE_URL}/user/forgot`, requestOptions)
+        .then(response => response.json)
 }
 

@@ -1,4 +1,4 @@
-import { UserActionTypes, login, logout, register } from './userActions';
+import { UserActionTypes, login, logout, register} from './userActions';
 import { AlertActionType, success, error, clear } from './alertActions'
 
 export {

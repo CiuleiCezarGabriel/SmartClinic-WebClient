@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector, connect } from 'react-redux';
-import { Redirect } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions'
 
 function LoginPage() {
@@ -51,7 +50,10 @@ function LoginPage() {
                         {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
                         Login
                     </button>
-                    <Link to="/register" className="btn btn-link">Register</Link>
+                </div>
+                <Link to="/register" className="btn btn-link">Register</Link>
+                <div>
+                    <Link to="/resetPassword" className="btn btn-link"> Reset password</Link>
                 </div>
             </form>
         </div>
