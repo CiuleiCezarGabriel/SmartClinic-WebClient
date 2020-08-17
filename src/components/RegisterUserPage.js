@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useLocation } from 'react-router-dom'
 import { register } from '../actions'
 
-function RegisterPage() {
+function RegisterUserPage() {
 
     const [user, setUser] = useState({
         firstName: '',
@@ -14,11 +14,13 @@ function RegisterPage() {
         phone: '',
         email: '',
         confirmed: 'false',
-        role: 'PATIENT',
-        medical_history: '',
-        information: ''
+        role: 'ADMIN',
+        speciality: '',
+        room: ''
     })
     const [submitted, setSubmitted] = useState(false);
+    const location = useLocation();
+    const [selected, setSelected] = useState(false)
     const registering = useSelector(state => state.registration.registering);
     const dispatch = useDispatch()
 
@@ -36,6 +38,17 @@ function RegisterPage() {
         }
         else {
             alert('Please complete all fields!')
+        }
+    }
+
+    function handleUserSelect(e) {
+        const { name, value } = e.target;
+        setUser(user => ({ ...user, [name]: value }));
+        if (e.target.value === 'DOCTOR') {
+            setSelected(true)
+        }
+        else {
+            setSelected(false)
         }
     }
 
@@ -68,24 +81,34 @@ function RegisterPage() {
                     <input type="text" name="email" value={user.email} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Medical history</label>
-                    <input type="text" name="medical_history" value={user.medical_history} onChange={handleChange} />
+                    {selected
+                        && <div>
+                            <div>
+                                <label>Speciality</label>
+                                <input type="text" name="speciality" value={user.speciality} onChange={handleChange}></input>
+                            </div>
+                            <div>
+                                <label>Room</label>
+                                <input type="text" name="room" value={user.room} onChange={handleChange}></input>
+                            </div>
+                        </div>
+                    }
                 </div>
-                <div>
-                    <label>Informations</label>
-                    <input type="text" name="information" value={user.information} onChange={handleChange} />
-                </div>
-
                 <div className="form-group">
                     <button className="btn btn-primary">
                         {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
                         Register
                     </button>
                 </div>
+                <label> Choose a role</label>
+                <select name="role" value={user.role} onChange={handleUserSelect}>
+                    <option value="ADMIN">Admin</option>
+                    <option value="DOCTOR">Doctor</option>
+                </select>
                 <Link to="/login" className="btn btn-link">Cancel</Link>
             </form>
         </div>
     )
 }
 
-export default RegisterPage
+export default RegisterUserPage

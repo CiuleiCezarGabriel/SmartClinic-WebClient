@@ -41,9 +41,6 @@ function LoginPage() {
                 <div className="form-group">
                     <label>Password</label>
                     <input type="password" name="password" value={password} onChange={handleChange} className={'form-control' + (submitted && !password ? ' is-invalid' : '')} />
-                    {submitted && !password &&
-                        <div className="invalid-feedback">Password is required</div>
-                    }
                 </div>
                 <div className="form-group">
                     <button className="btn btn-primary">

@@ -1,10 +1,11 @@
 import React from 'react'
 import NavBar from './NavBar'
 
-function PatientPage(){
+function PatientPage() {
+
     return (
         <div>
-            <NavBar/>
+            <NavBar />
             <div>
                 Patient Page
             </div>

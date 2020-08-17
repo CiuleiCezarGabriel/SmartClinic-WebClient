@@ -1,4 +1,4 @@
-const BASE_SERVICE_URL = "http://localhost:8080/auth"
+const BASE_SERVICE_URL = "http://localhost:9000/auth"
 
 export const userService = {
     login,
