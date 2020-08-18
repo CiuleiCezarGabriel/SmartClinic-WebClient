@@ -1,0 +1,21 @@
+.h-full-screen {
+    height: 100vh;
+}
+
+.ps {
+    overflow: hidden!important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+
+.bg-default {
+    background: #fafafa !important;
+
+}
+
+.flex {
+    display: flex;
+}
+

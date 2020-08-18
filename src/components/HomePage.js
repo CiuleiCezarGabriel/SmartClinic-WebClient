@@ -1,15 +1,16 @@
 import React from 'react'
 import NavBar from './navbar/NavBar'
 
-function DoctorPage() {
+function HomePage() {
+
     return (
         <div>
             <NavBar />
             <div>
-                Doctor Page
+                Home Page
             </div>
         </div>
     )
 }
 
-export default DoctorPage
+export default HomePage
