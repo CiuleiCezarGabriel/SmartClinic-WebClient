@@ -25,7 +25,7 @@ export function authentification(state = initialState, action) {
         case UserActionTypes.LOGOUT:
             return {
                 loggedIn: false,
-                user: null
+                user: []
             }
         default:
             return state

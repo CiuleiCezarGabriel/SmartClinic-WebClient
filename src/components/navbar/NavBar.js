@@ -9,7 +9,7 @@ function NavBar() {
     const dispatch = useDispatch()
 
     function handleLogout() {
-        dispatch(logout)
+        dispatch(logout())
     }
 
     function handleClick() {
@@ -25,7 +25,7 @@ function NavBar() {
                         <div>
                         </div>
                         <div>
-                            <button class="MuiButtonBase-root-353 w-full" tabindex="0" type="button" name="child"><div class="nav-bullet p-2px rounded ml-5 mr-2 jss361"></div>
+                            <button class="MuiButtonBase-root-353 w-full" type="button" name="child"><div class="nav-bullet p-2px rounded ml-5 mr-2 jss361"></div>
                                 <div class="nav-bullet-text ml-5 text-11 hidden"></div>
                                 <span class="align-middle text-left sidenavHoverShow jss359" onClick={() => handleClick()}> FAQ 1 </span>
                                 <div class="mx-auto"></div><span class="MuiTouchRipple-root-371"></span>

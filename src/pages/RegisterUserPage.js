@@ -29,7 +29,6 @@ function RegisterUserPage() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setSubmitted(true);
         console.log(user)
         if (user.firstName && user.lastName && user.username && user.password && user.role && user.email) {
             dispatch(register(user));

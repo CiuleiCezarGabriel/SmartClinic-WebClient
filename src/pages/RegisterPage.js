@@ -28,7 +28,6 @@ function RegisterPage() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setSubmitted(true);
         if (user.firstName && user.lastName && user.username && user.password && user.role && user.email) {
             dispatch(register(user));
         }
