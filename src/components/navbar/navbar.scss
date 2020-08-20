@@ -29,8 +29,6 @@
     flex-direction: column;
 }
 
-
-
 .whitespace-pre {
     white-space: pre;
 }
@@ -115,21 +113,6 @@ a {
     flex-shrink: 0;
     user-select: none;
 }
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-}
 
 .text-left {
     text-align: left;
@@ -142,16 +125,10 @@ a {
     padding-left: 0.8rem;
 }
 
-
-
-
 .mx-auto {
     margin-left: auto !important;
     margin-right: auto !important;
 }
-
-
-
 
 .MuiTouchRipple-root-1775 {
     top: 0;
@@ -164,8 +141,6 @@ a {
     border-radius: inherit;
     pointer-events: none;
 }
-
-
 
 .whitespace-pre {
     white-space: pre;
@@ -216,16 +191,12 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-
 .items-center {
     align-items: center;
 }
 .flex {
     display: flex;
 }
-
-
-
 
 .text-18 {
     font-size: 18px !important;
@@ -248,6 +219,49 @@ a {
     flex-shrink: 0;
     user-select: none;
 }
+
+.MuiIcon-root-401 {
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.MuiButtonBase-root-353 {
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.jss359 {
+    font-size: 0.875rem;
+    padding-left: 0.8rem;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v54/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -263,8 +277,6 @@ a {
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
 }
-
-
 
 .align-middle {
     vertical-align: middle;
@@ -292,21 +304,6 @@ a {
     font-size: 1.5rem;
     flex-shrink: 0;
     user-select: none;
-}
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
 }
 
 .MuiTouchRipple-root-9370 {

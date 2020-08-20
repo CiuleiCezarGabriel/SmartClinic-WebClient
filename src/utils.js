@@ -4,17 +4,15 @@ export function responseToJson(response) {
     return response.json().then(json => {
         return response.ok ? json : Promise.reject(json);
     });
-} 
+}
 
-export function authHeader() {
-    // return authorization header with jwt token
-    let user = JSON.parse(localStorage.getItem('user'));
+export function globalErrorHandler(error) {
+    if (error && error.message)
+        alert(error.message);
+    else
+        alert('An error occured!');
 
-    if (user && user.token) {
-        return { 'Authorization': 'Bearer ' + user.token };
-    } else {
-        return {};
-    }
+    return Promise.reject(false);
 }
 
 export const history = createBrowserHistory()

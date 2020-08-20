@@ -2,6 +2,7 @@ import React from 'react'
 import { logout } from '../../actions'
 import { useDispatch } from 'react-redux'
 import './navbar.scss';
+import { history } from '../../utils'
 
 function NavBar() {
 
@@ -11,34 +12,38 @@ function NavBar() {
         dispatch(logout)
     }
 
+    function handleClick() {
+        history.push('/questions')
+    }
+
+
     return (
         <div class="jss1279 jss1282">
             <div class="flex-column relative h-full">
                 <div class="scrollbar-container relative px-4 jss1285 ps ps--active-y">
                     <div class="navigation">
-                    <a class="flex justify-between h-44 border-radius-4 mb-2 compactNavItem whitespace-pre overflow-hidden jss1287" href="/crud-table">
-                    <button class="MuiButtonBase-root-1293 w-full" tabindex="0" type="button" name="child">
-                        <span class="material-icons MuiIcon-root-1294 text-18 align-middle w-36 px-4" aria-hidden="true">format_list_bulleted</span>
-                        <span class="align-middle text-left sidenavHoverShow jss1290">CRUD Table</span>
-                        <div class="mx-auto"></div>
-                        <span class="MuiTouchRipple-root-1775"></span>
-                    </button></a>
                         <div>
-                            <button class="MuiButtonBase-root-8895 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss8909" tabindex="0" type="button">
-                                <div class="flex items-center">
-                                    <span class="material-icons MuiIcon-root-8896 align-middle text-18 w-36 px-4" aria-hidden="true">help</span>
-                                    <span class="align-middle sidenavHoverShow jss8912">Help Center</span>
-                                </div>
-                                <div class="item-arrow sidenavHoverShow jss8911 jss8906">
-                                    <span class="material-icons MuiIcon-root-8896 align-middle MuiIcon-fontSizeSmall-8903" aria-hidden="true">chevron_right</span>
-                                </div>
-                                <span class="MuiTouchRipple-root-9370"></span>
+                        </div>
+                        <div>
+                            <button class="MuiButtonBase-root-353 w-full" tabindex="0" type="button" name="child"><div class="nav-bullet p-2px rounded ml-5 mr-2 jss361"></div>
+                                <div class="nav-bullet-text ml-5 text-11 hidden"></div>
+                                <span class="align-middle text-left sidenavHoverShow jss359" onClick={() => handleClick()}> FAQ 1 </span>
+                                <div class="mx-auto"></div><span class="MuiTouchRipple-root-371"></span>
                             </button>
+                            <button type="button" onClick={() => handleClick()} > Questions </button>
+                        </div>
+                        <div>
+                            <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
+                                <span class="material-icons MuiIcon-root-401" aria-hidden="true"> power_settings_new </span>
+                                <span class="pl-4" onClick={() => handleLogout()}> Logout </span><span class="MuiTouchRipple-root-410"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div>
+            </div>
+        </div >
     )
 }
 

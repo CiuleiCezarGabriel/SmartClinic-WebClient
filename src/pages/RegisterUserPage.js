@@ -18,8 +18,6 @@ function RegisterUserPage() {
         speciality: '',
         room: ''
     })
-    const [submitted, setSubmitted] = useState(false);
-    const location = useLocation();
     const [selected, setSelected] = useState(false)
     const registering = useSelector(state => state.registration.registering);
     const dispatch = useDispatch()

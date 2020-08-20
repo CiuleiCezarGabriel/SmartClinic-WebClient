@@ -1,10 +1,10 @@
 import React from 'react'
-import NavBar from './navbar/NavBar'
+import NavBar from '../components/navbar/NavBar'
 import { history } from '../utils'
 
-function AdminPage(){
+function AdminPage() {
 
-    function addUser(){
+    function addUser() {
         history.push('./registerNewUser')
     }
 

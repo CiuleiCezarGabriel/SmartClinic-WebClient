@@ -1,7 +1,5 @@
 import { userService } from '../services/'
 import { history } from '../utils'
-import { useLocation } from 'react-router-dom'
-import { error } from '.'
 
 export const UserActionTypes = {
     REGISTER_REQUEST: 'USERS_REGISTER_REQUEST',
@@ -67,10 +65,10 @@ export function register(user) {
         userService.register(user)
             .then(
                 user => {
-                    if(window.location.pathname === '/registerNewUser'){
+                    if (window.location.pathname === '/registerNewUser') {
                         history.push('/admin')
                     }
-                    else{
+                    else {
                         history.push('/login');
                     }
                     dispatchEvent(success(user))

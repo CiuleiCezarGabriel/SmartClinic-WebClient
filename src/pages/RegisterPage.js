@@ -18,7 +18,6 @@ function RegisterPage() {
         medical_history: '',
         information: ''
     })
-    const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
     const dispatch = useDispatch()
 
@@ -30,7 +29,6 @@ function RegisterPage() {
     function handleSubmit(e) {
         e.preventDefault();
         setSubmitted(true);
-        console.log(user)
         if (user.firstName && user.lastName && user.username && user.password && user.role && user.email) {
             dispatch(register(user));
         }
