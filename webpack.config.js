@@ -54,6 +54,8 @@ module.exports = {
         })
     ],
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+            inline:true,
+            port: 7000
     }
 }; 

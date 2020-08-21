@@ -12,6 +12,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HomePage from './pages/HomePage';
 import RegisterUserPage from './pages/RegisterUserPage'
 import QuestionPage from './pages/QuestionPage'
+import AppointmentPage from './pages/AppointmentPage'
 import './app.scss';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                         <Route path="/register" component={RegisterPage}></Route>
                         <Route path="/registerNewUser" component={RegisterUserPage}></Route>
                         <Route path="/questions" component={QuestionPage}></Route>
+                        <Route path="/appointments" component={AppointmentPage}></Route>
                         <Route path="/" component={HomePage}></Route>
                     </Switch>
                 </Router>

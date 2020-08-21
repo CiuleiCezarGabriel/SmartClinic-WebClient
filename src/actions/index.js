@@ -1,6 +1,8 @@
 import { UserActionTypes, login, logout, register} from './userActions';
 import { AlertActionType, success, error, clear } from './alertActions'
 import { QuestionActionsType, fetchQuestions} from './questionActions'
+import { AppointmentActionsType, fetchAppointments} from './appointmentActions'
+
 
 export {
     UserActionTypes,
@@ -14,5 +16,8 @@ export {
     clear,
 
     QuestionActionsType,
-    fetchQuestions
+    fetchQuestions,
+
+    AppointmentActionsType,
+    fetchAppointments,
 }

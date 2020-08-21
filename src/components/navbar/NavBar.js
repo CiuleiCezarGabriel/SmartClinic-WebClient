@@ -33,7 +33,7 @@ function NavBar() {
                             <button type="button" onClick={() => handleClick()} > Questions </button>
                         </div>
                         <div>
-                            <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
+                            <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabIndex="-1" role="menuitem" aria-disabled="false">
                                 <span class="material-icons MuiIcon-root-401" aria-hidden="true"> power_settings_new </span>
                                 <span class="pl-4" onClick={() => handleLogout()}> Logout </span><span class="MuiTouchRipple-root-410"></span>
                             </div>

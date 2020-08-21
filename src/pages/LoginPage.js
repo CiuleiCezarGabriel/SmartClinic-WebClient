@@ -6,8 +6,8 @@ import { login } from '../actions'
 function LoginPage() {
 
     const [inputs, setInputs] = React.useState({
-        username: ' ',
-        password: ' '
+        username: '',
+        password: ''
     })
     const [submitted, setSubmitted] = React.useState(false);
     const { username, password } = inputs;
