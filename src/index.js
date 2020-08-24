@@ -6,13 +6,27 @@ import App from './App';
 import rootReducer from './reducers'
 import thunk from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore, persistReducer } from 'redux-persist';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
+import storage from 'redux-persist/lib/storage';
 import '../index.css';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const persistConfig = {
+    key: 'root',
+    storage: storage,
+    stateReconciler: autoMergeLevel2
+};
+
+const pReducer = persistReducer(persistConfig, rootReducer);
+const store = createStore(pReducer, composeWithDevTools(applyMiddleware(thunk)))
+const persistor = persistStore(store)
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
-    </Provider>
+        <PersistGate loading={null} persistor={persistor}>
+            <App />
+        </PersistGate>
+    </Provider >
     , document.getElementById('app')
 );

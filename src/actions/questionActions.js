@@ -10,9 +10,9 @@ export const QuestionActionsType = {
     ADD_QUESTION_SUCCESS: 'ADD_QUESTION_SUCCESS',
     ADD_QUESTION_ERROR: 'ADD_QUESTION_ERROR',
 
-    UPDATE_QUESTION_REQUEST: 'UPDATE_QUESTION_REQUEST',
-    UPDATE_QUESTION_SUCCESS: 'UPDATE_QUESTION_SUCCESS',
-    UPDATE_QUESTION_ERROR: 'UPDATE_QUESTION_ERROR'
+    UPDATE_QUESTION_RESPONSE_REQUEST: 'UPDATE_QUESTION_RESPONSE_REQUEST',
+    UPDATE_QUESTION_RESPONSE_SUCCESS: 'UPDATE__RESPONSE_QUESTION_SUCCESS',
+    UPDATE_QUESTION_RESPONSE_ERROR: 'UPDATE_QUESTION_RESPONSE_ERROR'
 }
 
 export function requestQuestions() {
@@ -66,8 +66,50 @@ export function addQuestionError(error) {
     }
 }
 
+export function addQuestion(question) {
+    return dispatch => {
+        dispatch(addQuestionRequest())
+        return QuestionService.addQuestion(question)
+            .then(response => responseToJson(response))
+            .then(json => dispatch(addQuestionSuccess(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(addQuestionError(error))
+            })
+    }
+}
 
+export function updateQuestionResponseRequest() {
+    return {
+        type: QuestionActionsType.UPDATE_QUESTION_RESPONSE_REQUEST
+    }
+}
 
+export function updateQuestionResponseSuccess() {
+    return {
+        type: QuestionActionsType.UPDATE_QUESTION_RESPONSE_SUCCESS
+    }
+}
+
+export function updateQuestionResponseError(error) {
+    return {
+        type: QuestionActionsType.UPDATE_QUESTION_RESPONSE_ERROR,
+        error
+    }
+}
+
+export function updateResponse(id, doctorId, response) {
+    return dispatch => {
+        dispatch(updateQuestionResponseRequest())
+        return QuestionService.updateResponse(id, doctorId, response)
+            .then(response => responseToJson(response))
+            .then(json => dispatch(updateQuestionResponseSuccess(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(updateQuestionResponseError(error))
+            })
+    }
+}
 
 
 

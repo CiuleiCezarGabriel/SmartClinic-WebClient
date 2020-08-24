@@ -13,6 +13,12 @@ export function questions(state = questionsInitialState, action) {
             return { ...state, data: action.questions, loadingQuestion: false }
         case QuestionActionsType.FETCH_QUESTIONS_ERROR:
             return { ...state, data: [], loadingQuestion: false }
+        case QuestionActionsType.ADD_QUESTION_REQUEST:
+            return { ...state, loadingQuestion: false }
+        case QuestionActionsType.ADD_QUESTION_SUCCESS:
+            return { ...state, loadingQuestion: false }
+        case QuestionActionsType.ADD_QUESTION_ERROR:
+            return { ...state, loadingQuestion: false }
     }
     return state;
 }

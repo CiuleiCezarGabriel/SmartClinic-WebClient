@@ -29,11 +29,11 @@ export function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user))
-                    //localStorage.setItem('user', JSON.stringify(user))
-                    localStorage.setItem('user', JSON.stringify(user.user))
+                    console.log(user)
+  
+                    localStorage.setItem('user', JSON.stringify(user))
                     localStorage.setItem('patient', JSON.stringify(user.patient))
                     localStorage.setItem('doctor', JSON.stringify(user.doctor))
-                    console.log(user.user.role);
 
                     if (user.user.role === 'ADMIN') {
                         history.push('/admin');
@@ -55,7 +55,7 @@ export function login(username, password) {
     }
 
     function request(user) { return { type: UserActionTypes.LOGIN_REQUEST, user } }
-    function success(user) { return { type: UserActionTypes.LOGIN_SUCCESS, user } }
+    function success(user, patient, doctor) { return { type: UserActionTypes.LOGIN_SUCCESS, user, patient, doctor } }
     function failure(error) { return { type: UserActionTypes.LOGIN_FAILURE, error } }
 }
 
