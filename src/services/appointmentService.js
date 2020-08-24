@@ -8,9 +8,25 @@ const fetchAppointments = () => {
             'Accept': 'application/json' 
         }
     }
-    return fetch(`${BASE_SERVICE_URL}/appointment`, requestOptions);
+    return fetch(`${BASE_SERVICE_URL}`, requestOptions);
+}
+
+const fetchAppointmentsByDoctor = (id) => {
+    const user = localStorage.getItem('user')
+    const userJson = JSON.parse(user)
+    const role = userJson.role
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({ role})
+    };
+    return fetch(`${BASE_API_URL}/${id}`);
 }
 
 export default { 
-    fetchAppointments
+    fetchAppointments,
+    fetchAppointmentsByDoctor
 }; 

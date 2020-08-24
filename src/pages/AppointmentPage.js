@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators, compose } from 'redux';
-import { fetchAppointments } from '../actions';
+import { fetchAppointments} from '../actions';
+import {fetchAppointmentsForDoctor} from '../actions/appointmentActions';
 import { appointments } from '../reducers/appointmentReducer';
 import Appointment from '../components/Appointment'
 
@@ -13,6 +14,7 @@ class AppointmentPage extends React.Component {
 
         let { fetchAppointments } = this.props
         fetchAppointments()
+
         if (appointments.length < 10) {
             console.log(appointments)
         }
@@ -47,6 +49,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     fetchAppointments: fetchAppointments,
+    fetchAppointmentsForDoctor: fetchAppointmentsForDoctor
+
 }, dispatch);
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(AppointmentPage)

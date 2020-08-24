@@ -29,14 +29,19 @@ export function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user))
-                    localStorage.setItem('user', JSON.stringify(user))
-                    if (user.role === 'ADMIN') {
+                    //localStorage.setItem('user', JSON.stringify(user))
+                    localStorage.setItem('user', JSON.stringify(user.user))
+                    localStorage.setItem('patient', JSON.stringify(user.patient))
+                    localStorage.setItem('doctor', JSON.stringify(user.doctor))
+                    console.log(user.user.role);
+
+                    if (user.user.role === 'ADMIN') {
                         history.push('/admin');
                     }
-                    else if (user.role === 'PATIENT') {
+                    else if (user.user.role === 'PATIENT') {
                         history.push('/patient')
                     }
-                    else if (user.role === 'DOCTOR') {
+                    else if (user.user.role === 'DOCTOR') {
                         history.push('/doctor')
                     }
                     else {
