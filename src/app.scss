@@ -19,3 +19,188 @@
     display: flex;
 }
 
+
+// for flex-grow flex-column relative overflow-hidden h-full-screen jss2010 jss2012 class
+@media (min-width: 960px){   ///////FIX THIS
+.jss2012 {
+    margin-right: 50px;
+}
+.jss2012 {
+    margin-left: var(--sidenav-width);
+    vertical-align: top;
+    transition: all 0.3s ease 0s;
+}
+.h-full-screen {
+    height: 100vh;
+}
+.relative {
+    position: relative;
+}
+.overflow-hidden {
+    overflow: hidden !important;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+}
+
+
+.ps__rail-x, .ps__rail-y {
+    display: none;
+    opacity: 0;
+    transition: background-color .2s linear,opacity .2s linear;
+    -webkit-transition: background-color .2s linear,opacity .2s linear;
+    position: absolute;
+}
+.ps__rail-x {
+    height: 15px;
+    bottom: 0;
+}
+
+.ps__thumb-x, .ps__thumb-y {
+    background-color: #aaa;
+    border-radius: 6px;
+    position: absolute;
+}
+.ps__thumb-x {
+    transition: background-color .2s linear,height .2s ease-in-out;
+    -webkit-transition: background-color .2s linear,height .2s ease-in-out;
+    height: 6px;
+    bottom: 2px;
+}
+
+
+.ps__rail-y {
+    width: 15px;
+    right: 0;
+}
+.ps__rail-x, .ps__rail-y {
+    display: none;
+    opacity: 0;
+    transition: background-color .2s linear,opacity .2s linear;
+    -webkit-transition: background-color .2s linear,opacity .2s linear;
+    position: absolute;
+}
+
+
+.ps__thumb-y {
+    transition: background-color .2s linear,width .2s ease-in-out;
+    -webkit-transition: background-color .2s linear,width .2s ease-in-out;
+    width: 6px;
+    right: 2px;
+}
+.ps__thumb-x, .ps__thumb-y {
+    background-color: #aaa;
+    border-radius: 6px;
+    position: absolute;
+}
+
+
+
+
+.layout1.sidenav-full .content-wrap {
+    width: calc(100% - 260px);
+    vertical-align: top;
+    margin-left: 260px;
+}
+.layout1 .content-wrap {
+    flex: 1 1 auto;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+    height: 100%;
+}
+@media screen and (min-width: 767px){
+.content-wrap, .layout2.layout-contained, .layout2.layout-full {
+    margin-right: 50px;
+}}
+.sidenav, .topbar, .content-wrap {
+    transition: all 0.3s ease;
+}
+
+
+.layout1 .content-wrap .topbar {
+    FONT-VARIANT-EAST-ASIAN: JIS78;
+    top: 0;
+    z-index: 96;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 44%, rgba(247, 247, 247, 0.4) 50%, rgba(255, 255, 255, 0));
+}
+.sidenav, .topbar, .content-wrap {
+    transition: all 0.3s ease;
+}
+div, a {
+    box-sizing: border-box;
+}
+
+
+.layout1.sidenav-full .content-wrap {
+    width: calc(100% - 260px);
+    vertical-align: top;
+    margin-left: 260px;
+}
+.layout1 .content-wrap {
+    flex: 1 1 auto;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+    height: 100%;
+}
+@media screen and (min-width: 767px){
+.content-wrap, .layout2.layout-contained, .layout2.layout-full {
+    margin-right: 50px;
+}}
+.sidenav, .topbar, .content-wrap {
+    transition: all 0.3s ease;
+}
+.position-relative {
+    position: relative;
+}
+div, a {
+    box-sizing: border-box;
+}
+
+
+
+
+@media (min-width: 960px){
+    .jss1478 {
+        margin-right: 50px;
+    }
+}
+.jss1478 {
+        margin-left: var(--sidenav-width);
+        vertical-align: top;
+        transition: all 0.3s ease 0s;
+}
+.h-full-screen {
+        height: 100vh;
+}
+.relative {
+        position: relative;
+}
+.overflow-hidden {
+        overflow: hidden !important;
+}
+.flex-grow {
+        flex-grow: 1;
+}
+.flex-column {
+        display: flex;
+        flex-direction: column;
+}
+
+
+
+
+.jss1512 {
+    top: 0;
+    z-index: 96;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 44%, rgba(247, 247, 247, 0.4) 50%, rgba(255, 255, 255, 0));
+    transition: all 0.3s ease;
+}

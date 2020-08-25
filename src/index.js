@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -27,6 +28,6 @@ ReactDOM.render(
         <PersistGate loading={null} persistor={persistor}>
             <App />
         </PersistGate>
-    </Provider >
+    </Provider>
     , document.getElementById('app')
 );
