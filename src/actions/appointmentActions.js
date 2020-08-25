@@ -2,77 +2,147 @@ import AppointmentService from '../services/appointmentService'
 import { responseToJson } from '../utils';
 
 export const AppointmentActionsType = {
-    APPOITNEMNTS_GETALL_REQUEST: 'APPOITNEMNTS_GETALL_REQUEST',
-    APPOITNEMNTS_GETALL_SUCCESS: 'APPOITNEMNTS_GETALL_SUCCESS',
-    APPOITNEMNTS_GETALL_FAILURE: 'APPOITNEMNTS_GETALL_FAILURE',
+    APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_REQUEST: 'APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_REQUEST',
+    APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_SUCCESS: 'APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_SUCCESS',
+    APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_ERROR: 'APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_ERROR',
 
-    APPOINTMENTS_GET_BY_DOCTOR_REQUEST: 'APPOINTMENTS_GET_BY_DOCTOR_REQUEST',
-    APPOINTMENTS_GET_BY_DOCTOR_SUCCESS: 'APPOINTMENTS_GET_BY_DOCTOR_SUCCESS',
-    APPOINTMENTS_GET_BY_DOCTOR_ERROR: 'APPOINTMENTS_GET_BY_DOCTOR_ERROR'
+    APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_REQUEST: 'APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_REQUEST',
+    APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_SUCCESS: 'APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_SUCCESS',
+    APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_ERROR: 'APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_ERROR',
+
+    APPOINTMENTS_GET_BY_PATIENT_REQUEST: 'APPOINTMENTS_GET_BY_PATIENT_REQUEST',
+    APPOINTMENTS_GET_BY_PATIENT_SUCCESS: 'APPOINTMENTS_GET_BY_PATIENT_SUCCESS',
+    APPOINTMENTS_GET_BY_PATIENT_ERROR: 'APPOINTMENTS_GET_BY_PATIENT_ERROR',
+
+    ADD_APPOINTMENT_REQUEST: 'ADD_APPOINTMENT_REQUEST',
+    ADD_APPOINTMENT_SUCCESS: 'ADD_APPOINTMENT_SUCCESS',
+    ADD_APPOINTMENT_ERROR: 'ADD_APPOINTMENT_ERROR',
 };
 
-export function requiestAppointments(){
+export function requiestAppointmentsDoctorConfirmed(){
     return{
-        type: AppointmentActionsType.APPOITNEMNTS_GETALL_REQUEST,
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_REQUEST,
     }
 }
 
-export function fetchAppointmentsSuccess(appointments) {
+export function fetchAppointmentsDoctorConfirmedSuccess(appointments) {
     return {
-        type: AppointmentActionsType.APPOITNEMNTS_GETALL_SUCCESS,
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_SUCCESS,
         appointments
     }
 }
 
-export function fetchAppointmentsFailure(error) {
+export function fetchAppointmentsDoctorConfirmedFailure(error) {
     return {
-        type: AppointmentActionsType.APPOITNEMNTS_GETALL_FAILURE,
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_ERROR,
         error
     }
 }
 
-export function fetchAppointments() {
+export function fetchAppointmentsDoctorConfirmed() {
     return dispatch => {
-        dispatch(requiestAppointments())
-        return AppointmentService.fetchAppointments()
+        dispatch(requiestAppointmentsDoctorConfirmed())
+        return AppointmentService.fetchAppointmentsByDoctorConfirmed()
             .then(response => responseToJson(response))
-            .then(json => dispatch(fetchAppointmentsSuccess(json)))
+            .then(json => dispatch(fetchAppointmentsDoctorConfirmedSuccess(json)))
             .catch(error => {
                 console.log(error)
-                dispatch(fetchAppointmentsFailure(error))
+                dispatch(fetchAppointmentsDoctorConfirmedFailure(error))
             })
     }
 }
 
-export function requiestAppointmentsForDoctor(){
+export function requiestAppointmentsDoctorUnconfirmed(){
     return{
-        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_REQUEST,
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_REQUEST,
     }
 }
 
-export function fetchAppointmentsForDoctorSuccess(appointments) {
+export function fetchAppointmentsDoctorUnconfirmedSuccess(appointments) {
     return {
-        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_SUCCESS,
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_SUCCESS,
         appointments
     }
 }
 
-export function fetchAppointmentsForDoctorFailure(error) {
+export function fetchAppointmentsDoctorUnconfirmedFailure(error) {
     return {
-        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_ERROR,
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_ERROR,
         error
     }
 }
 
-export function fetchAppointmentsForDoctor(id) {
+export function fetchAppointmentsDoctorUnconfirmed() {
     return dispatch => {
-        dispatch(requiestAppointmentsForDoctor())
-        return AppointmentService.fetchAppointmentsByDoctor(id)
+        dispatch(requiestAppointmentsDoctorUnconfirmed())
+        return AppointmentService.fetchAppointmentsByDoctorUnconfirmed()
             .then(response => responseToJson(response))
-            .then(json => dispatch(fetchAppointmentsForDoctorSuccess(json)))
+            .then(json => dispatch(fetchAppointmentsDoctorUnconfirmedSuccess(json)))
             .catch(error => {
                 console.log(error)
-                dispatch(fetchAppointmentsForDoctorFailure(error))
+                dispatch(fetchAppointmentsDoctorUnconfirmedFailure(error))
+            })
+    }
+}
+
+export function requiestAppointmentsForPatient(){
+    return{
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_REQUEST,
+    }
+}
+
+export function fetchAppointmentsForPatientSuccess(appointments) {
+    return {
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_SUCCESS,
+        appointments
+    }
+}
+
+export function fetchAppointmentsForPatientFailure(error) {
+    return {
+        type: AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_ERROR,
+        error
+    }
+}
+
+export function fetchAppointmentsForPatient() {
+    return dispatch => {
+        dispatch(requiestAppointmentsForPatient())
+        return AppointmentService.fetchAppointmentsByPatient()
+            .then(response => responseToJson(response))
+            .then(json => dispatch(fetchAppointmentsForPatientSuccess(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(fetchAppointmentsForPatientFailure(error))
+            })
+    }
+}
+
+
+export function requestAddAppointment(appointment) {
+     return { 
+         type: AppointmentActionsType.ADD_APPOINTMENT_REQUEST, 
+         appointment 
+    } 
+}
+export function addAppointemntSucces(){
+    return {
+        type: AppointmentActionsType.ADD_APPOINTMENT_SUCCESS
+    }
+}
+export function addAppoinremntFailure(error){
+    return{
+        type: AppointmentActionsType.ADD_APPOINTMENT_ERROR
+    }
+}
+export function addAppointment(appointment){
+    return dispatch =>{
+        dispatch(requestAddAppointment(appointment))
+
+        AppointmentService.addAppointment(appointment)
+            .then(app => dispatchEvent(success(app)))
+            .catch(error => {
+                dispatch(failure(error.toString()))
             })
     }
 }

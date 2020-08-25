@@ -1,6 +1,12 @@
 const BASE_SERVICE_URL = "http://localhost:9002/appointment";
 
-const fetchAppointments = () => {
+const fetchAppointmentsByDoctorConfirmed = () => {
+    const doctor = localStorage.getItem('doctor');
+    const doctorJSON = JSON.parse(doctor);
+    let id = doctorJSON[0]._id;
+
+    console.log(id);
+
     const requestOptions = {
         method: 'GET',
         headers: { 
@@ -8,25 +14,57 @@ const fetchAppointments = () => {
             'Accept': 'application/json' 
         }
     }
-    return fetch(`${BASE_SERVICE_URL}`, requestOptions);
+    return fetch(`${BASE_SERVICE_URL}/doctor/confirmed/${id}`, requestOptions);
 }
 
-const fetchAppointmentsByDoctor = (id) => {
-    const user = localStorage.getItem('user')
-    const userJson = JSON.parse(user)
-    const role = userJson.role
+const fetchAppointmentsByDoctorUnconfirmed = () => {
+    const doctor = localStorage.getItem('doctor');
+    const doctorJSON = JSON.parse(doctor);
+    let id = doctorJSON[0]._id;
+
+    console.log(id);
+
     const requestOptions = {
-        method: 'POST',
+        method: 'GET',
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json' 
+        }
+    }
+    return fetch(`${BASE_SERVICE_URL}/doctor/unconfirmed/${id}`, requestOptions);
+}
+
+const fetchAppointmentsByPatient = () => {
+
+    const patient = localStorage.getItem('patient')
+    const patientJSON = JSON.parse(patient)
+    let id = patientJSON[0]._id;
+
+    const requestOptionsPatient = {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: JSON.stringify({ role})
     };
-    return fetch(`${BASE_API_URL}/${id}`);
+    return fetch(`${BASE_SERVICE_URL}/patient/${id}`,requestOptionsPatient);
+    
+}
+
+function addAppointment(appointment) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(appointment)
+    }
+
+    return fetch(`${BASE_SERVICE_URL}/post`, requestOptions)
+        .then(response => response.json)
 }
 
 export default { 
-    fetchAppointments,
-    fetchAppointmentsByDoctor
+    fetchAppointmentsByDoctorConfirmed,
+    fetchAppointmentsByDoctorUnconfirmed,
+    fetchAppointmentsByPatient,
+    addAppointment
 }; 

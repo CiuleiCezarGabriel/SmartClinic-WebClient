@@ -16,6 +16,10 @@ function NavBar() {
         history.push('/questions')
     }
 
+    function handleAppointments() {
+        history.push('/appointments')
+    }
+
 
     return (
         <div class="jss7658 jss7661">   {/*<div class="jss5875 jss5878">*/}
@@ -37,7 +41,12 @@ function NavBar() {
                                 <span class="align-middle text-left sidenavHoverShow jss359" onClick={() => handleClick()}> FAQ 1 </span>
                                 <div class="mx-auto"></div><span class="MuiTouchRipple-root-371"></span>
                             </button>
-                            <button type="button" onClick={() => handleClick()} > Questions </button>
+                            <div>
+                            <   button type="button" onClick={() => handleClick()} > Questions </button>
+                            </div>
+                            <div>
+                                <button type="button" onClick={() => handleAppointments()} > Appointments </button>
+                            </div>
                         </div>
                         <div>
                             <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">

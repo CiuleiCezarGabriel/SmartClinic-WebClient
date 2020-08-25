@@ -2,25 +2,43 @@ import { AppointmentActionsType } from '../actions/appointmentActions'
 
 const appointmentsInitialState = {
     loadingAppointments: false,
-    data: []
+    doctor_confirmed_app: [],
+    doctor_unconfirmed_app:[],
+    patient_app: []
 }
 
 export function appointments(state = appointmentsInitialState, action) {
     switch (action.type) {
-        case AppointmentActionsType.APPOITNEMNTS_GETALL_REQUEST:
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_REQUEST:
             return { ...state, loadingAppointments: true }
-        case AppointmentActionsType.APPOITNEMNTS_GETALL_SUCCESS:
-            return { ...state, data: action.appointments, loadingAppointments: false }
-        case AppointmentActionsType.APPOITNEMNTS_GETALL_FAILURE:
-            return { ...state, data: [], loadingAppointments: false }
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_SUCCESS:
+            return { ...state, doctor_confirmed_app: action.appointments, loadingAppointments: false }
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_ERROR:
+            return { ...state, doctor_confirmed_app: [], loadingAppointments: false }
+
+
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_REQUEST:
+            return { ...state, loadingAppointments: true }
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_SUCCESS:
+            return { ...state, doctor_unconfirmed_app: action.appointments, loadingAppointments: false }
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_ERROR:
+            return { ...state, doctor_unconfirmed_app: [], loadingAppointments: false }
 
             
-        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_REQUEST:
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_REQUEST:
             return { ...state, loadingAppointments: true }
-        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_SUCCESS:
-            return { ...state, data: action.appointments, loadingAppointments: false }
-        case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_ERROR:
-            return { ...state, data: [], loadingAppointments: false }
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_SUCCESS:
+            return { ...state, patient_app: action.appointments, loadingAppointments: false }
+        case AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_ERROR:
+            return { ...state, patient_app: [], loadingAppointments: false }
+
+
+        case AppointmentActionsType.ADD_APPOINTMENT_REQUEST:
+            return { ...state, loadingAppointments: true }
+        case AppointmentActionsType.ADD_APPOINTMENT_SUCCESS:
+            return { ...state, loadingAppointments: false }
+        case AppointmentActionsType.ADD_APPOINTMENT_ERROR:
+            return { ...state, loadingAppointments: false }
     }
     return state;
 }

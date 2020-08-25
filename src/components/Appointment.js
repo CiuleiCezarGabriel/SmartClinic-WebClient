@@ -17,6 +17,9 @@ class Appointment extends React.Component {
                     Date:  <label> {this.props.date} </label>
                 </div>
                 <div>
+                    Description:  <label> {this.props.description} </label>
+                </div>
+                <div>
                     Doctor - Patient:  <label> {this.props.doctor} - {this.props.patient} </label>
                 </div>
             </div>
