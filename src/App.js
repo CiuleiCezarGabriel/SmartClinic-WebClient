@@ -21,18 +21,15 @@ import TopBar from './components/TopBar/TopBar';
 //import DespreNoi from './components/DespreNoi/DespreNoi';
 
 function App() {
+
     useEffect(() => {
         history.listen((location, action) => {
         });
     }, []);
 
     return (
-        <div class="scrollbar-container h-full-screen ps">
-            {/*<div class="ps__rail-x" style={{left: "0px", bottom: "0px"}}>
-                    <div class="ps__thumb-x" tabindex="0" style={{left: "0px", width: "0px"}}></div>
-                </div>
-                    <div class="ps__rail-y" style={{top: "0px", right: "0px", height: "188px"}}></div>
-    <div class="ps__thumb-y" tabindex="0" style={{top: "0px", height: "0px"}}></div>*/}
+        <div class="scrollbar-container h-full-screen ps ps--active-y">
+
             <div class="bg-default theme-light flex">
 
                 <NavBar></NavBar>
@@ -40,27 +37,29 @@ function App() {
 
                     <div class="jss1512">
                         <div>
-                        
+
                         </div>
                         <div class="content-wrap position-relative">
                             <TopBar> </TopBar>
                         </div>
-                    </div>
 
-                    <Router history={history}>
-                        <Switch>
-                            <PrivateRoute path="/patient" component={PatientPage}></PrivateRoute>
-                            <PrivateRoute path="/doctor" component={DoctorPage}></PrivateRoute>
-                            <PrivateRoute path="/admin" component={AdminPage}></PrivateRoute>
-                            <Route path="/resetPassword" component={ForgotPasswordPage}></Route>
-                            <Route path="/login" exact component={LoginPage}></Route>
-                            <Route path="/register" component={RegisterPage}></Route>
-                            <Route path="/registerNewUser" component={RegisterUserPage}></Route>
-                            <Route path="/questions" component={QuestionPage}></Route>
-                            <Route path="/appointments" component={AppointmentPage}></Route>
-                            <Route path="/" component={HomePage}></Route>
-                        </Switch>
-                    </Router>
+                    </div>
+                    <div id="container">
+                        <Router history={history}>
+                            <Switch>
+                                <PrivateRoute path="/patient" component={PatientPage}></PrivateRoute>
+                                <PrivateRoute path="/doctor" component={DoctorPage}></PrivateRoute>
+                                <PrivateRoute path="/admin" component={AdminPage}></PrivateRoute>
+                                <Route path="/resetPassword" component={ForgotPasswordPage}></Route>
+                                <Route path="/login" exact component={LoginPage}></Route>
+                                <Route path="/register" component={RegisterPage}></Route>
+                                <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
+                                <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
+                                <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>
+                                <Route path="/" component={HomePage}></Route>
+                            </Switch>
+                        </Router>
+                    </div>
                 </div>
             </div>
         </div>

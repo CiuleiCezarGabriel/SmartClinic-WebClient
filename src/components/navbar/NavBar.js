@@ -110,7 +110,7 @@ function NavBar() {
                             </button>
                         </div>
                         <div>
-                            <a class="flex justify-between h-44 border-radius-4 mb-2 compactNavItem whitespace-pre overflow-hidden jss4342 bg-gray" href="/invoice/list" aria-current="page">
+                            <a class="flex justify-between h-44 border-radius-4 mb-2 compactNavItem whitespace-pre overflow-hidden jss4342 bg-gray" aria-current="page">
                                 <button class="MuiButtonBase-root-4339 w-full" tabindex="0" type="button" name="child"><span class="material-icons MuiIcon-root-4348 text-18 align-middle w-36 px-4" aria-hidden="true">receipt</span>
                                     <span class="align-middle text-left sidenavHoverShow jss4345" onClick={() => handleClick()}>FAQs</span>
                                     <div class="mx-auto"></div>

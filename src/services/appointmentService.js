@@ -8,9 +8,9 @@ const fetchAppointmentsByDoctorConfirmed = () => {
 
     const requestOptions = {
         method: 'GET',
-        headers: { 
+        headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json' 
+            'Accept': 'application/json'
         }
     }
     return fetch(`${BASE_SERVICE_URL}/doctor/confirmed/${id}`, requestOptions);
@@ -25,9 +25,9 @@ const fetchAppointmentsByDoctorUnconfirmed = () => {
 
     const requestOptions = {
         method: 'GET',
-        headers: { 
+        headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json' 
+            'Accept': 'application/json'
         }
     }
     return fetch(`${BASE_SERVICE_URL}/doctor/unconfirmed/${id}`, requestOptions);
@@ -46,8 +46,8 @@ const fetchAppointmentsByPatient = () => {
             'Accept': 'application/json'
         },
     };
-    return fetch(`${BASE_SERVICE_URL}/patient/${id}`,requestOptionsPatient);
-    
+    return fetch(`${BASE_SERVICE_URL}/patient/${id}`, requestOptionsPatient);
+
 }
 
 function addAppointment(appointment) {
@@ -61,7 +61,7 @@ function addAppointment(appointment) {
         .then(response => response.json)
 }
 
-export default { 
+export default {
     fetchAppointmentsByDoctorConfirmed,
     fetchAppointmentsByDoctorUnconfirmed,
     fetchAppointmentsByPatient,
