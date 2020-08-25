@@ -5,7 +5,6 @@ function PatientPage() {
 
     return (
         <div>
-            <NavBar />
             <div>
                 Patient Page
             </div>

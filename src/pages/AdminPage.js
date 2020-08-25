@@ -10,7 +10,6 @@ function AdminPage() {
 
     return (
         <div>
-            <NavBar />
             <div>
                 Admin Page
                 <button onClick={addUser}> Add user</button>

@@ -19,6 +19,13 @@ export function questions(state = questionsInitialState, action) {
             return { ...state, loadingQuestion: false }
         case QuestionActionsType.ADD_QUESTION_ERROR:
             return { ...state, loadingQuestion: false }
+        case QuestionActionsType.UPDATE_QUESTION_STATUS_REQUEST:
+            return { ...state, loadingQuestion: false }
+        case QuestionActionsType.UPDATE_QUESTION_STATUS_SUCCESS:
+            return { ...state, loadingQuestion: false }
+        case QuestionActionsType.UPDATE_QUESTION_STATUS_ERROR:
+            return { ...state, loadingQuestion: false }
+
     }
     return state;
 }

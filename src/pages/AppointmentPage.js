@@ -19,7 +19,7 @@ function AppointmentPage() {
     const [startDate, setStartDate] = useState(null);
     const [time, setTime] = useState(0);
 
-    const userLogged = localStorage.getItem('user');
+    const user = useSelector(state => state.authentification.user)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -39,25 +39,25 @@ function AppointmentPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let timePrecision = time/3600;
-        if(timePrecision % 1 == 0.5) timePrecision= ~~timePrecision + ":30:00";
-        else timePrecision= ~~timePrecision + ":00:00";
+        let timePrecision = time / 3600;
+        if (timePrecision % 1 == 0.5) timePrecision = ~~timePrecision + ":30:00";
+        else timePrecision = ~~timePrecision + ":00:00";
 
         let date = document.getElementById("dateId").value
         let datePrecision = date + 'T' + timePrecision + 'Z'
 
         let description = document.getElementById("descriptionId").value
-        const inputs = {date: datePrecision, description: description, patientId: userLogged.id}
+        const inputs = { date: datePrecision, description: description, patientId: user.id }
 
-         console.log(inputs)
+        console.log(inputs)
         handleClose()
         //dispatch(addAppointment(inputs))
     }
 
     const dispatch = useDispatch()
-
-
-    if (JSON.parse(userLogged).role === "PATIENT") {
+    console.log(user.role)
+    if (user.role === "PATIENT") {
+        console.log('fsdfsd')
         const appointments = useSelector(state => state.appointments.patient_app)
 
         useEffect(() => {
@@ -104,7 +104,7 @@ function AppointmentPage() {
                                         selected={startDate}
                                         onChange={handleDateChange}
                                         filterDate={isWeekday}
-                                        dateFormat = "yyyy-MM-dd"
+                                        dateFormat="yyyy-MM-dd"
                                         placeholderText="Select a weekday"
                                     />
                                 </Col>
@@ -114,10 +114,10 @@ function AppointmentPage() {
                                     <label>Time</label>
                                 </Col>
                                 <Col xs={6} md={4}>
-                                    <TimePicker 
-                                    start="08:00" end="18:00" step={30}
-                                    onChange={handleTimeChange}
-                                    value={time} />
+                                    <TimePicker
+                                        start="08:00" end="18:00" step={30}
+                                        onChange={handleTimeChange}
+                                        value={time} />
                                 </Col>
                             </Row>
                             <Row>

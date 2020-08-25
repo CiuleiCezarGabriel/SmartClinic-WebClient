@@ -13,7 +13,7 @@ function QuestionPage() {
     const { question, setQuestion } = useState([])
     const [inputs, setInputs] = useState({
         question: "",
-        response: "",
+        response: " ",
         userId: user._id,
         status: "PENDING",
         doctorId: ""

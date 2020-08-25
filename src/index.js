@@ -13,6 +13,8 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 import storage from 'redux-persist/lib/storage';
 import '../index.css';
 
+// Add redux persist store to the application
+
 const persistConfig = {
     key: 'root',
     storage: storage,

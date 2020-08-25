@@ -43,8 +43,21 @@ const updateResponse = (id, doctorId, response) => {
     return fetch(`${BASE_SERVICE_URL}/question/updateResponse/${id}`, requestOptions)
 }
 
+const updateStatus = (id, status) => {
+    const requestOptions = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({ status })
+    };
+    return fetch(`${BASE_SERVICE_URL}/question/updateStatus/${id}`, requestOptions)
+}
+
 export default {
     fetchQuestions,
     addQuestion,
-    updateResponse
+    updateResponse,
+    updateStatus
 };

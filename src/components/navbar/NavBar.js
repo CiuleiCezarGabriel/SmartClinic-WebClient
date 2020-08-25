@@ -20,6 +20,9 @@ function NavBar() {
         history.push('/appointments')
     }
 
+    function handleLogin() {
+        history.push('/login')
+    }
 
     return (
         <div class="jss7658 jss7661">   {/*<div class="jss5875 jss5878">*/}
@@ -31,22 +34,15 @@ function NavBar() {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="scrollbar-container relative px-4 jss1285 ps ps--active-y">
                     <div class="navigation">
-                        
+
                         <div>
                             <button class="MuiButtonBase-root-353 w-full" tabindex="0" type="button" name="child"><div class="nav-bullet p-2px rounded ml-5 mr-2 jss361"></div>
                                 <div class="nav-bullet-text ml-5 text-11 hidden"></div>
-                                <span class="align-middle text-left sidenavHoverShow jss359" onClick={() => handleClick()}> FAQ 1 </span>
                                 <div class="mx-auto"></div><span class="MuiTouchRipple-root-371"></span>
                             </button>
-                            <div>
-                            <   button type="button" onClick={() => handleClick()} > Questions </button>
-                            </div>
-                            <div>
-                                <button type="button" onClick={() => handleAppointments()} > Appointments </button>
-                            </div>
                         </div>
                         <div>
                             <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
@@ -58,7 +54,7 @@ function NavBar() {
                             <button class="MuiButtonBase-root-10142 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss10156" tabindex="0" type="button">
                                 <div class="flex items-center">
                                     <span class="material-icons MuiIcon-root-10143 align-middle text-18 w-36 px-4" aria-hidden="true">security</span>
-                                    <span class="align-middle sidenavHoverShow jss10159">Autentificare</span>
+                                    <span class="align-middle sidenavHoverShow jss10159" onClick={() => handleLogin()}> Autentificare</span>
                                 </div>
                                 <div class="item-arrow sidenavHoverShow jss10158 jss10153">
                                     <span class="material-icons MuiIcon-root-10143 align-middle MuiIcon-fontSizeSmall-10150" aria-hidden="true">chevron_right</span>
@@ -80,7 +76,8 @@ function NavBar() {
                         <div>
                             <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371" tabindex="0" type="button">
                                 <div class="flex items-center">
-                                    <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">description</span><span class="align-middle sidenavHoverShow jss4374">Programari online</span>
+                                    <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">description</span>
+                                    <span class="align-middle sidenavHoverShow jss4374" onClick={() => handleAppointments()}>Programari online</span>
                                 </div>
                                 <span class="MuiTouchRipple-root-4357"></span>
                             </button>
@@ -104,22 +101,22 @@ function NavBar() {
                             </button>
                         </div>
                         <div>
-                        <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371" tabindex="0" type="button">
-                            <div class="flex items-center">
-                                <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">help</span>
-                                <span class="align-middle sidenavHoverShow jss4374">Despre noi</span>
-                            </div>
-                            <span class="MuiTouchRipple-root-4357"></span>
-                         </button>
-                        </div>
-                        <div>
-                        <a class="flex justify-between h-44 border-radius-4 mb-2 compactNavItem whitespace-pre overflow-hidden jss4342 bg-gray" href="/invoice/list" aria-current="page">
-                            <button class="MuiButtonBase-root-4339 w-full" tabindex="0" type="button" name="child"><span class="material-icons MuiIcon-root-4348 text-18 align-middle w-36 px-4" aria-hidden="true">receipt</span>
-                                <span class="align-middle text-left sidenavHoverShow jss4345">FAQs</span>
-                                <div class="mx-auto"></div>
+                            <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371" tabindex="0" type="button">
+                                <div class="flex items-center">
+                                    <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">help</span>
+                                    <span class="align-middle sidenavHoverShow jss4374">Despre noi</span>
+                                </div>
                                 <span class="MuiTouchRipple-root-4357"></span>
                             </button>
-                        </a>
+                        </div>
+                        <div>
+                            <a class="flex justify-between h-44 border-radius-4 mb-2 compactNavItem whitespace-pre overflow-hidden jss4342 bg-gray" href="/invoice/list" aria-current="page">
+                                <button class="MuiButtonBase-root-4339 w-full" tabindex="0" type="button" name="child"><span class="material-icons MuiIcon-root-4348 text-18 align-middle w-36 px-4" aria-hidden="true">receipt</span>
+                                    <span class="align-middle text-left sidenavHoverShow jss4345" onClick={() => handleClick()}>FAQs</span>
+                                    <div class="mx-auto"></div>
+                                    <span class="MuiTouchRipple-root-4357"></span>
+                                </button>
+                            </a>
                         </div>
                     </div>
                     <div class="ps__rail-x" >
@@ -132,7 +129,7 @@ function NavBar() {
 
             </div>
         </div>
-       
+
     )
 }
 

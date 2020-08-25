@@ -4,7 +4,7 @@ import NavBar from '../components/navbar/NavBar'
 function DoctorPage() {
     return (
         <div>
-            <NavBar />
+
             <div>
                 Doctor Page
             </div>
