@@ -20,6 +20,7 @@ function AppointmentPage() {
     const [time, setTime] = useState(0);
 
     const user = useSelector(state => state.authentification.user)
+    const patient = useSelector(state => state.authentification.patient)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -47,17 +48,15 @@ function AppointmentPage() {
         let datePrecision = date + 'T' + timePrecision + 'Z'
 
         let description = document.getElementById("descriptionId").value
-        const inputs = { date: datePrecision, description: description, patientId: user.id }
+        const inputs = { date: datePrecision, description: description, patient: patient._id, doctor:'5' }
 
-        console.log(inputs)
+       // console.log(inputs)
+        dispatch(addAppointment(inputs))
         handleClose()
-        //dispatch(addAppointment(inputs))
     }
 
     const dispatch = useDispatch()
-    console.log(user.role)
     if (user.role === "PATIENT") {
-        console.log('fsdfsd')
         const appointments = useSelector(state => state.appointments.patient_app)
 
         useEffect(() => {
