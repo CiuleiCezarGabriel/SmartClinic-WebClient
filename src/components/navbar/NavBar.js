@@ -1,17 +1,9 @@
 import React from 'react'
-import { logout } from '../../actions'
-import { useDispatch } from 'react-redux'
 import './navbar.scss';
 import { history } from '../../utils'
+import Logo from '../../assets/images/SmartClinic.jpg'
 
 function NavBar() {
-
-    const dispatch = useDispatch()
-
-    function handleLogout() {
-        dispatch(logout)
-    }
-
     function handleClick() {
         history.push('/questions')
     }
@@ -30,25 +22,20 @@ function NavBar() {
                 <div class="flex items-center justify-between jss7662">
                     <div class="flex items-center justify-between jss5879">
                         <div class="flex items-center">
-                            <span class="text-18 ml-2 font-medium sidenavHoverShow">LOGO AICI (?)</span>
+                            <span class="text-18 ml-2 font-medium sidenavHoverShow">
+                                <img src ={Logo} alt="Logo" style = {{width:"100px", height:"100px"}}></img>
+                            </span>
                         </div>
                     </div>
                 </div>
 
                 <div class="scrollbar-container relative px-4 jss1285 ps ps--active-y">
                     <div class="navigation">
-
                         <div>
                             <button class="MuiButtonBase-root-353 w-full" tabindex="0" type="button" name="child"><div class="nav-bullet p-2px rounded ml-5 mr-2 jss361"></div>
                                 <div class="nav-bullet-text ml-5 text-11 hidden"></div>
                                 <div class="mx-auto"></div><span class="MuiTouchRipple-root-371"></span>
                             </button>
-                        </div>
-                        <div>
-                            <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
-                                <span class="material-icons MuiIcon-root-401" aria-hidden="true"> power_settings_new </span>
-                                <span class="pl-4" onClick={() => handleLogout()}> Logout </span><span class="MuiTouchRipple-root-410"></span>
-                            </div>
                         </div>
                         <div>
                             <button class="MuiButtonBase-root-10142 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss10156" tabindex="0" type="button">

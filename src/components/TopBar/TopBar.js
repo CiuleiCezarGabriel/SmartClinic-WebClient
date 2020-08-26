@@ -1,47 +1,38 @@
 import React from 'react'
 import { logout } from '../../actions'
 import { useDispatch } from 'react-redux'
-import { history } from '../../utils'
+import Face from '../../assets/images/face.jpg'
 import './topbar.scss';
 
 
 function TopBar() {
 
-    
-
+    const dispatch = useDispatch()
+    function handleLogout() {
+        dispatch(logout)
+    }
 
     return (
         <div>
-            
-                <div class="topbar withRouter(Connect(Layout1Topbar))-topbar-16082">
-                    <div class="topbar-hold fixed">
-                        <div class="flex justify-between items-center h-full">
-                            <div class="flex">  </div>
-                            <div class="flex items-center">
-                                    <button class="MuiButtonBase-root-16092 MuiIconButton-root-16084" tabindex="0" type="button">
-                                        <span class="MuiIconButton-label-16091">
-                                            <span class="material-icons MuiIcon-root-16093" aria-hidden="true">search</span>
-                                        </span>
-                                        <span class="MuiTouchRipple-root-16102"></span>
-                                    </button>
-                                    <button class="MuiButtonBase-root-16233 MuiIconButton-root-16225" tabindex="0" type="button" >
-                                        <span class="MuiIconButton-label-16232">
-                                            <span class="MuiBadge-root-16234">
-                                                <span class="material-icons MuiIcon-root-16249" aria-hidden="true">shopping_cart</span>
-                                                <span class="MuiBadge-badge-16235 MuiBadge-anchorOriginTopRightRectangle-16240 MuiBadge-colorSecondary-16237">1</span>
-                                            </span>
-                                        </span>
-                                        <span class="MuiTouchRipple-root-16258"></span>
-                                    </button>
-                                    <div class="inline-block" aria-haspopup="true">
-                                        <img class="mx-2 align-middle circular-image-small cursor-pointer" src="/assets/images/face-6.jpg" ></img>
-                                    </div>
+            <div class="jss390">
+                <div class="topbar-hold fixed">
+                    <div class="flex justify-between items-center h-full">
+                        <div class="flex items-center">
+                            <div class="inline-block">
+                                <div class="MuiAvatar-root-596 MuiAvatar-circle-598 cursor-pointer mx-2">
+                                    <img src={Face} class="MuiAvatar-img-601" />
                                 </div>
-                            
+                            </div>
+                            <div class="Log-out">
+                                <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
+                                    <span class="material-icons MuiIcon-root-401" aria-hidden="true" onClick={() => handleLogout()}> power_settings_new </span>
+                                    <span class="pl-4" o hidden> Logout </span><span class="MuiTouchRipple-root-410"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            
+            </div>
         </div>
     )
 }
