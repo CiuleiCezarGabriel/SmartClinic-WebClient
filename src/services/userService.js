@@ -49,4 +49,3 @@ function forgotPassword(email) {
     return fetch(`${BASE_SERVICE_URL}/user/forgot`, requestOptions)
         .then(response => response.json)
 }
-

@@ -13,7 +13,6 @@ import {
     addAppointment
 } from '../actions';
 
-
 function AppointmentPage() {
     const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(null);
@@ -48,11 +47,12 @@ function AppointmentPage() {
         let datePrecision = date + 'T' + timePrecision + 'Z'
 
         let description = document.getElementById("descriptionId").value
-        const inputs = { date: datePrecision, description: description, patient: patient._id, doctor:'5' }
+        const inputs = { date: datePrecision, description: description, patient: patient._id, doctor: '5' }
 
-       // console.log(inputs)
+        // console.log(inputs)
         dispatch(addAppointment(inputs))
         handleClose()
+        window.location.reload(false);
     }
 
     const dispatch = useDispatch()

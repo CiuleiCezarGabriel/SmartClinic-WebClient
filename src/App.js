@@ -16,6 +16,7 @@ import AppointmentPage from './pages/AppointmentPage'
 import NavBar from './components/navbar/NavBar';
 import './app.scss';
 import TopBar from './components/TopBar/TopBar';
+import DoctorList from './pages/DoctorsList'
 
 //import PictureContent from './components/PictureContent/PictureContent';
 //import DespreNoi from './components/DespreNoi/DespreNoi';
@@ -48,6 +49,7 @@ function App() {
                                         <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                         <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
                                         <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>
+                                        <PrivateRoute path="/doctorList" component={DoctorList}></PrivateRoute>
                                         <Route path="/" component={HomePage}></Route>
                                     </Switch>
                                 </Router>

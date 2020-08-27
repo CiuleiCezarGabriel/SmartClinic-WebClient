@@ -1,5 +1,5 @@
 import React from 'react'
-import Question from '../components/Question'
+import Question from '../components/question/Question'
 import { fetchQuestions, addQuestion } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
@@ -9,7 +9,7 @@ function QuestionPage() {
     const dispatch = useDispatch()
     const questions = useSelector(state => state.questions.data)
     const user = useSelector(state => state.authentification.user)
-
+    console.log(questions)
     const { question, setQuestion } = useState([])
     const [inputs, setInputs] = useState({
         question: "",
@@ -50,8 +50,9 @@ function QuestionPage() {
                         </div>
                     </form>
                 </div>
+
             }
-            {
+            {   
                 questions.map((question, i) => {
                     return <div key={i}> <Question question={question.question}
                         questionId={question._id}

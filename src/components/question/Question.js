@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { updateResponse, updateStatus } from '../actions';
+import { updateResponse, updateStatus } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux'
+import './questions.scss';
 
 function Question(props) {
 
@@ -27,9 +28,6 @@ function Question(props) {
         window.location.reload(false);
     }
 
-    useEffect(() => {
-
-    }, [])
     return (
         <div>
             <div>
@@ -51,11 +49,12 @@ function Question(props) {
                 </div>
                 &&
                 <div>
-                    <select name="role" value={status} onChange={handleStatusSelect}>
+                    <select name="role" value={status} onChange={handleStatusSelect} class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary" tabindex="0" type="button" aria-haspopup="true">
                         <option value="CURENT_STATUS">{props.status}</option>
                         <option value="UNANSWERED">ACCEPT</option>
                         <option value="DELETE">DELETE</option>
                     </select>
+
                 </div>
             }
             {props.userRole == "DOCTOR"
@@ -85,13 +84,12 @@ function Question(props) {
             }
             {props.userRole == "PATIENT"
                 &&
-                <div>
-                    <div>
-                        Response  <label> {props.response} </label>
-                    </div>
+                <div id="response">
+                    Response  <label> {props.response} </label>
                 </div>
             }
-        </div>
+
+        </div >
     )
 }
 

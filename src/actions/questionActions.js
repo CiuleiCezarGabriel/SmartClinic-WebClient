@@ -142,15 +142,7 @@ export function updateStatus(id, status) {
             .then(json => dispatch(updateQuestionStatusSuccess(json)))
             .catch(error => {
                 console.log(error)
-                dispatch(UPDATE_QUESTION_STATUS_ERROR(error))
+                dispatch(updateQuestionStatusError(error))
             })
     }
 }
-
-
-
-
-
-
-
-

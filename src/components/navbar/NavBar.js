@@ -16,6 +16,10 @@ function NavBar() {
         history.push('/login')
     }
 
+    function handleMedici(){
+        history.push('/doctorList')
+    }
+
     return (
         <div class="jss7658 jss7661">   {/*<div class="jss5875 jss5878">*/}
             <div class="flex-column relative h-full">
@@ -70,6 +74,15 @@ function NavBar() {
                             </button>
                         </div>
                         <div>
+                            <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371" tabindex="0" type="button">
+                                <div class="flex items-center">
+                                    <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">description</span>
+                                    <span class="align-middle sidenavHoverShow jss4374" onClick={() => handleMedici()}>Medici</span>
+                                </div>
+                                <span class="MuiTouchRipple-root-4357"></span>
+                            </button>
+                        </div>
+                        <div>
                             <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371 open" tabindex="0" type="button">
                                 <div class="flex items-center">
                                     <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">money</span>
@@ -104,6 +117,13 @@ function NavBar() {
                                     <span class="MuiTouchRipple-root-4357"></span>
                                 </button>
                             </a>
+                            <div>
+                                <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
+                                    <span class="material-icons MuiIcon-root-401" aria-hidden="true"> power_settings_new </span>
+                                    <span class="pl-4" onClick={() => handleLogout()}> Logout </span><span class="MuiTouchRipple-root-410"></span>
+                                    <span class="MuiTouchRipple-root-2293"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="ps__rail-x" >

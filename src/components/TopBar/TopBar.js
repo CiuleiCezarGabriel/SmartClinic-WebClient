@@ -9,7 +9,7 @@ function TopBar() {
 
     const dispatch = useDispatch()
     function handleLogout() {
-        dispatch(logout)
+        dispatch(logout())
     }
 
     return (
@@ -30,6 +30,7 @@ function TopBar() {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import { requestQuestions, fetchQuestionsError } from "../actions/questionActions"
+import { requestQuestions } from "../actions/questionActions"
 
 const BASE_SERVICE_URL = "http://localhost:9001"
 
@@ -27,7 +27,6 @@ const addQuestion = (question) => {
         },
         body: JSON.stringify(question)
     };
-    console.log(question)
     return fetch(`${BASE_SERVICE_URL}/question/insert`, requestOptions)
 }
 
@@ -55,9 +54,35 @@ const updateStatus = (id, status) => {
     return fetch(`${BASE_SERVICE_URL}/question/updateStatus/${id}`, requestOptions)
 }
 
+const getAverageRating = (id) => {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    };
+    return fetch(`${BASE_SERVICE_URL}/review/getAverageRating/${id}`, requestOptions)
+}
+
+const addRating = (params) => {
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(params)
+    };
+
+    return fetch(`${BASE_SERVICE_URL}/review/insert`, requestOptions)
+}
+
 export default {
     fetchQuestions,
     addQuestion,
     updateResponse,
-    updateStatus
+    updateStatus,
+    getAverageRating,
+    addRating
 };

@@ -2,6 +2,7 @@ import { QuestionActionsType } from '../actions/questionActions'
 
 const questionsInitialState = {
     loadingQuestion: false,
+    loadingRating: true,
     data: []
 }
 
@@ -25,7 +26,6 @@ export function questions(state = questionsInitialState, action) {
             return { ...state, loadingQuestion: false }
         case QuestionActionsType.UPDATE_QUESTION_STATUS_ERROR:
             return { ...state, loadingQuestion: false }
-
     }
     return state;
 }

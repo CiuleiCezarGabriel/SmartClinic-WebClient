@@ -4,6 +4,7 @@ import { AppointmentActionsType, fetchAppointmentsDoctorConfirmed,
         fetchAppointmentsForPatient,fetchAppointmentsDoctorUnconfirmed,
         addAppointment} from './appointmentActions'
 import { QuestionActionsType, fetchQuestions, addQuestion, updateResponse, updateStatus} from './questionActions'
+import { DoctorActionTypes, getDoctors } from './doctorActions'
 
 export {
     UserActionTypes,
@@ -27,4 +28,7 @@ export {
     fetchAppointmentsDoctorUnconfirmed,
     fetchAppointmentsForPatient,
     addAppointment,
+
+    DoctorActionTypes,
+    getDoctors
 }
