@@ -944,8 +944,6 @@ a {
 }
 
 
-
-
 .mx-auto {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -981,6 +979,9 @@ a {
     background-repeat: no-repeat;
     background-position: center top;
 }
+.Logo{
+    cursor: pointer;
+}
 
 .jss5879 {
     padding: 20px 18px 32px 24px;
@@ -1010,20 +1011,6 @@ a {
     position: fixed;
     background: rgba(0, 0, 0, 0.54);
 }}
-
-.jss5879 {
-    padding: 20px 18px 32px 24px;
-}
-.items-center {
-    align-items: center;
-}
-.justify-between {
-    justify-content: space-between !important;
-}
-.flex {
-    display: flex;
-}
-
 
 
 .ps__rail-x, .ps__rail-y {

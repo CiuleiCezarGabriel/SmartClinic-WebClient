@@ -61,9 +61,18 @@ function addAppointment(appointment) {
         .then(response => response.json)
 }
 
+function confirmAppointment(id){
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+    }
+    return fetch(`${BASE_SERVICE_URL}/confirm/${id}`, requestOptions);
+}
+
 export default {
     fetchAppointmentsByDoctorConfirmed,
     fetchAppointmentsByDoctorUnconfirmed,
     fetchAppointmentsByPatient,
-    addAppointment
+    addAppointment,
+    confirmAppointment
 }; 

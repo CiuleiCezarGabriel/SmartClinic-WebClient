@@ -3,7 +3,7 @@ import { AppointmentActionsType } from '../actions/appointmentActions'
 const appointmentsInitialState = {
     loadingAppointments: false,
     doctor_confirmed_app: [],
-    doctor_unconfirmed_app:[],
+    doctor_unconfirmed_app: [],
     patient_app: []
 }
 
@@ -24,7 +24,7 @@ export function appointments(state = appointmentsInitialState, action) {
         case AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_ERROR:
             return { ...state, doctor_unconfirmed_app: [], loadingAppointments: false }
 
-            
+
         case AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_REQUEST:
             return { ...state, loadingAppointments: true }
         case AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_SUCCESS:
@@ -39,6 +39,14 @@ export function appointments(state = appointmentsInitialState, action) {
             return { ...state, loadingAppointments: false }
         case AppointmentActionsType.ADD_APPOINTMENT_ERROR:
             return { ...state, loadingAppointments: false }
+
+
+        case AppointmentActionsType.CONFIRM_APPOINTMENT_REQUEST:
+            return { ...state }
+        case AppointmentActionsType.CONFIRM_APPOINTMENT_SUCCESS:
+            return { ...state }
+        case AppointmentActionsType.CONFIRM_APPOINTMENT_ERROR:
+            return { ...state }
     }
     return state;
 }

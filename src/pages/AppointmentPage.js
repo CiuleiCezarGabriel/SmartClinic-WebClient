@@ -1,5 +1,6 @@
 import React from 'react'
-import Appointment from '../components/Appointment'
+import Appointment from '../components/Appointment/Appointment'
+import Table from '../components/Table/Table'
 
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import TimePicker from 'react-bootstrap-time-picker';
@@ -51,6 +52,7 @@ function AppointmentPage() {
 
         // console.log(inputs)
         dispatch(addAppointment(inputs))
+        window.location.reload(false);
         handleClose()
         window.location.reload(false);
     }
@@ -66,22 +68,7 @@ function AppointmentPage() {
 
         return (
             <div>
-                Appointments list:
-                <div>
-                    {
-                        appointments.map((appointment, i) => {
-                            return <div key={i}>
-                                <Appointment
-                                    id={appointment._id}
-                                    date={appointment.date}
-                                    description={appointment.description}
-                                    doctor={appointment.doctor}
-                                    patient={appointment.patient}>
-                                </Appointment>
-                            </div>
-                        })
-                    }
-                </div>
+                <Appointment events={appointments} />
 
                 <Button variant="primary" onClick={handleShow}>
                     MODAL
@@ -147,42 +134,12 @@ function AppointmentPage() {
 
         return (
             <div>
-                Appointments confirmed list:
                 <div>
-                    {
-                        appointments.map((appointment, i) => {
-                            return <div key={i}>
-                                <Appointment
-                                    id={appointment._id}
-                                    date={appointment.date}
-                                    description={appointment.description}
-                                    doctor={appointment.doctor}
-                                    patient={appointment.patient}>
-                                </Appointment>
-                            </div>
-                        })
-                    }
+                    <Appointment events={appointments} />
                 </div>
-                <div>
-                    -------------------------------------------------------------------
-                </div>
-
-                Appointments unconfirmed list:
-                <div>
-                    {
-                        appointments_un.map((appointment, i) => {
-                            return <div key={i}>
-                                <Appointment
-                                    id={appointment._id}
-                                    date={appointment.date}
-                                    description={appointment.description}
-                                    doctor={appointment.doctor}
-                                    patient={appointment.patient}>
-                                </Appointment>
-                            </div>
-                        })
-                    }
-                </div>
+                    <div>
+                        <Table events={appointments_un} />
+                    </div>
             </div>
         )
     }

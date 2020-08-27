@@ -28,6 +28,11 @@ function App() {
         });
     }, []);
 
+    
+    function handleHome() {
+        history.push('/');
+    }
+
     return (
         <div>
             <NavBar></NavBar>
@@ -59,11 +64,10 @@ function App() {
                 </div>
             </div>
 
-
             <div class="secondary-sidebar jss691 jss692">
                 <span class="m-auto">
                 </span>
-                <span class="jss693" title="Theme Settings"> SMART CLINIC</span>
+                <span class="jss693" title="Theme Settings" onClick = {() => handleHome()}> SMART CLINIC</span>
                 <span class="m-auto">
                 </span>
             </div>

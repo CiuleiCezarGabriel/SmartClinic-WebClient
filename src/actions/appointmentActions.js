@@ -17,6 +17,10 @@ export const AppointmentActionsType = {
     ADD_APPOINTMENT_REQUEST: 'ADD_APPOINTMENT_REQUEST',
     ADD_APPOINTMENT_SUCCESS: 'ADD_APPOINTMENT_SUCCESS',
     ADD_APPOINTMENT_ERROR: 'ADD_APPOINTMENT_ERROR',
+
+    CONFIRM_APPOINTMENT_REQUEST: 'CONFIRM_APPOINTMENT_REQUEST',
+    CONFIRM_APPOINTMENT_SUCCESS: 'CONFIRM_APPOINTMENT_SUCCESS',
+    CONFIRM_APPOINTMENT_ERROR: 'CONFIRM_APPOINTMENT_ERROR',
 };
 
 export function requiestAppointmentsDoctorConfirmed(){
@@ -24,21 +28,18 @@ export function requiestAppointmentsDoctorConfirmed(){
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_REQUEST,
     }
 }
-
 export function fetchAppointmentsDoctorConfirmedSuccess(appointments) {
     return {
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_SUCCESS,
         appointments
     }
 }
-
 export function fetchAppointmentsDoctorConfirmedFailure(error) {
     return {
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_CONFIRMED_ERROR,
         error
     }
 }
-
 export function fetchAppointmentsDoctorConfirmed() {
     return dispatch => {
         dispatch(requiestAppointmentsDoctorConfirmed())
@@ -57,21 +58,18 @@ export function requiestAppointmentsDoctorUnconfirmed(){
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_REQUEST,
     }
 }
-
 export function fetchAppointmentsDoctorUnconfirmedSuccess(appointments) {
     return {
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_SUCCESS,
         appointments
     }
 }
-
 export function fetchAppointmentsDoctorUnconfirmedFailure(error) {
     return {
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_DOCTOR_UNCONFIRMED_ERROR,
         error
     }
 }
-
 export function fetchAppointmentsDoctorUnconfirmed() {
     return dispatch => {
         dispatch(requiestAppointmentsDoctorUnconfirmed())
@@ -90,21 +88,18 @@ export function requiestAppointmentsForPatient(){
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_REQUEST,
     }
 }
-
 export function fetchAppointmentsForPatientSuccess(appointments) {
     return {
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_SUCCESS,
         appointments
     }
 }
-
 export function fetchAppointmentsForPatientFailure(error) {
     return {
         type: AppointmentActionsType.APPOINTMENTS_GET_BY_PATIENT_ERROR,
         error
     }
 }
-
 export function fetchAppointmentsForPatient() {
     return dispatch => {
         dispatch(requiestAppointmentsForPatient())
@@ -140,9 +135,36 @@ export function addAppointment(appointment){
         dispatch(requestAddAppointment(appointment))
 
         AppointmentService.addAppointment(appointment)
-            .then(app => dispatchEvent(success(app)))
+            .then(app => dispatchEvent(addAppointemntSucces(app)))
             .catch(error => {
-                dispatch(failure(error.toString()))
+                dispatch(addAppoinremntFailure(error.toString()))
+            })
+    }
+}
+
+export function requestConfirmAppointment(appointment) {
+    return { 
+        type: AppointmentActionsType.CONFIRM_APPOINTMENT_REQUEST 
+   } 
+}
+export function confirmAppointmentSuccess(){
+   return {
+       type: AppointmentActionsType.CONFIRM_APPOINTMENT_SUCCESS
+   }
+}
+export function confirmAppointmentFail(error){
+   return{
+       type: AppointmentActionsType.CONFIRM_APPOINTMENT_ERROR
+   }
+}
+export function confirmAppointment(id){
+    return dispatch =>{
+        dispatch(requestConfirmAppointment(id))
+
+        AppointmentService.confirmAppointment(id)
+            .then(app => dispatchEvent(confirmAppointmentSuccess(app)))
+            .catch(error => {
+                dispatch(confirmAppointmentFail(error.toString()))
             })
     }
 }

@@ -73,7 +73,8 @@
 }
 
 .m-sm-30 {
-    margin: 30px;
+    padding: center;
+    padding-left: 12%;
 }
 
 .py-16 {
@@ -126,7 +127,7 @@
 // for flex-grow flex-column relative overflow-hidden h-full-screen jss2010 jss2012 class
 @media (min-width: 960px){   ///////FIX THIS
 .jss2012 {
-    margin-right: 50px;
+    margin-right: 10px;
 }
 .jss2012 {
     margin-left: var(--sidenav-width);

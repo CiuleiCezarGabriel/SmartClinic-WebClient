@@ -20,6 +20,10 @@ function NavBar() {
         history.push('/doctorList')
     }
 
+    function handleHome() {
+        history.push('/');
+    }
+
     return (
         <div class="jss7658 jss7661">   {/*<div class="jss5875 jss5878">*/}
             <div class="flex-column relative h-full">
@@ -27,7 +31,9 @@ function NavBar() {
                     <div class="flex items-center justify-between jss5879">
                         <div class="flex items-center">
                             <span class="text-18 ml-2 font-medium sidenavHoverShow">
-                                <img src ={Logo} alt="Logo" style = {{width:"100px", height:"100px"}}></img>
+                                <span class="Logo" aria-hidden="true" onClick={() => handleHome()}>
+                                    <img src={Logo} alt="Logo" style={{ width: "100px", height: "100px" }}></img>
+                                </span>
                             </span>
                         </div>
                     </div>
@@ -117,13 +123,6 @@ function NavBar() {
                                     <span class="MuiTouchRipple-root-4357"></span>
                                 </button>
                             </a>
-                            <div>
-                                <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
-                                    <span class="material-icons MuiIcon-root-401" aria-hidden="true"> power_settings_new </span>
-                                    <span class="pl-4" onClick={() => handleLogout()}> Logout </span><span class="MuiTouchRipple-root-410"></span>
-                                    <span class="MuiTouchRipple-root-2293"></span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="ps__rail-x" >

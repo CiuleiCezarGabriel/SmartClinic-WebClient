@@ -29,7 +29,6 @@ export function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user))
-                    console.log(user)
   
                     localStorage.setItem('user', JSON.stringify(user))
                     localStorage.setItem('patient', JSON.stringify(user.patient))
