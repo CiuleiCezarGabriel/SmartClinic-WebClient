@@ -8,6 +8,8 @@ import questionService from '../../services/questionService';
 
 function Doctor(props) {
 
+    console.log(props)
+
     const dispatch = useDispatch()
     const [show, setShow] = useState(false);
     const [review, setReview] = useState(null)
@@ -16,17 +18,6 @@ function Doctor(props) {
     const handleShow = () => setShow(true);
 
     const user = useSelector(state => state.authentification.user)
-
-    function handleReview() {
-        const param = {
-            userId: user._id,
-            doctorId: props.doctorId,
-            description: review,
-            rating: rating
-        }
-
-        questionService.addRating(param)
-    }
 
     function handleAppointment() {
 
@@ -53,10 +44,9 @@ function Doctor(props) {
         setRating(newRating)
     };
 
-
     useEffect(() => {
 
-    }, [])
+    }, [rating])
 
     return (
         <div style={{ marginBottom: "20px" }}>

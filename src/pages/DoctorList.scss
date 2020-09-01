@@ -1,0 +1,10 @@
+.MuiGrid-spacing-xs-3 {
+    width: calc(100% + 24px);
+    margin: -12px;
+}
+.MuiGrid-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
