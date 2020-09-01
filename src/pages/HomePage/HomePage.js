@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './homepage.scss';
-//import DespreNoi from '../../components/DespreNoi/DespreNoi';
-import PictureContent from '../../components/PictureContent/PictureContent';
+import DespreNoi from '../../components/DespreNoi/DespreNoi';
+//import PictureContent from '../../components/PictureContent/PictureContent';
+import Simptome from '../../components/Simptome/simptome'
+import Farmacii from '../../components/Farmacii/Farmacii';
+import BottomBar from '../../components/BottomBar/BottomBar';
 
 function HomePage() {
 
     return (
+        
         <div class="totherightt">
-            <PictureContent></PictureContent>
-          {/* <DespreNoi></DespreNoi>
-            Aici mai trebuie urmatoarele componente: 1. info despre importanta contului
-                                                        2.   buton redirectionare pagina register || login
-                                                        3. Servicii
-                                                        4. Farmacii
-                                                        5. Newsletter*/}
+            <DespreNoi></DespreNoi>
+            <Simptome></Simptome>
+            <Farmacii></Farmacii>
+           
         </div>
     )
 }

@@ -1,43 +1,75 @@
 import React from 'react'
-import { logout } from '../../actions'
-import { useDispatch } from 'react-redux'
 import './desprenoi.scss';
-import { history } from '../../utils'
-import NavBar from '../navbar/NavBar';
 
 function DespreNoi() {
     return (
         <div>
-            {/*<div class="relative flex-grow">    
-                <div class="m-sm-30">
-                    <div class="MuiPaper-root MuiCard-root w-full overflow-auto MuiPaper-elevation6 MuiPaper-rounded">
-                        Text despre noi
-                    </div>
-                </div>
-            </div>
-            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6">
-                <div class="MuiPaper-root MuiCard-root flex flex-wrap justify-between items-center p-sm-24 bg-paper MuiPaper-elevation6 MuiPaper-rounded">
-                    <div class="flex items-center">
-                        <span class="material-icons MuiIcon-root jss994" aria-hidden="true">group</span>
-                        <div class="ml-3">
-                            <small class="text-muted">New Leads</small>
-                            <h6 class="m-0 mt-1 text-primary font-medium">3050</h6>
+        <div class="MuiPaper-rootf MuiCard-rootf px-6f py-5f h-fullf MuiPaper-elevation6f MuiPaper-roundedf">
+        <small class="text-mutedf" ><h3>Despre noi</h3></small>
+                   
+                   
+            <div class="jss887f">
+                
+                <div class="MuiPaper-rootf MuiExpansionPanel-rootf MuiExpansionPanel-roundedf MuiPaper-elevation1f MuiPaper-roundedf">
+                    
+                    <div class="MuiCollapse-containerf MuiCollapse-hiddenf">
+                        <div class="MuiCollapse-wrapperf">
+                            <div class="MuiCollapse-wrapperInnerf">
+                                <div aria-labelledby="panel2a-header" id="panel2a-content" role="region">
+                                    <div class="MuiExpansionPanelDetails-rootf">
+                                        <p class="MuiTypography-rootf MuiTypography-body11f text-muted2f">Aplicatia noastra reprezinta un jurnal de sanatate pe care il poti accesa oricand. Pornind de la o programare, apoi la o analiza amanuntita a starii dvs de sanatate, pana la comandarea medicamentelor recomandate de catre medicii nostri specialisti, SmartClinic is the shit! </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button">
-                        <span class="MuiIconButton-label">
-                            <span class="material-icons MuiIcon-root" aria-hidden="true">arrow_right_alt</span>
-                        </span>
-                        <span class="MuiTouchRipple-root"></span>
-                    </button>
                 </div>
-            /div>*/}
-            <div class="MuiPaper-root MuiCard-root p-4 MuiPaper-elevation3 MuiPaper-rounded">
-                <div class="pt-4 flex items-center">
-                    <h2 class="m-0 text-muted flex-grow">Despre noi:)</h2>
-                </div>
+                
+                
             </div>
-        </div> /*Dont use it yet*/
+        </div>
+
+
+        <div class="MuiPaper-rootf MuiCard-rootf px-6f py-5f h-fullf MuiPaper-elevation6f MuiPaper-roundedf">
+            <div class="text-mutedf"><h3>Contul meu</h3></div>
+            <div class="jss887f">
+                
+                <div class="MuiPaper-rootf MuiExpansionPanel-rootf MuiExpansionPanel-roundedf MuiPaper-elevation1f MuiPaper-roundedf">
+                    
+                    <div class="MuiCollapse-containerf MuiCollapse-hiddenf">
+                        <div class="MuiCollapse-wrapperf">
+                            <div class="MuiCollapse-wrapperInnerf">
+                                <div aria-labelledby="panel2a-header" id="panel2a-content" role="region">
+                                    <div class="MuiExpansionPanelDetails-rootf">
+                                        <p class="MuiTypography-rootf MuiTypography-body11f text-muted2f">*Contul meu* este intrumentul prin care ai acces la toate informatiile medicale care te intereseaza. 
+                                        Poti verifica oricand, din fata calculatorului, programarile, consultatiile, rezultatelor analizelor sau costul investigatiilor din policlinica.</p>
+                                        <p class="MuiTypography-rootf MuiTypography-body11f text-muted2f"> De asemenea ai acces la farmaciile disponibile si posibilitate de cumparare a produselor.</p>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                            <button class="btn"><a class="btn-primary btn" href="/login"> Login</a></button>
+                       
+                            <button class="btn"><a class="btn-primary btn" href="/register"> Register</a></button>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+
+</div> 
+
+
+
+
+
+               
+          
     )
 
 }

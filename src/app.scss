@@ -54,12 +54,10 @@
 }
 .flex-grow {
     flex-grow: 1;
+    height: 100%;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
+
 .ps {
     overflow: hidden!important;
     overflow-anchor: none;
@@ -78,8 +76,9 @@
 }
 
 .py-16 {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;  //diferenta intre divu "flex-column justify-center items-center  py-16" si
+    min-height: 1100px;;
 }
 
 .items-center {
@@ -105,7 +104,9 @@
 }
 
 .max-w-400 {
-    max-width: 900px !important;
+    max-width: 65% !important;
+    padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
 }
 
 .MuiFormControl-fullWidth {
@@ -128,6 +129,8 @@
 @media (min-width: 960px){   ///////FIX THIS
 .jss2012 {
     margin-right: 10px;
+    height: 100%;
+
 }
 .jss2012 {
     margin-left: var(--sidenav-width);
@@ -143,10 +146,6 @@
 .overflow-hidden {
     overflow: hidden !important;
 }
-.flex-grow {
-    flex-grow: 1;
-}
-
 
 .ps__rail-x, .ps__rail-y {
     display: none;

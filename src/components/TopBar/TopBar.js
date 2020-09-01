@@ -31,6 +31,7 @@ function TopBar() {
             <div class="jss390">
                 <div class="topbar-hold fixed">
                     <div class="flex justify-between items-center h-full">
+                    
                         <div class="flex items-center">
                             <div class="inline-block">
                                 <div class="MuiAvatar-root-596 MuiAvatar-circle-598 cursor-pointer mx-2">

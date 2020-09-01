@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../actions'
+import { login } from '../../actions';
+import './loginpage.scss';
 
 function LoginPage() {
 
@@ -28,7 +29,7 @@ function LoginPage() {
     }
 
     return (
-        <div>
+        <div class="loginclass">
             <h2> Login Page</h2>
             <form id="form" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -43,7 +44,7 @@ function LoginPage() {
                     <input type="password" name="password" value={password} onChange={handleChange} className={'form-control' + (submitted && !password ? ' is-invalid' : '')} />
                 </div>
                 <div className="form-group">
-                    <button className="btn btn-primary">
+                    <button onClick = {handleSubmit } className="btn btn-primary">
                         {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
                         Login
                     </button>
@@ -52,7 +53,7 @@ function LoginPage() {
                 <div>
                     <Link to="/resetPassword" className="btn btn-link"> Reset password</Link>
                 </div>
-            </form>
+                </form>
         </div>
     )
 }

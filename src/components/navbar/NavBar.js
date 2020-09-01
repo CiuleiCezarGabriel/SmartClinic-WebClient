@@ -23,6 +23,10 @@ function NavBar() {
     function handleHome() {
         history.push('/');
     }
+    
+    function handleServices() {
+        history.push('/services')
+    }
 
     return (
         <div class="jss7658 jss7661">   {/*<div class="jss5875 jss5878">*/}
@@ -92,7 +96,7 @@ function NavBar() {
                             <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371 open" tabindex="0" type="button">
                                 <div class="flex items-center">
                                     <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">money</span>
-                                    <span class="align-middle sidenavHoverShow jss4374">Simptome</span>
+                                    <span class="align-middle sidenavHoverShow jss4374" onClick={() => handleServices()}>Services</span>
                                 </div>
                                 <span class="MuiTouchRipple-root-4357"></span>
                             </button>
@@ -125,12 +129,7 @@ function NavBar() {
                             </a>
                         </div>
                     </div>
-                    <div class="ps__rail-x" >
-                        <div class="ps__thumb-x" tabindex="0" ></div>
-                    </div>
-                    <div class="ps__rail-y" >
-                        <div class="ps__thumb-y" tabindex="0" ></div>
-                    </div>
+                    
                 </div>
 
             </div>
