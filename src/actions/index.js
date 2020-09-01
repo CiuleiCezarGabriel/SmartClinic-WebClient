@@ -2,7 +2,8 @@ import { UserActionTypes, login, logout, register} from './userActions';
 import { AlertActionType, success, error, clear } from './alertActions'
 import { AppointmentActionsType, fetchAppointmentsDoctorConfirmed, 
         fetchAppointmentsForPatient,fetchAppointmentsDoctorUnconfirmed,
-        addAppointment, confirmAppointment} from './appointmentActions'
+        addAppointment, updateAppointment,
+        deleteAppointment, confirmAppointment} from './appointmentActions'
 import { QuestionActionsType, fetchQuestions, addQuestion, updateResponse, updateStatus} from './questionActions'
 import { DoctorActionTypes, getDoctors } from './doctorActions'
 
@@ -28,8 +29,10 @@ export {
     fetchAppointmentsDoctorUnconfirmed,
     fetchAppointmentsForPatient,
     addAppointment,
+    updateAppointment,
+    deleteAppointment,
+    confirmAppointment,
 
     DoctorActionTypes,
     getDoctors,
-    confirmAppointment
 }

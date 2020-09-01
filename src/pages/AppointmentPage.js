@@ -137,9 +137,9 @@ function AppointmentPage() {
                 <div>
                     <Appointment events={appointments} />
                 </div>
-                    <div>
-                        <Table events={appointments_un} />
-                    </div>
+                <div>
+                    <Table events={appointments_un} />
+                </div>
             </div>
         )
     }

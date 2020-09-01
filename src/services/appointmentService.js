@@ -61,6 +61,27 @@ function addAppointment(appointment) {
         .then(response => response.json)
 }
 
+function updateAppointment(appointment){
+    const id = appointment.id;
+
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(appointment)
+    }
+
+    return fetch(`${BASE_SERVICE_URL}/${id}`, requestOptions)
+        .then(response => response.json)
+}
+
+function deleteAppointment(id){
+    const requestOptions = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    }
+    return fetch(`${BASE_SERVICE_URL}/${id}`, requestOptions)
+}
+
 function confirmAppointment(id){
     const requestOptions = {
         method: 'PUT',
@@ -74,5 +95,7 @@ export default {
     fetchAppointmentsByDoctorUnconfirmed,
     fetchAppointmentsByPatient,
     addAppointment,
+    updateAppointment,
+    deleteAppointment,
     confirmAppointment
 }; 
