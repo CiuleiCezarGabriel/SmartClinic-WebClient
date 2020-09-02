@@ -14,10 +14,6 @@ function DoctorList() {
         dispatch(getDoctors())
     }, [])
 
-    useEffect(() => {
-        
-    }, [doctors])
-
     return (
         <div>
             <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 ">
