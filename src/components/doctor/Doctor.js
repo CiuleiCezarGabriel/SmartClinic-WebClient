@@ -13,6 +13,7 @@ import { addAppointment } from '../../actions';
 
 function Doctor(props) {
 
+    console.log('')
     const [rating, setRating] = useState(props.rating)
     const [newRating, setNewRating] = useState(0)
     const [numberOfRatings, setNumberOfRatings] = useState(props.numberOfRatings)
