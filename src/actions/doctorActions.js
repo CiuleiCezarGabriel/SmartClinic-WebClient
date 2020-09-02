@@ -7,7 +7,6 @@ export const DoctorActionTypes = {
     GET_DOCTORS_ERROR: 'GET_DOCTORS_FAILURE'
 }
 
-
 export function getDoctorsRequest() {
     return {
         type: DoctorActionTypes.GET_DOCTORS_REQUEST

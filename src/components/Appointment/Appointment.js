@@ -2,11 +2,17 @@ import React from 'react'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import './appointment.scss'
+import { history } from '../../utils'
 
 
 const localizer = momentLocalizer(moment) // or globalizeLocalizer
 
 function Appointment(props) {
+    
+    function handleDiagnostic(e) {
+        console.log(e);//informatiile despre appointment
+        history.push('/diagnostic');
+    }
    
     const events = props.events
     return (
@@ -21,6 +27,7 @@ function Appointment(props) {
                             allDay:false
                         }
                     })}
+                    onSelectEvent = {(e) => handleDiagnostic(e)}
                     startAccessor="start"
                     endAccessor="end"
                     style={{ height: 700 }}

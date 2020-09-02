@@ -41,6 +41,22 @@ export function appointments(state = appointmentsInitialState, action) {
             return { ...state, loadingAppointments: false }
 
 
+        case AppointmentActionsType.UPDATE_APPOINTMENT_REQUEST:
+            return { ...state, loadingAppointments: true }
+        case AppointmentActionsType.UPDATE_APPOINTMENT_SUCCESS:
+            return { ...state, loadingAppointments: false }
+        case AppointmentActionsType.UPDATE_APPOINTMENT_ERROR:
+            return { ...state, loadingAppointments: false }
+
+            
+        case AppointmentActionsType.DELETE_APPOINTMENT_REQUEST:
+            return { ...state, loadingAppointments: true }
+        case AppointmentActionsType.DELETE_APPOINTMENT_SUCCESS:
+            return { ...state, loadingAppointments: false }
+        case AppointmentActionsType.DELETE_APPOINTMENT_ERROR:
+            return { ...state, loadingAppointments: false }
+
+
         case AppointmentActionsType.CONFIRM_APPOINTMENT_REQUEST:
             return { ...state }
         case AppointmentActionsType.CONFIRM_APPOINTMENT_SUCCESS:
