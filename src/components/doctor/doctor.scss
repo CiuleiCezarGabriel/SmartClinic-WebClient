@@ -5,15 +5,14 @@
 .MuiGrid-grid-sm-6 {
     flex-grow: 0;
     max-width: 50%;
-    flex-basis: 50%;
 }
-
 }
 .MuiGrid-grid-xs-12 {
     flex-grow: 0;
-    max-width: 100%;
+    max-width: 50%;
     flex-basis: 100%;
 }
+
 .MuiGrid-item {
     margin: 0;
     box-sizing: border-box;
