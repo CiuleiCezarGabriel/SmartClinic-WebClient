@@ -67,7 +67,6 @@ export default function MaterialTableDemo(props) {
 
     function onHandleConfirm( id) {
         dispatch(confirmAppointment(id));
-        //window.location.reload(false)
     }
 
     function onHandleAdd(appointment) {

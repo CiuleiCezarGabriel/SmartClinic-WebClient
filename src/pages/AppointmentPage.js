@@ -2,15 +2,13 @@ import React from 'react'
 import Appointment from '../components/Appointment/Appointment'
 import Table from '../components/Table/Table'
 
-import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
-import TimePicker from 'react-bootstrap-time-picker';
-import DatePicker from 'react-datepicker'
 import { useSelector, useDispatch } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 import {
     fetchAppointmentsForPatient,
     fetchAppointmentsDoctorConfirmed,
     fetchAppointmentsDoctorUnconfirmed,
+    
 } from '../actions';
 
 function AppointmentPage() {
