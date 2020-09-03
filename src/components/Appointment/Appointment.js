@@ -11,7 +11,7 @@ function Appointment(props) {
     
     function handleDiagnostic(e) {
         console.log(e);//informatiile despre appointment
-        history.push('/diagnostic');
+        history.push('/diagnosis');
     }
    
     const events = props.events

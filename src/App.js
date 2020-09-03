@@ -20,6 +20,7 @@ import Services from './pages/Services/Services';
 import Dermatologie from './pages/Services/ServicesPages/Dermatologie/Dermatologie';
 import BottomBar from './components/BottomBar/BottomBar';
 import './app.scss';
+import DiagnosisPage from './pages/DiagnosisPage';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                     <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
                                     <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>
+                                    <PrivateRoute path="/diagnosis" component={DiagnosisPage}></PrivateRoute>
                                     <PrivateRoute path="/doctorList" component={DoctorList}></PrivateRoute>
                                     <Route path="/" component={HomePage}></Route>
                                 </Switch>

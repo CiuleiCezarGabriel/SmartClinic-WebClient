@@ -7,11 +7,9 @@ import './table.scss'
 export default function MaterialTableDemo(props) {
 
     const dispatch = useDispatch()
-    const [events, setEvents] = useState(props.events)
-
     const doctor = useSelector(state => state.authentification.doctor)
 
-    const [state, setState] = React.useState({
+    const [state, setState] = useState({
         columns: [
             { title: 'Patient username', field: 'patient_name' },
             { title: 'Data', field: 'data', type: 'date'},
@@ -27,7 +25,7 @@ export default function MaterialTableDemo(props) {
             },
             { title: 'Description', field: 'description' },
         ],
-        data: events.map(event => {
+        data: props.events.map(event => {
             return {
                 patient_name: "patient username",
                 data: event.date.substring(0, 10),
@@ -55,7 +53,7 @@ export default function MaterialTableDemo(props) {
                 },
                 { title: 'Description', field: 'description' },
             ],
-            data: events.map(event => {
+            data: props.events.map(event => {
                 return {
                     patient_name: "patient username",
                     date: event.date.substring(0, 10),
@@ -65,25 +63,16 @@ export default function MaterialTableDemo(props) {
                 }
             })
         })
-    }, [events])
+    }, [props.events])
 
     function onHandleConfirm( id) {
         dispatch(confirmAppointment(id));
-        // let aux = events;
-        // aux = aux.filter((a) => {return a.id == id})
-        // setEvents(aux);
-
-        window.location.reload(false)
+        //window.location.reload(false)
     }
 
     function onHandleAdd(appointment) {
         dispatch(addAppointment(appointment));
 
-        let aux = events;
-        aux = aux.filter((a) => {return a.id == id})
-        setEvents(aux);
-
-        window.location.reload(false)
     }
 
     function onHandleUpdate(appointment) {
@@ -135,20 +124,20 @@ export default function MaterialTableDemo(props) {
                                     description: newData.description
                                 }
                                 onHandleAdd(postData);
-                                window.location.reload(false)
+                                //window.location.reload(false)
                             }, 600);
                         }),
                     onRowUpdate: (newData, oldData) =>
                         new Promise((resolve) => {
                             setTimeout(() => {
                                 resolve();
+                                const date1 = new Date(newData.date);
 
-
-                                const year = newData.date.getFullYear();
-                                let month = newData.date.getMonth() + 1;
+                                const year = date1.getFullYear();
+                                let month = date1.getMonth() + 1;
                                 const part_month = month/10;
                                 if (~~part_month == 0) month = '0' + month;
-                                let day = newData.date.getDate();
+                                let day = date1.getDate();
                                 const part_day = day/10;
                                 if (~~part_day == 0) day = '0' + day;
                                 const time = newData.time;
@@ -156,8 +145,8 @@ export default function MaterialTableDemo(props) {
                                 const time1 = ~~t + ":" + time%10 + "0" + ':00';
 
                                 const fullDate = year + '-' + month + '-' + day + 'T' + time1 + 'Z';
-
-                                //from postData
+                                console.log(fullDate);
+                                //from updateData
                                 const updateData={
                                     id:newData.id,
                                     patient:"aaa",
@@ -168,13 +157,6 @@ export default function MaterialTableDemo(props) {
                                 console.log(updateData);
 
                                 onHandleUpdate(updateData);
-                                if (oldData) {
-                                    setState((prevState) => {
-                                        const data = [...prevState.data];
-                                        data[data.indexOf(oldData)] = newData;
-                                        return { ...prevState, data };
-                                    });
-                                }
                             }, 600);
                         }),
                     onRowDelete: (oldData) =>
@@ -182,11 +164,6 @@ export default function MaterialTableDemo(props) {
                             setTimeout(() => {
                                 resolve();
                                 onHandleDelete(oldData.id);
-                                setState((prevState) => {
-                                    const data = [...prevState.data];
-                                    data.splice(data.indexOf(oldData), 1);
-                                    return { ...prevState, data };
-                                });
                             }, 600);
                         }),
                 }}
