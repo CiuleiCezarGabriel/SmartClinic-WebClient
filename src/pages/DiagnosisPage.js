@@ -1,15 +1,41 @@
 import React from 'react'
-import { history } from '../utils'
+import { useSelector } from 'react-redux'
 
 function DiagnosisPage() {
 
-    return (
-        <div>
+    const diagnosis_obj = useSelector(state => state.diagnosis.data);
+    console.log(diagnosis_obj);
+    const user = useSelector(state => state.authentification.user)
+
+    if (diagnosis_obj.length != 0) {
+        if (user.role == 'DOCTOR') {
+            return (
+                <div>
+                    <div>
+                        Diagnosis Page Doctor
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <div>
+                        Diagnosis Page Patient
+                    </div>
+                </div>
+            )
+        }
+
+    } else {
+        return (
             <div>
-                Diagnosis Page
+                <div>
+                    Diagnosis not created
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+
 }
 
 export default DiagnosisPage

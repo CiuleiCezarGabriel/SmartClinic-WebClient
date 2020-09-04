@@ -17,7 +17,7 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { history } from '../../utils'
-import { findDiagnosis } from '../../actions'
+import { findDiagnosis, addDiagnosis } from '../../actions'
 import './appointment.scss'
 
 
@@ -35,28 +35,30 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 function Appointment(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    const [diagnosisName, setDiagnosisName] = useState('');
+    const [diagnosisDescription, setDiagnosisDescription] = useState('');
+    const [appSelected, setAppSelected] = useState();
 
     const dispatch = useDispatch()
 
     const user = useSelector(state => state.authentification.user)
     const diagnostic = useSelector(state => state.diagnosis.data);
 
-    useEffect(() => {
-    
-    }, [diagnostic])
-
     function handleDiagnostic(selectedAppointment) {
-        dispatch(findDiagnosis(selectedAppointment.id));
-
-        if (diagnostic.length == 0) {
-            if (user.role == 'DOCTOR') {
-                handleClickOpen()
-            } else {
-                if (user.role == 'PATIENT') {
-                    alert("Diagnosis is not written");
+        dispatch(findDiagnosis(selectedAppointment.id)).then(res => {
+            setAppSelected(selectedAppointment);
+            if (res.diagnosis.length == 0) {
+                if (user.role == 'DOCTOR') {
+                    handleClickOpen()
+                } else {
+                    if (user.role == 'PATIENT') {
+                        alert("Diagnosis is not written");
+                    }
                 }
-            }
-        } else history.push('/diagnosis')
+            } else history.push('/diagnosis')
+
+        });
+
 
     }
 
@@ -67,6 +69,18 @@ function Appointment(props) {
     const handleClose = () => {
         setOpen(false);
     };
+
+    const handleSaveDiagnosis = () =>{
+        
+        const newDiagnosis = {
+            name: diagnosisName,
+            description: diagnosisDescription,
+            appointment: appSelected.id,
+        }
+       
+        dispatch(addDiagnosis(newDiagnosis));
+        history.push('/diagnosis');
+    }
 
     const events = props.events
     return (
@@ -97,7 +111,7 @@ function Appointment(props) {
                         <Typography variant="h6" className={classes.title}>
                             Create Diagnosis
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={handleClose}>
+                        <Button autoFocus color="inherit" onClick={handleSaveDiagnosis}>
                             Save
                         </Button>
                     </Toolbar>
@@ -108,7 +122,7 @@ function Appointment(props) {
                             <ListItemText primary="Diagnosis name:" />
                         </div>
                         <div class='form-text-name'>
-                            <TextField name='name' />
+                            <TextField  onChange = {(e) => setDiagnosisName(e.target.value)} />
                         </div>
                     </ListItem>
                     <Divider />
@@ -117,7 +131,7 @@ function Appointment(props) {
                             <ListItemText primary="Diagnosis description:" />
                         </div>
                         <div class='form-text-description'>
-                            <TextField name='description' multiline
+                            <TextField onChange = {(e) => setDiagnosisDescription(e.target.value)}  multiline
                                 rows={1}
                                 rowsMax={6} />
                         </div>

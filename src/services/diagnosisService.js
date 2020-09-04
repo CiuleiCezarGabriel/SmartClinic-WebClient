@@ -7,7 +7,7 @@ function addDiagnosis(diagnosis) {
         body: JSON.stringify(diagnosis)
     }
 
-    return fetch(`${BASE_SERVICE_URL}/post`, requestOptions)
+    return fetch(`${BASE_SERVICE_URL}/insert`, requestOptions)
 }
 
 function findDiagnosisByAppointment(id) {

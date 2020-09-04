@@ -43,7 +43,7 @@ export function findDiagnosis(appointment) {
     return dispatch => {
         dispatch(requestFindDiagnosis(appointment));
 
-        DiagnosisService.findDiagnosisByAppointment(appointment)
+        return DiagnosisService.findDiagnosisByAppointment(appointment)
             .then(response => responseToJson(response))
             .then(json => dispatch(fetchFindDiagnosisSuccess(json)))
             .catch(error => {
