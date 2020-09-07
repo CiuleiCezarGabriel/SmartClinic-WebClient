@@ -36,7 +36,11 @@ export function appointments(state = appointmentsInitialState, action) {
         case AppointmentActionsType.ADD_APPOINTMENT_REQUEST:
             return { ...state, loadingAppointments: true }
         case AppointmentActionsType.ADD_APPOINTMENT_SUCCESS:
-            return { ...state, loadingAppointments: false }
+
+            const newDoctorUnconfirmApps = state.doctor_unconfirmed_app.map(it => it);
+            newDoctorUnconfirmApps.push(action.app);
+
+            return { ...state, doctor_unconfirmed_app: newDoctorUnconfirmApps, loadingAppointments: false }
         case AppointmentActionsType.ADD_APPOINTMENT_ERROR:
             return { ...state, loadingAppointments: false }
 
@@ -44,25 +48,40 @@ export function appointments(state = appointmentsInitialState, action) {
         case AppointmentActionsType.UPDATE_APPOINTMENT_REQUEST:
             return { ...state, loadingAppointments: true }
         case AppointmentActionsType.UPDATE_APPOINTMENT_SUCCESS:
-            return { ...state, loadingAppointments: false }
+
+            const unconfirmedNotUpdatedApps = state.doctor_unconfirmed_app.filter(it => it._id != action.app._id);
+            const updatedUnconfirmedApp = state.doctor_unconfirmed_app.find(it => it._id == action.app._id);
+            updatedUnconfirmedApp.description = action.app.description;
+            updatedUnconfirmedApp.date = action.app.date;
+            unconfirmedNotUpdatedApps.push(updatedUnconfirmedApp);
+
+            return { ...state, doctor_unconfirmed_app: unconfirmedNotUpdatedApps, loadingAppointments: false }
         case AppointmentActionsType.UPDATE_APPOINTMENT_ERROR:
             return { ...state, loadingAppointments: false }
 
-            
+
         case AppointmentActionsType.DELETE_APPOINTMENT_REQUEST:
             return { ...state, loadingAppointments: true }
         case AppointmentActionsType.DELETE_APPOINTMENT_SUCCESS:
-            return { ...state, loadingAppointments: false }
+
+            const newDoctorUnconfirmedAppDel = state.doctor_unconfirmed_app.filter(it => it._id != action.app._id);
+
+            return { ...state, doctor_unconfirmed_app: newDoctorUnconfirmedAppDel, loadingAppointments: false }
         case AppointmentActionsType.DELETE_APPOINTMENT_ERROR:
             return { ...state, loadingAppointments: false }
 
 
         case AppointmentActionsType.CONFIRM_APPOINTMENT_REQUEST:
-            return { ...state }
+            return { ...state, loadingAppointments: true  }
         case AppointmentActionsType.CONFIRM_APPOINTMENT_SUCCESS:
-            return { ...state }
+
+            const newDoctorConfirmedApp =  state.doctor_confirmed_app.map(it => it);
+            newDoctorConfirmedApp.push(action.app);
+            const newDoctorUnconfirmedApp = state.doctor_unconfirmed_app.filter(it => it._id != action.app._id);
+
+            return { ...state , doctor_confirmed_app : newDoctorConfirmedApp, doctor_unconfirmed_app:newDoctorUnconfirmedApp, loadingAppointments: false }
         case AppointmentActionsType.CONFIRM_APPOINTMENT_ERROR:
-            return { ...state }
+            return { ...state , loadingAppointments: false }
     }
     return state;
 }

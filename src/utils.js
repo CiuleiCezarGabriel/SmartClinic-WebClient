@@ -6,6 +6,13 @@ export function responseToJson(response) {
     });
 }
 
+
+export function responseToJson2(response) {
+    return response.then(json => {
+        return response.ok ? json : Promise.reject(json);
+    });
+}
+
 export function globalErrorHandler(error) {
     if (error && error.message)
         alert(error.message);

@@ -58,7 +58,6 @@ function addAppointment(appointment) {
     }
 
     return fetch(`${BASE_SERVICE_URL}/post`, requestOptions)
-        .then(response => response.json)
 }
 
 function updateAppointment(appointment){
@@ -71,7 +70,6 @@ function updateAppointment(appointment){
     }
 
     return fetch(`${BASE_SERVICE_URL}/${id}`, requestOptions)
-        .then(response => response.json)
 }
 
 function deleteAppointment(id){
