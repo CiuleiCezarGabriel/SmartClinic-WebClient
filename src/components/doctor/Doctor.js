@@ -4,16 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import ReactStars from "react-rating-stars-component";
 import questionService from '../../services/questionService';
-
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import TimePicker from 'react-bootstrap-time-picker';
 import DatePicker from 'react-datepicker'
-
 import { addAppointment } from '../../actions';
 
 function Doctor(props) {
 
-    console.log('')
     const [rating, setRating] = useState(props.rating)
     const [newRating, setNewRating] = useState(0)
     const [numberOfRatings, setNumberOfRatings] = useState(props.numberOfRatings)
@@ -68,7 +65,6 @@ function Doctor(props) {
         setNumberOfRatings(numberOfRatings + 1)
         let aux = (rating * (numberOfRatings - 1) + newRating) / numberOfRatings
         setRating(Math.round((aux + Number.EPSILON) * 100) / 100)
-
         handleClose()
     }
 
@@ -164,7 +160,7 @@ function Doctor(props) {
                     </button>
                     <button class="MuiButtonBase-root MuiButton-root MuiButton-text bg-light-primary hover-bg-primary text-primary px-5 MuiButton-textSizeSmall MuiButton-sizeSmall" type="button">
                         <span class="MuiButton-label" onClick={handleShow}>REVIEW</span>
-
+        
                         <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
                             <Modal.Header closeButton>
                                 <Modal.Title>Create Review</Modal.Title>

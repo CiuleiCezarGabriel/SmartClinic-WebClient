@@ -9,8 +9,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 /* Button used to open the chat form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
+.open-button {  
+    
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  background-position: right center; 
   color: white;
   padding: 16px 20px;
   border: none;
@@ -19,7 +21,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
   position: fixed;
   bottom: 2%;
   right: 3%;
-  width: 280px;
+  width: 150px;
+  border-radius: 50%;
+
 }
 
 /* The popup chat - hidden by default */
@@ -66,7 +70,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Set a style for the submit/send button */
 .form-container .btn {
-  background-color: #4CAF50;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -74,11 +77,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 100%;
   margin-bottom:10px;
   opacity: 0.8;
+    
+background: rgb(0,5,94);
+background: linear-gradient(90deg, rgba(0,5,94,1) 0%, rgba(6,34,97,1) 100%);
+
 }
 
 /* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
+.form-container .cancel {    
+  background: rgb(177,123,123);
+  background: linear-gradient(0deg, rgba(177,123,123,1) 0%, rgba(218,0,0,1) 100%);
 }
 
 /* Add some hover effects to buttons */
