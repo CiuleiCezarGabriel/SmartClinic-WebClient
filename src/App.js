@@ -20,7 +20,7 @@ import Services from './pages/Services/Services';
 import Dermatologie from './pages/Services/ServicesPages/Dermatologie/Dermatologie';
 import BottomBar from './components/BottomBar/BottomBar';
 import './app.scss';
-import DiagnosisPage from './pages/DiagnosisPage';
+import DiagnosisPage from './pages/Diagnosis/DiagnosisPage';
 
 function App() {
 

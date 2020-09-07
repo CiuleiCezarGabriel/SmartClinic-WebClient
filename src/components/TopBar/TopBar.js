@@ -31,23 +31,33 @@ function TopBar() {
             <div class="jss390">
                 <div class="topbar-hold fixed">
                     <div class="flex justify-between items-center h-full">
-                    
                         <div class="flex items-center">
+                        <button class="MuiButtonBase-root-8112 MuiIconButton-root-8104" tabindex="0" type="button">
+                                <span class="MuiIconButton-label-8111">
+                                    <span class="material-icons MuiIcon-root-401" aria-hidden="true" onClick={() => handleLogout()}> power_settings_new </span>
+                                    <span class="pl-4" hidden> Logout </span>
+                                </span>
+                                <span class="MuiTouchRipple-root-8122">
+                                </span>
+                            </button>
+                            <button class="MuiButtonBase-root-8231 MuiIconButton-root-8223" tabindex="0" type="button" style={{ color: "rgba(52, 49, 76, 0.54)" }}>
+                                <span class="MuiIconButton-label-8230">
+                                    <span class="MuiBadge-root-8232">
+                                        <span class="material-icons MuiIcon-root-8247" aria-hidden="true">shopping_cart</span>
+                                        <span class="MuiBadge-badge-8233 MuiBadge-anchorOriginTopRightRectangle-8238 MuiBadge-colorSecondary-8235 MuiBadge-invisible-8246">0</span>
+                                    </span>
+                                </span>
+                                <span class="MuiTouchRipple-root-8256"></span>
+                            </button>
                             <div class="inline-block">
-                                <div class="MuiAvatar-root-596 MuiAvatar-circle-598 cursor-pointer mx-2">
+                                <div class="MuiAvatar-root-8308 MuiAvatar-circle-8310 cursor-pointer mx-2">
                                     <span class="Logo" aria-hidden="true" onClick={() => handleProfile()}>
-                                        <img src={Face} class="MuiAvatar-img-601" />
+                                        <img src={Face} class="MuiAvatar-img-8313" />
                                     </span>
                                 </div>
                             </div>
-                            <div class="Log-out">
-                                <div class="MuiButtonBase-root-400 MuiListItem-root-860 MuiMenuItem-root-857 jss391 MuiMenuItem-gutters-858 MuiListItem-gutters-865 MuiListItem-button-866" tabindex="-1" role="menuitem" aria-disabled="false">
-                                    <span class="material-icons MuiIcon-root-401" aria-hidden="true" onClick={() => handleLogout()}> power_settings_new </span>
-                                    <span class="pl-4" hidden> Logout </span><span class="MuiTouchRipple-root-410"></span>
-                                </div>
-                            </div>
+                            
                         </div>
-
                     </div>
                 </div>
             </div>

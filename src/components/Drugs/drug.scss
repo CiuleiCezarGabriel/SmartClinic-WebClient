@@ -1,0 +1,25 @@
+.h-full {
+    height: 100% !important;
+}
+.w-full {
+    width: 100%;
+}
+.flex {
+    display: flex;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+.relative {
+    position: relative;
+}
+.MuiGrid-spacing-xs-2 {
+    width: calc(100% + 16px);
+    margin: -8px;
+}
+.MuiGrid-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}

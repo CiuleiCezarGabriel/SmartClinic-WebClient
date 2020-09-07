@@ -4,7 +4,6 @@ const fetchAppointmentsByDoctorConfirmed = () => {
     const doctor = localStorage.getItem('doctor');
     const doctorJSON = JSON.parse(doctor);
     let id = doctorJSON[0]._id;
-    console.log(id);
 
     const requestOptions = {
         method: 'GET',
@@ -20,8 +19,6 @@ const fetchAppointmentsByDoctorUnconfirmed = () => {
     const doctor = localStorage.getItem('doctor');
     const doctorJSON = JSON.parse(doctor);
     let id = doctorJSON[0]._id;
-
-    console.log(id);
 
     const requestOptions = {
         method: 'GET',
