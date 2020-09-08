@@ -5,6 +5,7 @@ import {questions} from './questionReducer'
 import {appointments} from './appointmentReducer'
 import {getDoctors} from './doctorReducer'
 import {diagnosis} from './diagnosisReducer'
+import {pharmacies} from './pharmacyReducer'
 
 const rootReducer = combineReducers({
     authentification,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     questions,
     appointments,
     getDoctors,
-    diagnosis
+    diagnosis,
+    pharmacies
 })
 
 export default rootReducer

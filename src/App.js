@@ -16,6 +16,7 @@ import AppointmentPage from './pages/AppointmentPage'
 import NavBar from './components/navbar/NavBar';
 import TopBar from './components/TopBar/TopBar';
 import DoctorList from './pages/DoctorList/DoctorsList.js'
+import PharmacyPage from './pages/PharmacyPage/PharmacyPage.js'
 import Services from './pages/Services/Services';
 import Dermatologie from './pages/Services/ServicesPages/Dermatologie/Dermatologie';
 import BottomBar from './components/BottomBar/BottomBar';
@@ -58,6 +59,7 @@ function App() {
                                     <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>
                                     <PrivateRoute path="/diagnosis" component={DiagnosisPage}></PrivateRoute>
                                     <PrivateRoute path="/doctorList" component={DoctorList}></PrivateRoute>
+                                    <PrivateRoute path="/pharmacy" component={PharmacyPage}></PrivateRoute>
                                     <Route path="/" component={HomePage}></Route>
                                 </Switch>
                             </Router>

@@ -28,6 +28,10 @@ function NavBar() {
         history.push('/services')
     }
 
+    function handlePharmacy(){
+        history.push('/pharmacy')
+    }
+
     return (
         <div class="jss7658 jss7661">   {/*<div class="jss5875 jss5878">*/}
             <div class="flex-column relative h-full">
@@ -66,7 +70,7 @@ function NavBar() {
                             <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371" tabindex="0" type="button">
                                 <div class="flex items-center">
                                     <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">shopping_basket</span>
-                                    <span class="align-middle sidenavHoverShow jss4374">Farmacii</span>
+                                    <span class="align-middle sidenavHoverShow jss4374" onClick={() => handlePharmacy()}>Pharmacy</span>
                                 </div>
                                 <div class="item-arrow sidenavHoverShow jss4373 jss4368">
                                     <span class="material-icons MuiIcon-root-4348 align-middle MuiIcon-fontSizeSmall-4355" aria-hidden="true">chevron_right</span>

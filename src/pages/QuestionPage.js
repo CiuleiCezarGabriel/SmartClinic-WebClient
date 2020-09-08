@@ -34,7 +34,6 @@ function QuestionPage() {
     const dispatch = useDispatch()
     const questions = useSelector(state => state.questions.data)
     const user = useSelector(state => state.authentification.user)
-    console.log(questions)
     const [question, setQuestion] = useState("")
     const [inputs, setInputs] = useState({
         question: "",
@@ -47,6 +46,10 @@ function QuestionPage() {
     useEffect(() => {
         dispatch(fetchQuestions())
     }, [])
+
+    useEffect(() => {
+        console.log('!!!')
+    }, [questions])
 
     function handleChange(e) {
         const { value } = e.target;

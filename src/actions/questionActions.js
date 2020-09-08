@@ -11,7 +11,7 @@ export const QuestionActionsType = {
     ADD_QUESTION_ERROR: 'ADD_QUESTION_ERROR',
 
     UPDATE_QUESTION_RESPONSE_REQUEST: 'UPDATE_QUESTION_RESPONSE_REQUEST',
-    UPDATE_QUESTION_RESPONSE_SUCCESS: 'UPDATE__RESPONSE_QUESTION_SUCCESS',
+    UPDATE_QUESTION_RESPONSE_SUCCESS: 'UPDATE_RESPONSE_QUESTION_SUCCESS',
     UPDATE_QUESTION_RESPONSE_ERROR: 'UPDATE_QUESTION_RESPONSE_ERROR',
 
     UPDATE_QUESTION_STATUS_REQUEST: 'UPDATE_QUESTION_STATUS_REQUEST',
@@ -89,9 +89,10 @@ export function updateQuestionResponseRequest() {
     }
 }
 
-export function updateQuestionResponseSuccess() {
+export function updateQuestionResponseSuccess(question) {
     return {
-        type: QuestionActionsType.UPDATE_QUESTION_RESPONSE_SUCCESS
+        type: QuestionActionsType.UPDATE_QUESTION_RESPONSE_SUCCESS,
+        question
     }
 }
 

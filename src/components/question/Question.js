@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
 function Question(props) {
     const classes = useStyles();
     const [response, setResponse] = useState(props.response)
-    const [alert, setAlert] = useState(false)
     const [status, setStatus] = useState(props.status)
     const dispatch = useDispatch()
 
@@ -51,7 +50,6 @@ function Question(props) {
     function handleSubmit(e) {
         e.preventDefault()
         dispatch(updateResponse(props.questionId, doctor._id, response))
-        setAlert(true)
     }
 
     function handleStatusSelect(e) {
@@ -65,9 +63,8 @@ function Question(props) {
     }, [status])
 
     useEffect(() => {
-        console.log(alert)
-    }, [alert])
-
+        console.log(response)
+    }, [response])
 
     return (
         <div>
@@ -138,7 +135,6 @@ function Question(props) {
             {props.userRole == "PATIENT"
                 &&
                 <div className={classes.root}>
-
                     <Accordion>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -155,7 +151,6 @@ function Question(props) {
                     </Accordion>
                 </div>
             }
-
         </div >
     )
 }

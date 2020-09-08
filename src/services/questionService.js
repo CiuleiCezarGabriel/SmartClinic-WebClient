@@ -1,12 +1,9 @@
-import { requestQuestions } from "../actions/questionActions"
-
 const BASE_SERVICE_URL = "http://localhost:9001"
 
 const fetchQuestions = () => {
     const user = localStorage.getItem('user')
     const userJson = JSON.parse(user)
     const role = userJson.user.role
-    console.log(role)
     const requestOptions = {
         method: 'POST',
         headers: {
