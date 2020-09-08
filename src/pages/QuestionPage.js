@@ -48,7 +48,6 @@ function QuestionPage() {
     }, [])
 
     useEffect(() => {
-        console.log('!!!')
     }, [questions])
 
     function handleChange(e) {

@@ -21,6 +21,7 @@ const addPharmacy = (pharmacy) => {
         },
         body: JSON.stringify(pharmacy)
     };
+    console.log(requestOptions.body)
     return fetch(`${BASE_SERVICE_URL}`, requestOptions)
 }
 
@@ -67,7 +68,7 @@ const addNewDrugToPharmacy = (pharmacy, drug) => {
         body: JSON.stringify(drug)
     };
 
-    return fetch(`${BASE_SERVICE_URL}/add/newDrug/:${pharmacy}`, requestOptions)
+    return fetch(`${BASE_SERVICE_URL}/add/newDrug/${pharmacy}`, requestOptions)
 }
 
 export default {

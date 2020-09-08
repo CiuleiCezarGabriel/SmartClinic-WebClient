@@ -92,3 +92,69 @@ export function addPharmacy(pharmacy) {
             })
     }
 }
+
+export function deletePharmacyRequest() {
+    return {
+        type: PharmacyActionsType.DELETE_PHARMACY_REQUEST
+    }
+}
+
+export function deletePharmacySuccess(pharmacy) {
+    return {
+        type: PharmacyActionsType.DELETE_PHARMACY_SUCCESS,
+        pharmacy
+    }
+}
+
+export function deletePharmacyError(error) {
+    return {
+        type: PharmacyActionsType.DELETE_PHARMACY_ERROR,
+        error
+    }
+}
+
+export function deletePharmacy(id) {
+    return dispatch => {
+        dispatch(deletePharmacyRequest())
+        return PharmacyService.deletePharmacy(id)
+            .then(response => responseToJson(response))
+            .then(json => dispatch(deletePharmacySuccess(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(deletePharmacyError(error))
+            })
+    }
+}
+
+export function addNewDrugToPharmacyRequest() {
+    return {
+        type: PharmacyActionsType.ADD_NEW_DRUG_TO_PHARMACY_REQUEST
+    }
+}
+
+export function addNewDrugToPharmacySuccess(drug) {
+    return {
+        type: PharmacyActionsType.ADD_NEW_DRUG_TO_PHARMACY_SUCCESS,
+        drug
+    }
+}
+
+export function addNewDrugToPharmacyError(error) {
+    return {
+        type: PharmacyActionsType.ADD_NEW_DRUG_TO_PHARMACY_ERROR,
+        error
+    }
+}
+
+export function addNewDrugToPharmacy(id, drug) {
+    return dispatch => {
+        dispatch(addNewDrugToPharmacyRequest())
+        return PharmacyService.addNewDrugToPharmacy(id, drug)
+            .then(response => responseToJson(response))
+            .then(json => dispatch(addNewDrugToPharmacySuccess(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(addNewDrugToPharmacyError(error))
+            })
+    }
+}

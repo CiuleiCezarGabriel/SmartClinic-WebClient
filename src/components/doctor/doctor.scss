@@ -1,6 +1,194 @@
 .text-primary {
     color: #1976d2 !important;
 }
+
+.item{
+    width: 100%
+}
+
+.flex-container>div {
+    flex: 0 50%;
+    /*demo*/
+  }
+
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    padding: 12px;
+}
+@media (min-width: 600px){
+.MuiGrid-grid-sm-6 {
+    flex-grow: 0;
+    max-width: 50%;
+}}
+.MuiGrid-grid-xs-12 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 100%;
+}
+.MuiGrid-item {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.MuiCard-root {
+    overflow: hidden;
+    border-radius: 8px;
+}
+.MuiPaper-elevation1 {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.042), 0px 1px 3px 0px rgba(0, 0, 0, 0.036);
+}
+.MuiPaper-rounded {
+    border-radius: 4px;
+}
+.MuiPaper-root {
+    color: rgba(52, 49, 76, 1);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+}
+
+.m--2 {
+    margin: -0.5rem !important;
+}
+.p-5 {
+    padding: 1.25rem !important;
+}
+.items-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between !important;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex {
+    display: flex;
+}
+
+.MuiDivider-root {
+    border: none;
+    height: 1px;
+    margin: 0;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.m--2 {
+    margin: -0.5rem !important;
+}
+.p-5 {
+    padding: 1.25rem !important;
+}
+.justify-between {
+    justify-content: space-between !important;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex {
+    display: flex;
+}
+
+.max-w-220 {
+    max-width: 220px !important;
+}
+.mr-6 {
+    margin-right: 1.5rem !important;
+}
+.m-2 {
+    margin: 0.5rem !important;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+
+.m-2 {
+    margin: 0.5rem !important;
+}
+.flex {
+    display: flex;
+}
+
+.text-primary {
+    color: #1976d2 !important;
+}
+.bg-light-primary {
+    background: rgba(var(--primary), 0.15) !important;
+}
+.hover-bg-primary {
+    transition: all 250ms;
+}
+.px-5 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+}
+.mr-1 {
+    margin-right: 0.25rem !important;
+}
+.MuiButton-textSizeSmall {
+    padding: 4px 5px;
+    font-size: 0.8125rem;
+}
+.MuiButton-text {
+    padding: 6px 8px;
+}
+.MuiButton-root {
+    color: rgba(52, 49, 76, 1);
+    padding: 6px 16px;
+    font-size: 14px;
+    min-width: 64px;
+    box-sizing: border-box;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    border-radius: 4px;
+    letter-spacing: 0.02857em;
+    text-transform: none;
+}
+.MuiButtonBase-root {
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.MuiTouchRipple-root {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    position: absolute;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+
+.text-primary {
+    color: #1976d2 !important;
+}
 .bg-light-primary {
     background: rgba(var(--primary), 0.15) !important;
 }
@@ -51,31 +239,4 @@
     background-color: transparent;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
-}
-
-.MuiGrid-spacing-xs-3 > .MuiGrid-item {
-    padding: 12px;
-}
-@media (min-width: 600px){
-.MuiGrid-grid-sm-6 {
-    flex-grow: 0;
-    max-width: 50%;
-}
-}
-.MuiGrid-grid-xs-12 {
-    flex-grow: 0;
-    max-width: 50%;
-    flex-basis: 100%;
-}
-
-.MuiGrid-item {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.MuiButton-label {
-    width: 100%;
-    display: inherit;
-    align-items: inherit;
-    justify-content: inherit;
 }
