@@ -47,7 +47,8 @@ function Appointment(props) {
     function handleDiagnostic(selectedAppointment) {
         dispatch(findDiagnosis(selectedAppointment.id)).then(res => {
             setAppSelected(selectedAppointment);
-            if (res.diagnosis.length == 0) {
+            console.log(res);
+            if (!res) {
                 if (user.role == 'DOCTOR') {
                     handleClickOpen()
                 } else {
@@ -79,6 +80,7 @@ function Appointment(props) {
         }
        
         dispatch(addDiagnosis(newDiagnosis));
+        
         history.push('/diagnosis');
     }
 
