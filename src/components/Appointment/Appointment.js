@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
-import { useSelector, useDispatch, useStore } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment'
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';

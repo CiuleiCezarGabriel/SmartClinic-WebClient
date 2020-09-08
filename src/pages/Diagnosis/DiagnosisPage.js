@@ -27,7 +27,7 @@ function DiagnosisPage() {
                                     <ListItemText primary="Diagnosis name:" />
                                 </div>
                                 <div id='text-name-dig'>
-                                    <TextField size = "medium" value={diagnosisName}
+                                    <TextField size="medium" value={diagnosisName}
                                         onChange={(e) => setDiagnosisName(e.target.value)} />
                                 </div>
                                 <div></div>
@@ -42,10 +42,12 @@ function DiagnosisPage() {
                                 </div>
                             </ListItem>
                             <Divider />
-                           
+                            <div id = 'button-prescription'>
+                                <button>See Prescription</button>
+                            </div>
                         </List>
                     </div>
-                        <DrugPage/>
+                    <DrugPage />
                 </div>
             )
         } else {
