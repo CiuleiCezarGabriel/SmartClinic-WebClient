@@ -2,6 +2,9 @@ import React from 'react';
 import './drugSearch.scss'
 
 function DrugSearch() {
+
+
+    
     return (
         <div class="bg-default jss8319 jss8321">
             <div class="pl-4 flex items-center mb-4 mt-2">
@@ -122,7 +125,7 @@ function DrugSearch() {
                         </fieldset>
                     </div>
                     <div class="MuiPaper-root MuiCard-root relative p-4 mb-4 MuiPaper-elevation3 MuiPaper-rounded">
-                        <h5 class="m-0 mb-4">Brands</h5>
+                        <h5 class="m-0 mb-4">Pharmacys</h5>
                         <div class="MuiFormControl-root MuiTextField-root mb-4 MuiFormControl-fullWidth">
                             <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart MuiInputBase-marginDense MuiOutlinedInput-marginDense">
                                 <div class="MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-marginDense">
@@ -150,8 +153,8 @@ function DrugSearch() {
                                 <span class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Microlab</span>
                             </label>
                             <small class="badge bg-light-primary text-primary">32</small>
-                            </div>
-                            <div class="flex items-center justify-between">
+                        </div>
+                            {/* <div class="flex items-center justify-between">
                                 <label class="MuiFormControlLabel-root flex-grow">
                                     <span class="MuiButtonBase-root MuiIconButton-root jss8326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
                                         <span class="MuiIconButton-label">
@@ -164,53 +167,10 @@ function DrugSearch() {
                                     </span>
                                     <span class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Sony</span>
                                 </label><small class="badge bg-light-primary text-primary">534</small>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <label class="MuiFormControlLabel-root flex-grow">
-                                    <span class="MuiButtonBase-root MuiIconButton-root jss8326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
-                                        <span class="MuiIconButton-label">
-                                            <input class="jss8329" name="Beats" type="checkbox" data-indeterminate="false" value=""/>
-                                                <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
-                                                </svg>
-                                        </span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span>
-                                    <span class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Beats</span>
-                                </label>
-                                <small class="badge bg-light-primary text-primary">23</small>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <label class="MuiFormControlLabel-root flex-grow">
-                                    <span class="MuiButtonBase-root MuiIconButton-root jss8326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
-                                        <span class="MuiIconButton-label">
-                                            <input class="jss8329" name="Iphone" type="checkbox" data-indeterminate="false" value=""/>
-                                            <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
-                                            </svg>
-                                        </span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span>
-                                    <span class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Iphone</span>
-                                </label>
-                                <small class="badge bg-light-primary text-primary">65</small>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <label class="MuiFormControlLabel-root flex-grow">
-                                    <span class="MuiButtonBase-root MuiIconButton-root jss8326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
-                                        <span class="MuiIconButton-label">
-                                            <input class="jss8329" name="Comlion" type="checkbox" data-indeterminate="false" value=""/>
-                                            <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span>
-                                    <span class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Comlion</span>
-                                </label>
-                                <small class="badge bg-light-primary text-primary">198</small>
-                            </div>
+                            </div> */}
+                           
+                          
+                       
                         </div>
                     </div>
                 </div>

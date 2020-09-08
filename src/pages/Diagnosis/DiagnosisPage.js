@@ -45,9 +45,7 @@ function DiagnosisPage() {
                            
                         </List>
                     </div>
-                    <div>
                         <DrugPage/>
-                    </div>
                 </div>
             )
         } else {
