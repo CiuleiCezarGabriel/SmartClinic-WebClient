@@ -13,6 +13,9 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 import storage from 'redux-persist/lib/storage';
 import '../index.css';
 
+//import useSlider from "./useSlider";
+//import "./styles.css";
+
 // Add redux persist store to the application
 
 const persistConfig = {
@@ -24,6 +27,9 @@ const persistConfig = {
 const pReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(pReducer, composeWithDevTools(applyMiddleware(thunk)))
 const persistor = persistStore(store)
+
+
+
 
 ReactDOM.render(
     <Provider store={store}>

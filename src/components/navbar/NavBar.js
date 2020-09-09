@@ -1,7 +1,7 @@
 import React from 'react'
 import './navbar.scss';
 import { history } from '../../utils'
-import Logo from '../../assets/images/SmartClinic.jpg'
+import Logo from '../../assets/images/SmartClinicCopy.jpg'
 
 function NavBar() {
     function handleClick() {
@@ -40,7 +40,7 @@ function NavBar() {
                         <div class="flex items-center">
                             <span class="text-18 ml-2 font-medium sidenavHoverShow">
                                 <span class="Logo" aria-hidden="true" onClick={() => handleHome()}>
-                                    <img src={Logo} alt="Logo" style={{ width: "100px", height: "100px" }}></img>
+                                    <img src={Logo} alt="Logo" style={{ width: "160px", height: "100px" }}></img>
                                 </span>
                             </span>
                         </div>

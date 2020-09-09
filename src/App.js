@@ -1,4 +1,5 @@
 import React from 'react'
+import reactDOM from 'React-dom';
 import { Router, Switch, Route } from 'react-router-dom';
 import { history } from './utils'
 import { useEffect } from 'react'
@@ -19,9 +20,16 @@ import DoctorList from './pages/DoctorList/DoctorsList.js'
 import PharmacyPage from './pages/PharmacyPage/PharmacyPage.js'
 import Services from './pages/Services/Services';
 import Dermatologie from './pages/Services/ServicesPages/Dermatologie/Dermatologie';
+import Cardiologie from './pages/Services/ServicesPages/Cardiologie/Cardiologie';
+import Urologie from './pages/Services/ServicesPages/Urologie/Urologie';
+import Neurologie from './pages/Services/ServicesPages/Neurologie/Neurologie';
+import Pedriatie from './pages/Services/ServicesPages/Pedriatie/Pedriatie';
+import Nutritie from './pages/Services/ServicesPages/Nutritie/Nutritie';
 import BottomBar from './components/BottomBar/BottomBar';
 import './app.scss';
 import DiagnosisPage from './pages/Diagnosis/DiagnosisPage';
+
+import FarmaciaCatema from './pages/PharmaPages/FarmaciaCatena/FarmaciaCatena';
 
 function App() {
 
@@ -54,6 +62,14 @@ function App() {
                                     <Route path="/register" component={RegisterPage}></Route>
                                     <Route path="/services" component={Services}></Route>
                                     <Route path="/Dermatologie" component={Dermatologie}></Route>
+                                    <Route path="/Cardiologie" component={Cardiologie}></Route>
+                                    <Route path="/Urologie" component={Urologie}></Route>
+                                    <Route path="/Neurologie" component={Neurologie}></Route>
+                                    <Route path="/Pedriatie" component={Pedriatie}></Route>
+                                    <Route path="/Nutritie" component={Nutritie}></Route>
+
+                                    <Route path="/FarmaciaCatema" component={FarmaciaCatema}></Route>
+
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                     <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
                                     <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>
