@@ -12,6 +12,18 @@ const fetchPharmacies = () => {
     return fetch(`${BASE_SERVICE_URL}`, requestOptions)
 }
 
+const getDrugs = () => {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    };
+
+    return fetch(`${BASE_SERVICE_URL}/drug`, requestOptions)
+}
+
 const addPharmacy = (pharmacy) => {
     const requestOptions = {
         method: 'POST',

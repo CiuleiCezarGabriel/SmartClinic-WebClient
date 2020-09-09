@@ -14,3 +14,4 @@ function getDoctors() {
     }
     return fetch(`${BASE_SERVICE_URL}/doctor`, requestOptions)
 }
+

@@ -64,6 +64,36 @@ export function fetchPharmacies() {
     }
 }
 
+export function requestDrugs(){
+    return{
+        type: PharmacyActionsType.FETCH_DRUG_REQUEST,
+    }
+}
+
+export function fetchDrugSuccess(drugs){
+    return{
+        type: PharmacyActionsType.FETCH_DRUG_SUCCESS,
+        drugs
+    }
+}
+
+export function fetchDrugsError(err){
+    return{
+        type: PharmacyActionsType.FETCH_DRUG_ERROR,
+        err
+    }
+}
+
+export function fetchDrugs() {
+    return dispatch => {
+        dispatch(requestDrugs());
+        return PharmacyService.getDrugs()
+            .then(response => responseToJson(response))
+            .then(json => fetchDrugSuccess(json))
+            .catch(error => fetchDrugsError(error))
+    }
+}
+
 export function addPharmacyRequest() {
     return {
         type: PharmacyActionsType.ADD_PHARMACY_REQUEST

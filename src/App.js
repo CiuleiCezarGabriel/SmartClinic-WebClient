@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
 import PatientPage from './pages/PatientPage'
 import AdminPage from './pages/AdminPage/AdminPage.js'
-import DoctorPage from './pages/DoctorPage'
+import DoctorPage from './pages/DoctorPage/DoctorPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HomePage from './pages/HomePage/HomePage';
 import RegisterUserPage from './pages/RegisterUserPage'
