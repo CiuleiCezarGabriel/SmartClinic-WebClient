@@ -16,7 +16,7 @@ import {
     addDrugPrescription, deleteDrugPrescription
 } from './diagnosisAction'
 
-import { PharmacyActionsType, fetchPharmacies, addPharmacy, fetchDrugs} from './pharmacyActions'
+import { PharmacyActionsType, fetchPharmacies, addPharmacy, fetchAllDrugs} from './pharmacyActions'
 
 export {
     UserActionTypes,
@@ -56,5 +56,5 @@ export {
     PharmacyActionsType,
     addPharmacy,
     fetchPharmacies,
-    fetchDrugs,
+    fetchAllDrugs,
 }

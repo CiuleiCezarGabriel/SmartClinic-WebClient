@@ -15,13 +15,6 @@ export function pharmacies(state = pharmaciesInitialState, action) {
         case PharmacyActionsType.FETCH_PHARMACIES_ERROR:
             return { ...state, data: [], loadingPharmacy: false }
 
-        case PharmacyActionsType.FETCH_DRUG_REQUEST:
-            return { ...state, loadingPharmacy: true }
-        case PharmacyActionsType.FETCH_DRUG_SUCCESS:
-            return { ...state, drugs: action.drugs, loadingPharmacy: false }
-        case PharmacyActionsType.FETCH_DRUG_ERROR:
-            return { ...state, drugs: [], loadingPharmacy: false }
-
         case PharmacyActionsType.ADD_PHARMACY_REQUEST:
             return { ...state, loadingPharmacy: false }
         case PharmacyActionsType.ADD_PHARMACY_SUCCESS:
@@ -32,6 +25,13 @@ export function pharmacies(state = pharmaciesInitialState, action) {
             return { ...state, data: newPharmacies, loadingPharmacy: false }
         case PharmacyActionsType.ADD_PHARMACY_ERROR:
             return { ...state, loadingPharmacy: false }
+
+        case PharmacyActionsType.FETCH_ALL_DRUGS_REQUEST:
+            return {...state, loadingPharmacy: true}
+        case PharmacyActionsType.FETCH_ALL_DRUGS_SUCCESS:
+            return {...state, drugs: action.allDrugs, loadingPharmacy:false}
+        case PharmacyActionsType.FETCH_ALL_DRUGS_ERROR:
+            return {...state, loadingPharmacy:false}
     }
 
     return state

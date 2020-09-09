@@ -47,7 +47,7 @@ function Appointment(props) {
     function handleDiagnostic(selectedAppointment) {
         dispatch(findDiagnosis(selectedAppointment.id)).then(res => {
             setAppSelected(selectedAppointment);
-            console.log(res);
+           
             if (!res) {
                 if (user.role == 'DOCTOR') {
                     handleClickOpen()

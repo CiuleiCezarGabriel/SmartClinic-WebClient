@@ -7,7 +7,7 @@ function RegisterPage() {
 
     const [user, setUser] = useState({
         firstName: '',
-        lastName: 'adam',
+        lastName: '',
         username: '',
         password: '',
         phone: '',
@@ -60,7 +60,7 @@ function RegisterPage() {
                                         <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
                                             <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated" data-shrink="false"></label>
                                             <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
-                                                <input aria-invalid="false" name="lastname" type="text" class="MuiInputBase-input MuiInput-input"  value={user.lastName} onChange={handleChange} placeholder="Last Name" />
+                                                <input aria-invalid="false" name="lastName" type="text" class="MuiInputBase-input MuiInput-input"  value={user.lastName} onChange={handleChange} placeholder="Last Name" />
                                             </div>
                                         </div>
                                     </div>
