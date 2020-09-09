@@ -29,7 +29,6 @@ import BottomBar from './components/BottomBar/BottomBar';
 import './app.scss';
 import DiagnosisPage from './pages/Diagnosis/DiagnosisPage';
 
-import FarmaciaCatema from './pages/PharmaPages/FarmaciaCatena/FarmaciaCatena';
 
 function App() {
 
@@ -67,8 +66,6 @@ function App() {
                                     <Route path="/Neurologie" component={Neurologie}></Route>
                                     <Route path="/Pedriatie" component={Pedriatie}></Route>
                                     <Route path="/Nutritie" component={Nutritie}></Route>
-
-                                    <Route path="/FarmaciaCatema" component={FarmaciaCatema}></Route>
 
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                     <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
