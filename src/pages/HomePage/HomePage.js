@@ -1,10 +1,14 @@
 import React from 'react';
 import './homepage.scss';
 import DespreNoi from '../../components/DespreNoi/DespreNoi';
-import Simptome from '../../components/Simptome/simptome'
+import Simptome from '../../components/Simptome/simptome';
 import Farmacii from '../../components/Farmacii/Farmacii';
-import { useState, useEffect } from 'react'
-import Chat from '../../components/Chat/Chat'
+import { useState, useEffect } from 'react';
+import Chat from '../../components/Chat/Chat';
+import PictureContent from '../../components/PictureContent/PictureContent';
+
+
+//import Slideshow from '../../components/Slideshow/Slideshow';
 
 function HomePage() {
 
@@ -40,10 +44,11 @@ function HomePage() {
     return (
         
         <div class="totherightt">
+            {/*<Slideshow></Slideshow>*/}
+            <PictureContent></PictureContent>
             <DespreNoi></DespreNoi>
             <Simptome></Simptome>
             <Farmacii></Farmacii>
-
             <button class="open-button" onClick={(e) => openForm(e)}>Chat</button>
             <div class="chat-popup" id="myForm">
                 <form class="form-container">

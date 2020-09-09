@@ -50,8 +50,9 @@ function RegisterUserPage() {
     }
 
     return (
-        <div className="col-lg-8 offset-lg-2">
-            <h2>Register</h2>
+        <div className="col-lg-8 offset-lg-2">while (condition) {
+            
+        }
             <form name="form" onSubmit={handleSubmit}>
                 <div>
                     <label>First Name</label>

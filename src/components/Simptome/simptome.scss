@@ -40,6 +40,9 @@
 .items-centerf {
     align-items: center;
 }
+.items-rightf {
+    align-items: end;
+}
 .justify-betweenf {
     justify-content: space-between !important;
 }
@@ -101,9 +104,18 @@
     -webkit-font-smoothing: antialiased;
 }
 
+.ml-3f-buton{
+    margin-left:10%;
+}
 
 .ml-3f {
-    margin-left: 0.75rem !important;
+    margin-left: 1.75rem !important;
+}
+.ml-3ff {
+    margin-left: 100% !important;
+}
+.ml-3f1 {
+    margin-left: 100% !important;
 }
 .text-mutedf {
     color: rgba(73, 62, 163, 0.54) !important;

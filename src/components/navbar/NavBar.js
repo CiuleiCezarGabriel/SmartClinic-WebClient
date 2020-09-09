@@ -1,7 +1,7 @@
 import React from 'react'
 import './navbar.scss';
 import { history } from '../../utils'
-import Logo from '../../assets/images/SmartClinic.jpg'
+import Logo from '../../assets/images/SmartClinicCopy.jpg'
 
 function NavBar() {
     function handleClick() {
@@ -32,6 +32,10 @@ function NavBar() {
         history.push('/pharmacy')
     }
 
+    function handleAddUser(){
+        history.push('/registerNewUser')
+    }
+
     return (
         <div class="jss7658 jss7661">   {/*<div class="jss5875 jss5878">*/}
             <div class="flex-column relative h-full">
@@ -40,7 +44,7 @@ function NavBar() {
                         <div class="flex items-center">
                             <span class="text-18 ml-2 font-medium sidenavHoverShow">
                                 <span class="Logo" aria-hidden="true" onClick={() => handleHome()}>
-                                    <img src={Logo} alt="Logo" style={{ width: "100px", height: "100px" }}></img>
+                                    <img src={Logo} alt="Logo" style={{ width: "160px", height: "100px" }}></img>
                                 </span>
                             </span>
                         </div>
@@ -92,6 +96,15 @@ function NavBar() {
                                 <div class="flex items-center">
                                     <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">description</span>
                                     <span class="align-middle sidenavHoverShow jss4374" onClick={() => handleMedici()}>Medici</span>
+                                </div>
+                                <span class="MuiTouchRipple-root-4357"></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371" tabindex="0" type="button">
+                                <div class="flex items-center">
+                                    <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">Add user</span>
+                                    <span class="align-middle sidenavHoverShow jss4374" onClick={() => handleAddUser()}>Add user</span>
                                 </div>
                                 <span class="MuiTouchRipple-root-4357"></span>
                             </button>

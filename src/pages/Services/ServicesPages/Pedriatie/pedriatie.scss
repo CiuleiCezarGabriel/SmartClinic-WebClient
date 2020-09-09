@@ -1,0 +1,118 @@
+@media (min-width: 992px){
+.container {
+    max-width: 960px;
+}}
+@media (min-width: 768px){
+.container {
+    max-width: 720px;
+}}
+@media (min-width: 576px){
+.container {
+    max-width: 540px;
+}}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center!important;
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+.translate-top {
+    top: -70px;
+}
+.position-relative {
+    position: relative!important;
+}
+@media (min-width: 768px){
+.col-md-10 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}}
+
+
+
+.dotted {
+    background-color: #b0c6e2ce;
+}
+.p-4 {
+    padding: 1.5rem!important;
+}
+
+
+html body .font-18 {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.txt-primary {
+    color: #4999d3;
+}
+b, strong {
+    font-weight: bolder;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+table {
+    border-collapse: collapse;
+}
+
+
+.elevation-z16 {
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.06),0px 16px 24px 2px rgba(0, 0, 0, 0.042),0px 6px 30px 5px rgba(0, 0, 0, 0.036) !important;
+}
+
+.px-20 {
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+    padding-right: 50%;
+}
+
+.py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+.my-2 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    margin: 1rem !important;
+}
+.text-center {
+    text-align: center;
+}
+
+.lista{
+    text-align: left !important;
+}

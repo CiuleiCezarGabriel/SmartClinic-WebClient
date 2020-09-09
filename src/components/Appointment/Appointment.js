@@ -60,7 +60,6 @@ function Appointment(props) {
 
         });
 
-
     }
 
     const handleClickOpen = () => {
