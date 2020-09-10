@@ -28,6 +28,7 @@ import Nutritie from './pages/Services/ServicesPages/Nutritie/Nutritie';
 import BottomBar from './components/BottomBar/BottomBar';
 import './app.scss';
 import DiagnosisPage from './pages/Diagnosis/DiagnosisPage';
+import ShopPage from './pages/ShopPage/ShopPage';
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
                                     <Route path="/Neurologie" component={Neurologie}></Route>
                                     <Route path="/Pedriatie" component={Pedriatie}></Route>
                                     <Route path="/Nutritie" component={Nutritie}></Route>
+                                    <Route path="/Shop" component={ShopPage}></Route>
 
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                     <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>

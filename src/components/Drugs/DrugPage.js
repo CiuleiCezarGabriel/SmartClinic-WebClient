@@ -8,8 +8,10 @@ import { Input } from '@material-ui/core';
 
 import './drug.scss'
 
-function DrugPage() {
+function DrugPage(props) {
     const dispatch = useDispatch();
+
+    const addElement = props.elem;
 
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -71,7 +73,7 @@ function DrugPage() {
         return (
             <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-6">
                 <div class="MuiPaper-root MuiCard-root text-center relative h-full jss1923 MuiPaper-elevation3 MuiPaper-roundedd">
-                    <Item price={drug.price} name={drug.name} img={drugImg} drug_id={drug._id}></Item>
+                    <Item price={drug.price} name={drug.name} img={drugImg} drug_id={drug._id} elem = {addElement}></Item>
                 </div>
             </div>
         )

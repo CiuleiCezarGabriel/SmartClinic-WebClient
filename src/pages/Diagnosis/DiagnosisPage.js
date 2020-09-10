@@ -126,7 +126,7 @@ function DiagnosisPage() {
                             </div>
                         </List>
                     </div>
-                    <DrugPage />
+                    <DrugPage elem = "Add to prescription"/>
                 </div>
             )
         } else {

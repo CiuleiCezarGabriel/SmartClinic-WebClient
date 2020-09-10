@@ -34,14 +34,14 @@ function LoginPage() {
             <form id="form" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" name="username" value={username} onChange={handleChange} style={{ width: '25%' }} className={'form-control' + (submitted && !username ? ' is-invalid' : '')} />
+                    <input type="text" name="username" value={username} onChange={handleChange} style={{ width: '85%' }} className={'form-control' + (submitted && !username ? ' is-invalid' : '')} />
                     {submitted && !username &&
                         <div className="invalid-feedback">Username is required</div>
                     }
                 </div>
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" value={password} onChange={handleChange} style={{ width: '25%' }} className={'form-control' + (submitted && !password ? ' is-invalid' : '')} />
+                    <input type="password" name="password" value={password} onChange={handleChange} style={{ width: '85%' }} className={'form-control' + (submitted && !password ? ' is-invalid' : '')} />
                 </div>
                 <div className="form-group">
                     <button onClick={handleSubmit} className="btn btn-primary">

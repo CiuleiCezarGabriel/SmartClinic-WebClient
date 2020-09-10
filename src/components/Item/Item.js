@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
-import { addDrugPrescription, findPrescriptionByDiagnosis } from '../../actions'
+import { addDrugPrescription } from '../../actions'
 import './item.scss'
 
 const useStyles = makeStyles((theme) => ({
@@ -35,6 +35,7 @@ function Item(props) {
     const name = props.name;
     const imagine = props.img;
     const drug_id = props.drug_id;
+    const addElement = props.elem;
 
     const [open, setOpen] = useState(false);
     const [drugQuantity, setDrugQuantity] = useState('');
@@ -49,6 +50,15 @@ function Item(props) {
         setOpen(false);
     };
 
+    function handleClickAdd(e){
+        if(addElement === 'Add to Cart'){
+           
+        }else
+            if(addElement === 'Add to prescription'){
+                handleAddToPrescription(e);
+            }
+    }
+
     
     function handleAddToPrescription(e) {
         const elem = e.target.textContent;
@@ -61,8 +71,6 @@ function Item(props) {
         });
 
         handleClickOpen()
-
-
     }
 
     const handleAddDrugPrescription = () =>{
@@ -95,7 +103,7 @@ function Item(props) {
                     <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined bg-default" tabindex="0" type="button">
                         <span class="MuiButton-label">
                             <span class="material-icons MuiIcon-root mr-2" aria-hidden="true">shopping_cart</span>
-                            <span onClick={(e) => handleAddToPrescription(e)}>Add to prescription
+                            <span onClick={(e) => handleClickAdd(e)}>{addElement}
                             <span hidden>{drug_id}</span>
                                 <span hidden>{name}</span>
                             </span>
