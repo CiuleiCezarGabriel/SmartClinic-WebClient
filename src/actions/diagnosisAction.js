@@ -3,21 +3,25 @@ import { responseToJson } from '../utils';
 
 
 export const DiagnosisActionType = {
-    ADD_DIAGNOSIS_REQUEST : "ADD_DIAGNOSIS_REQUEST",
-    ADD_DIAGNOSIS_SUCCESS : "ADD_DIAGNOSIS_SUCCESS",
-    ADD_DIAGNOSIS_ERROR : "ADD_DIAGNOSIS_ERROR",
+    ADD_DIAGNOSIS_REQUEST: "ADD_DIAGNOSIS_REQUEST",
+    ADD_DIAGNOSIS_SUCCESS: "ADD_DIAGNOSIS_SUCCESS",
+    ADD_DIAGNOSIS_ERROR: "ADD_DIAGNOSIS_ERROR",
 
-    FIND_DIAGNOSIS_BY_APPOINTMENT_REQUEST : "FIND_DIAGNOSIS_BY_APPOINTMENT_REQUEST",
-    FIND_DIAGNOSIS_BY_APPOINTMENT_SUCCESS : "FIND_DIAGNOSIS_BY_APPOINTMENT_SUCCESS",
-    FIND_DIAGNOSIS_BY_APPOINTMENT_ERROR : "FIND_DIAGNOSIS_BY_APPOINTMENT_ERROR",
+    FIND_DIAGNOSIS_BY_APPOINTMENT_REQUEST: "FIND_DIAGNOSIS_BY_APPOINTMENT_REQUEST",
+    FIND_DIAGNOSIS_BY_APPOINTMENT_SUCCESS: "FIND_DIAGNOSIS_BY_APPOINTMENT_SUCCESS",
+    FIND_DIAGNOSIS_BY_APPOINTMENT_ERROR: "FIND_DIAGNOSIS_BY_APPOINTMENT_ERROR",
 
-    ADD_DRUG_PRESCRIPTION_REQUEST :"ADD_DRUG_PRESCRIPTION_REQUEST",
-    ADD_DRUG_PRESCRIPTION_SUCCESS : "ADD_DRUG_PRESCRIPTION_SUCCESS",
-    ADD_DRUG_PRESCRIPTION_ERROR : "ADD_DRUG_PRESCRIPTION_ERROR",
+    ADD_DRUG_PRESCRIPTION_REQUEST: "ADD_DRUG_PRESCRIPTION_REQUEST",
+    ADD_DRUG_PRESCRIPTION_SUCCESS: "ADD_DRUG_PRESCRIPTION_SUCCESS",
+    ADD_DRUG_PRESCRIPTION_ERROR: "ADD_DRUG_PRESCRIPTION_ERROR",
 
-    DELETE_DRUG_PRESCRIPTION_REQUEST : "DELETE_DRUG_PRESCRIPTION_REQUEST",
-    DELETE_DRUG_PRESCRIPTION_SUCCESS : "DELETE_DRUG_PRESCRIPTION_SUCCESS",
-    DELETE_DRUG_PRESCRIPTION_ERROR : "DELETE_DRUG_PRESCRIPTION_ERROR",
+    DELETE_DRUG_PRESCRIPTION_REQUEST: "DELETE_DRUG_PRESCRIPTION_REQUEST",
+    DELETE_DRUG_PRESCRIPTION_SUCCESS: "DELETE_DRUG_PRESCRIPTION_SUCCESS",
+    DELETE_DRUG_PRESCRIPTION_ERROR: "DELETE_DRUG_PRESCRIPTION_ERROR",
+
+    FIND_PRESCRIPTION_BY_DIAGNOSIS_REQUEST: "FIND_PRESCRIPTION_BY_DIAGNOSIS_REQUEST",
+    FIND_PRESCRIPTION_BY_DIAGNOSIS_SUCCESS: "FIND_PRESCRIPTION_BY_DIAGNOSIS_SUCCESS",
+    FIND_PRESCRIPTION_BY_DIAGNOSIS_ERROR: "FIND_PRESCRIPTION_BY_DIAGNOSIS_ERROR",
 }
 
 export function requestAddDiagnosis(diagnosis) { return { type: DiagnosisActionType.ADD_DIAGNOSIS_REQUEST, diagnosis } }
@@ -71,15 +75,32 @@ export function addDrugPrescription(drugPrescription) {
 export function requestDeleteDrugPrescription(id) { return { type: DiagnosisActionType.DELETE_DRUG_PRESCRIPTION_REQUEST, id } }
 export function fetchDeleteDrugPrescriptionSuccess(drugPrescription) { return { type: DiagnosisActionType.DELETE_DRUG_PRESCRIPTION_SUCCESS, drugPrescription } };
 export function fetchDeleteDrugPrescriptionError(err) { return { type: DiagnosisActionType.DELETE_DRUG_PRESCRIPTION_ERROR, err } }
-export function deleteDrugPrescription(id) {
+export function deleteDrugPrescription(id, diagnosis) {
     return dispatch => {
         dispatch(requestDeleteDrugPrescription(id));
 
-        DiagnosisService.deleteDrugPrescription(id)
+        DiagnosisService.deleteDrugPrescription(id, diagnosis)
             .then(response => responseToJson(response))
             .then(json => dispatch(fetchDeleteDrugPrescriptionSuccess(json)))
             .catch(error => {
                 dispatch(fetchDeleteDrugPrescriptionError(error.toString()))
             })
+    }
+}
+
+export function requestFindPrescriptionByDiagnosis(id) { return { type: DiagnosisActionType.FIND_PRESCRIPTION_BY_DIAGNOSIS_REQUEST, id } }
+export function findPrescriptionByDiagnosisSuccess(prescriptions) { return { type: DiagnosisActionType.FIND_PRESCRIPTION_BY_DIAGNOSIS_SUCCESS, prescriptions } }
+export function findPrescriptionByDiagnosisError(err) { return { type: DiagnosisActionType.FIND_PRESCRIPTION_BY_DIAGNOSIS_ERROR, err } }
+export function findPrescriptionByDiagnosis(id) {
+    return dispatch => {
+        dispatch(requestFindPrescriptionByDiagnosis(id));
+
+        DiagnosisService.findPrescriptionByDiagnosis(id)
+            .then(response => responseToJson(response))
+            .then(json => dispatch(findPrescriptionByDiagnosisSuccess(json)))
+            .catch(error => {
+                dispatch(findPrescriptionByDiagnosisError(error))
+            })
+
     }
 }

@@ -9,7 +9,6 @@ function addDiagnosis(diagnosis) {
 
     return fetch(`${BASE_SERVICE_URL}/insert`, requestOptions)
 }
-
 function findDiagnosisByAppointment(id) {
     const requestOptions = {
         method: 'GET',
@@ -23,24 +22,34 @@ function addDrugPrescription(drugPrescription){
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(drugPrescription)
     }
 
     return fetch(`${BASE_SERVICE_URL}/addDrugPrescription`, requestOptions)
 }
 
-function deleteDrugPrescription(diagnosis,drugPrescription){
+function deleteDrugPrescription(drugPrescription, diagnosis){
     const requestOptions = {
-        method: 'POST',
+        method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
     }
 
-    return fetch(`${BASE_SERVICE_URL}/deleteDrugPrescription/:${diagnosis}/:${drugPrescription}`, requestOptions)
+    return fetch(`${BASE_SERVICE_URL}/deleteDrugPrescription/${diagnosis}/${drugPrescription}`, requestOptions)
+}
+
+function findPrescriptionByDiagnosis(diagnosis){
+    const requestOptions = {
+        method: 'GET',
+        headers: {'Content-type' : 'application/json'},
+    }
+    return fetch(`http://localhost:9004/prescription/getByDiagnosisId/${diagnosis}`, requestOptions);
 }
 
 export default {
     addDiagnosis,
     findDiagnosisByAppointment,
     addDrugPrescription,
-    deleteDrugPrescription
+    deleteDrugPrescription,
+    findPrescriptionByDiagnosis
 }; 
 

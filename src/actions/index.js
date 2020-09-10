@@ -13,10 +13,11 @@ import {
 import { DoctorActionTypes, getDoctors } from './doctorActions'
 import {
     DiagnosisActionType, addDiagnosis, findDiagnosis,
-    addDrugPrescription, deleteDrugPrescription
+    addDrugPrescription, deleteDrugPrescription, findPrescriptionByDiagnosis,
 } from './diagnosisAction'
 
-import { PharmacyActionsType, fetchPharmacies, addPharmacy, deletePharmacy, addNewDrugToPharmacy, fetchAllDrugs } from './pharmacyActions'
+import { PharmacyActionsType, fetchPharmacies, addPharmacy,
+     deletePharmacy, addNewDrugToPharmacy, fetchAllDrugs, fetchPharmacyDrugs } from './pharmacyActions'
 
 export {
     UserActionTypes,
@@ -52,6 +53,7 @@ export {
     findDiagnosis,
     addDrugPrescription,
     deleteDrugPrescription,
+    findPrescriptionByDiagnosis,
 
     PharmacyActionsType,
     addPharmacy,
@@ -59,4 +61,5 @@ export {
     fetchAllDrugs,
     deletePharmacy,
     addNewDrugToPharmacy,
+    fetchPharmacyDrugs,
 }

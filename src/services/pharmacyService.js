@@ -56,7 +56,7 @@ const fetchDrugsOfPharmacy = (id) => {
             'Accept': 'application/json'
         }
     };
-    return fetch(`${BASE_SERVICE_URL}/drug/pharmacy/:id`, requestOptions)
+    return fetch(`${BASE_SERVICE_URL}/drug/pharmacy/${id}`, requestOptions)
 }
 
 const addDrugToPharmacy = (pharmacy, drug) => {
@@ -94,6 +94,7 @@ const fetchAllDrugs = () =>{
     }
     return fetch(`${BASE_SERVICE_URL}/drug`, requestOptions)
 }
+
 
 export default {
     fetchPharmacies,
