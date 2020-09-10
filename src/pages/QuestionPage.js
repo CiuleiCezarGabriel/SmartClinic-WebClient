@@ -53,12 +53,11 @@ function QuestionPage() {
     }
 
     function handleSubmit(e) {
-
         inputs.question = question
         e.preventDefault();
         dispatch(addQuestion(inputs))
         console.log(inputs)
-        document.getElementById("outlined-search").value = ""
+        document.getElementById("outlined-search").value = " "
     }
     return (
         <div>

@@ -1,4 +1,4 @@
-import { UserActionTypes, login, logout, register } from './userActions';
+import { UserActionTypes, login, logout, register, getUsers, deleteUser } from './userActions';
 import { AlertActionType, success, error, clear } from './alertActions'
 import {
     AppointmentActionsType, fetchAppointmentsDoctorConfirmed,
@@ -24,6 +24,7 @@ export {
     login,
     logout,
     register,
+    getUsers,
 
     AlertActionType,
     success,

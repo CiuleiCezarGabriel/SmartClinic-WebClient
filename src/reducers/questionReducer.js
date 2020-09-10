@@ -14,21 +14,21 @@ export function questions(state = questionsInitialState, action) {
             return { ...state, data: action.questions, loadingQuestion: false }
         case QuestionActionsType.FETCH_QUESTIONS_ERROR:
             return { ...state, data: [], loadingQuestion: false }
-       
+
         case QuestionActionsType.ADD_QUESTION_REQUEST:
             return { ...state, loadingQuestion: false }
         case QuestionActionsType.ADD_QUESTION_SUCCESS:
             return { ...state, loadingQuestion: false }
         case QuestionActionsType.ADD_QUESTION_ERROR:
             return { ...state, loadingQuestion: false }
-      
+
         case QuestionActionsType.UPDATE_QUESTION_STATUS_REQUEST:
             return { ...state, loadingQuestion: false }
         case QuestionActionsType.UPDATE_QUESTION_STATUS_SUCCESS:
             return { ...state, loadingQuestion: false }
         case QuestionActionsType.UPDATE_QUESTION_STATUS_ERROR:
             return { ...state, loadingQuestion: false }
-        
+
         case QuestionActionsType.UPDATE_QUESTION_RESPONSE_REQUEST:
             return { ...state, loadingQuestion: false }
         case QuestionActionsType.UPDATE_QUESTION_RESPONSE_SUCCESS:
@@ -36,7 +36,7 @@ export function questions(state = questionsInitialState, action) {
             const updatedQuestion = state.data.find(it => it._id == action.question._id)
             updatedQuestion.response = action.question.response
             filterQuestions.push(updatedQuestion)
-            return { ...state, data: filterQuestions,loadingQuestion: false }
+            return { ...state, data: filterQuestions, loadingQuestion: false }
         case QuestionActionsType.UPDATE_QUESTION_RESPONSE_ERROR:
             return { ...state, loadingQuestion: false }
     }

@@ -55,7 +55,6 @@ function Doctor(props) {
     }
 
     function handleSubmit() {
-
         const param = {
             userId: user._id,
             doctorId: props.doctorId,
@@ -63,13 +62,11 @@ function Doctor(props) {
             rating: newRating
         }
 
-        console.log(param)
         questionService.addRating(param)
         setNumberOfRatings(numberOfRatings + 1)
         console.log(numberOfRatings)
         let aux = (rating * (numberOfRatings - 1) + newRating) / numberOfRatings
         setRating(Math.round((aux + Number.EPSILON) * 100) / 100)
-
         handleClose()
     }
 

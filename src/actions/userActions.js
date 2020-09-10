@@ -1,5 +1,6 @@
 import { userService } from '../services/'
 import { history } from '../utils'
+import { responseToJson } from '../utils';
 
 export const UserActionTypes = {
     REGISTER_REQUEST: 'USERS_REGISTER_REQUEST',
@@ -29,7 +30,7 @@ export function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user))
-  
+
                     localStorage.setItem('user', JSON.stringify(user))
                     localStorage.setItem('patient', JSON.stringify(user.patient))
                     localStorage.setItem('doctor', JSON.stringify(user.doctor))
@@ -86,4 +87,39 @@ export function register(user) {
     function request(user) { return { type: UserActionTypes.REGISTER_REQUEST, user } }
     function success(user) { return { type: UserActionTypes.REGISTER_SUCCESS, user } }
     function failure(error) { return { type: UserActionTypes.REGISTER_FAILURE, error } }
+}
+
+
+export function getUsers() {
+    return dispatch => {
+        dispatch(request())
+        return userService.getUsers()
+            .then(response => responseToJson(response))
+            .then(json => dispatch(success(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(failure(error.toString()))
+            })
+    }
+
+    function request() { return { type: UserActionTypes.GETALL_REQUEST } }
+    function success(users) { return { type: UserActionTypes.GETALL_SUCCESS, users } }
+    function failure(error) { return { type: UserActionTypes.GETALL_FAILURE, error } }
+}
+
+export function deleteUser(){
+    return dispatch => {
+        dispatch(request())
+        return userService.deleteUser()
+            .then(response => responseToJson(response))
+            .then(json => dispatch(success(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(failure(error.toString()))
+            })
+    }
+
+    function request() { return { type: UserActionTypes.DELETE_REQUEST } }
+    function success(user) { return { type: UserActionTypes.DELETE_SUCCESS, user } }
+    function failure(error) { return { type: UserActionTypes.DELETE_FAILURE, error } }
 }

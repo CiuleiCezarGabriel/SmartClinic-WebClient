@@ -10,6 +10,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Table } from 'react-bootstrap'
 import Select from '@material-ui/core/Select';
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -89,7 +90,7 @@ function DoctorPage() {
                                     {reviews.map((review, i) => {
                                         return <div key={i}>
                                             {review.description}
-                                            <hr className="MuiDivider-root mb-4" style={{width:'815px'}}></hr>
+                                            <hr className="MuiDivider-root mb-4" style={{ width: '815px' }}></hr>
                                         </div>
                                     })}
                                 </Typography>

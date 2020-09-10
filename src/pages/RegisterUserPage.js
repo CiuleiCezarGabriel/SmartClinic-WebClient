@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom'
 import { register } from '../actions'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '25ch',
+        },
+    },
+}));
 
 function RegisterUserPage() {
+    const classes = useStyles();
 
     const [user, setUser] = useState({
         firstName: '',
@@ -50,44 +61,34 @@ function RegisterUserPage() {
     }
 
     return (
-        <div className="col-lg-8 offset-lg-2">while (condition) {
-            
-        }
-            <form name="form" onSubmit={handleSubmit}>
+        <div className="col-lg-8 offset-lg-2">
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <div>
-                    <label>First Name</label>
-                    <input type="text" name="firstName" value={user.firstName} onChange={handleChange} />
+                    <TextField id="standard-basic" label="First Name" name="firstName" value={user.firstName} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Last Name</label>
-                    <input type="text" name="lastName" value={user.lastName} onChange={handleChange} />
+                    <TextField id="standard-basic" label="Last Name" value={user.lastName} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Username</label>
-                    <input type="text" name="username" value={user.username} onChange={handleChange} />
+                    <TextField id="standard-basic" label="Username" value={user.username} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input type="password" name="password" value={user.password} onChange={handleChange} />
+                    <TextField id="standard-basic" type="password" label="Password" value={user.password} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Phone</label>
-                    <input type="text" name="phone" value={user.phone} onChange={handleChange} />
+                    <TextField id="standard-basic" label="Phone" value={user.phone} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Email</label>
-                    <input type="text" name="email" value={user.email} onChange={handleChange} />
+                    <TextField id="standard-basic" label="Email" value={user.email} onChange={handleChange} />
                 </div>
                 <div>
                     {selected
                         && <div>
                             <div>
-                                <label>Speciality</label>
-                                <input type="text" name="speciality" value={user.speciality} onChange={handleChange}></input>
+                                <TextField id="standard-basic" label="Speciality" name="speciality" value={user.speciality} onChange={handleChange} />
                             </div>
                             <div>
-                                <label>Room</label>
-                                <input type="text" name="room" value={user.room} onChange={handleChange}></input>
+                                <TextField id="standard-basic" label="Room" name="room" value={user.room} onChange={handleChange} />
                             </div>
                         </div>
                     }
@@ -98,7 +99,7 @@ function RegisterUserPage() {
                         Register
                     </button>
                 </div>
-                <label> Choose a role</label>
+                <h3> Choose a role</h3>
                 <select name="role" value={user.role} onChange={handleUserSelect}>
                     <option value="ADMIN">Admin</option>
                     <option value="DOCTOR">Doctor</option>

@@ -16,7 +16,7 @@ function DoctorList() {
 
     return (
         <div>
-            <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 flex-container">
+            <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 flex-container1">
                 {
                     doctors.map((doctor, i) => {
                         return <Doctor key={i} firstName={doctor.userDetails[0].firstName}
