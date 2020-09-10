@@ -9,20 +9,20 @@ function Dermatologie() {
             <strong class="font-18 txt-primary">Dr. CEUCA Lavinia</strong>
             <strong class="font-18 txt-primary">Program: luni-vineri</strong><p>08:00 - 18:00</p>
            
-            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6">
-                <div class="MuiPaper-root MuiCard-root p-4 MuiPaper-elevation3 MuiPaper-rounded">
-                    <div class="flex items-center">
-                        <h6 class="font-medium text-green m-0 ml-3"> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DERMATOLOGIA este o ramură a medicinei care se ocupă de piele şi bolile sale. Ea urmăreşte diagnosticarea şi tratarea bolilor de piele necontagioase şi contagioase (infecţioase). Dermatologia acoperă şi domeniul bolilor venerice (care se transmit pe cale sexuală). Medicul are grijă atât de bolile pielii, cât şi de unele probleme estetice ale pielii, scalpului, părului şi unghiilor. Funcţia pielii este de a asigura o protecţie împotriva agenţilor chimici şi fizici, întărită prin acţiunea keratinei şi a melaninei. Pielea mai intervine şi în termoreglare (menţinerea unei temperaturi interne constante) prin dilatarea vaselor sangvine cutanate şi prin evaporarea sudorii, ceea ce permite evacuarea unui exces de căldură. Din structura pielii fac parte şi numeroase glande: sudoripare (secretă sudoarea)&nbsp;şi sebacee (secretă sebumul sau grăsimea pielii ce formează o peliculă protectoare la suprafaţa pielii şi părului).</p></h6>
+            <div class="MuiGrid-rootserv MuiGrid-itemserv MuiGrid-grid-xs-12serv MuiGrid-grid-md-6serv" style={{marginBottom:"1rem"}}>
+                <div class="MuiPaper-rootserv MuiCard-rootserv p-4serv MuiPaper-elevation3serv MuiPaper-roundedserv">
+                    <div class="flexserv items-centerserv">
+                        <h6 class="font-medium text-green m-0serv ml-3"> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DERMATOLOGIA este o ramură a medicinei care se ocupă de piele şi bolile sale. Ea urmăreşte diagnosticarea şi tratarea bolilor de piele necontagioase şi contagioase (infecţioase). Dermatologia acoperă şi domeniul bolilor venerice (care se transmit pe cale sexuală). Medicul are grijă atât de bolile pielii, cât şi de unele probleme estetice ale pielii, scalpului, părului şi unghiilor. Funcţia pielii este de a asigura o protecţie împotriva agenţilor chimici şi fizici, întărită prin acţiunea keratinei şi a melaninei. Pielea mai intervine şi în termoreglare (menţinerea unei temperaturi interne constante) prin dilatarea vaselor sangvine cutanate şi prin evaporarea sudorii, ceea ce permite evacuarea unui exces de căldură. Din structura pielii fac parte şi numeroase glande: sudoripare (secretă sudoarea)&nbsp;şi sebacee (secretă sebumul sau grăsimea pielii ce formează o peliculă protectoare la suprafaţa pielii şi părului).</p></h6>
                     </div>
 
                 </div>
             </div>
           
 
-            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6">
-                <div class="MuiPaper-root MuiCard-root p-4 MuiPaper-elevation3 MuiPaper-rounded">
-                    <div class="flex items-center">
-                        <h6 class="font-medium text-green m-0 ml-3"> Pentru orice problemă cu pielea este indicat să cerem sfatul unui medic dermatolog. Nu trebuie să ne autotratăm fără cunoștință de cauză și, important de reținut, nu toate petele roșii, petele maronii, coșurile și bubițele de pe față și corp se tratează la cosmetică! Să nu ne lăsăm influiențați de reclamele de la televizor sau din reviste! Nu toate produsele cosmetice sunt bune, unele din ele sunt chiar iritante. Un produs cosmetic nu se alege după culoare, miros sau aspectul ambalajului. Dermatologul poate indica produsele cosmetice corespunzatoare tipului de ten/piele și este cel care poate institui un tratament adecvat în cazul bolilor de piele.</h6>
+            <div cclass="MuiGrid-rootserv MuiGrid-itemserv MuiGrid-grid-xs-12serv MuiGrid-grid-md-6serv">
+                <div class="MuiPaper-rootserv MuiCard-rootserv p-4serv MuiPaper-elevation3serv MuiPaper-roundedserv">
+                <div class="flexserv items-centerserv">
+                        <h6 class="font-medium text-green m-0serv ml-3"> Pentru orice problemă cu pielea este indicat să cerem sfatul unui medic dermatolog. Nu trebuie să ne autotratăm fără cunoștință de cauză și, important de reținut, nu toate petele roșii, petele maronii, coșurile și bubițele de pe față și corp se tratează la cosmetică! Să nu ne lăsăm influiențați de reclamele de la televizor sau din reviste! Nu toate produsele cosmetice sunt bune, unele din ele sunt chiar iritante. Un produs cosmetic nu se alege după culoare, miros sau aspectul ambalajului. Dermatologul poate indica produsele cosmetice corespunzatoare tipului de ten/piele și este cel care poate institui un tratament adecvat în cazul bolilor de piele.</h6>
                     </div>
 
                 </div>

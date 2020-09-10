@@ -1,5 +1,6 @@
 import React from 'react'
 import './navbar.scss';
+import './dropdown.scss';
 import { history } from '../../utils'
 import Logo from '../../assets/images/SmartClinicCopy.jpg'
 
@@ -16,23 +17,23 @@ function NavBar() {
         history.push('/login')
     }
 
-    function handleMedici(){
+    function handleMedici() {
         history.push('/doctorList')
     }
 
     function handleHome() {
         history.push('/');
     }
-    
+
     function handleServices() {
         history.push('/services')
     }
 
-    function handlePharmacy(){
+    function handlePharmacy() {
         history.push('/pharmacy')
     }
 
-    function handleAddUser(){
+    function handleAddUser() {
         history.push('/registerNewUser')
     }
 
@@ -44,7 +45,7 @@ function NavBar() {
                         <div class="flex items-center">
                             <span class="text-18 ml-2 font-medium sidenavHoverShow">
                                 <span class="Logo" aria-hidden="true" onClick={() => handleHome()}>
-                                    <img src={Logo} alt="Logo" style={{ width: "160px", height: "100px" }}></img>
+                                    <img src={Logo} alt="Logo" style={{ width: "140px", height: "81px" }}></img>
                                 </span>
                             </span>
                         </div>
@@ -60,15 +61,20 @@ function NavBar() {
                             </button>
                         </div>
                         <div>
-                            <button class="MuiButtonBase-root-10142 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss10156" tabindex="0" type="button">
-                                <div class="flex items-center">
-                                    <span class="material-icons MuiIcon-root-10143 align-middle text-18 w-36 px-4" aria-hidden="true">security</span>
-                                    <span class="align-middle sidenavHoverShow jss10159" onClick={() => handleLogin()}> Autentificare</span>
+                            <div class="">
+                                <span class="material-icons MuiIcon-root-10143 align-middle text-18 w-36 px-4" aria-hidden="true">security</span>
+                                <div class="dropdown">
+
+                                    <span class="dropdown " onClick={() => handleLogin()} style={{ marginLeft: "12px", marginBottom : "0.55rem" }}> Autentificare</span>
+                                    <div class="dropdown-content">
+                                        <a href="/login">Login</a>
+                                        <a href="/register">Register</a>
+                                        <a href="/resetPassword">Reset Password</a>
+                                    </div>
+
                                 </div>
-                                <div class="item-arrow sidenavHoverShow jss10158 jss10153">
                                     <span class="material-icons MuiIcon-root-10143 align-middle MuiIcon-fontSizeSmall-10150" aria-hidden="true">chevron_right</span>
-                                </div>
-                            </button>
+                            </div>
                         </div>
                         <div>
                             <button class="MuiButtonBase-root-4339 flex justify-between h-44 border-radius-4 mb-2 w-full pr-4 has-submenu compactNavItem whitespace-pre overflow-hidden jss4371" tabindex="0" type="button">
@@ -146,7 +152,7 @@ function NavBar() {
                             </a>
                         </div>
                     </div>
-                    
+
                 </div>
 
             </div>

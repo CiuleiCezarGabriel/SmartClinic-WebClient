@@ -54,6 +54,8 @@ function LoginPage() {
                     <Link to="/resetPassword" className="btn btn-link"> Reset password</Link>
                 </div>
                 </form>
+                    
+
         </div>
     )
 }

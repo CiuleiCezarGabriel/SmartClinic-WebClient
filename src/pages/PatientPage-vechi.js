@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/navbar/NavBar'
 
-function PatientPage() {
+function PatientPage_vechi() {
 
     return (
         <div>
@@ -12,4 +12,4 @@ function PatientPage() {
     )
 }
 
-export default PatientPage
+export default PatientPage_vechi;

@@ -12,6 +12,9 @@ function TopBar() {
     function handleLogout() {
         dispatch(logout())
     }
+    function handleCart() {
+        history.push('/cart');
+    }
 
     function handleProfile() {
         const userLog = localStorage.getItem('user');
@@ -40,15 +43,16 @@ function TopBar() {
                                 <span class="MuiTouchRipple-root-8122">
                                 </span>
                             </button>
+
                             <button class="MuiButtonBase-root-8231 MuiIconButton-root-8223" tabindex="0" type="button" style={{ color: "rgba(52, 49, 76, 0.54)" }}>
                                 <span class="MuiIconButton-label-8230">
                                     <span class="MuiBadge-root-8232">
-                                        <span class="material-icons MuiIcon-root-8247" aria-hidden="true">shopping_cart</span>
-                                        <span class="MuiBadge-badge-8233 MuiBadge-anchorOriginTopRightRectangle-8238 MuiBadge-colorSecondary-8235 MuiBadge-invisible-8246">0</span>
+                                        <span class="material-icons MuiIcon-root-8247" aria-hidden="true" onClick={() => handleCart()}>shopping_cart</span>
                                     </span>
                                 </span>
                                 <span class="MuiTouchRipple-root-8256"></span>
                             </button>
+
                             <div class="inline-block">
                                 <div class="MuiAvatar-root-8308 MuiAvatar-circle-8310 cursor-pointer mx-2">
                                     <span class="Logo" aria-hidden="true" onClick={() => handleProfile()}>

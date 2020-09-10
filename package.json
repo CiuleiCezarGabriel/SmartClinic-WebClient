@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@material-ui/codemod": "^4.5.0",
@@ -17,6 +18,7 @@
     "@material-ui/styles": "^4.10.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "font-awesome": "^4.7.0",
     "history": "^4.10.1",
     "infinite-react-carousel": "^1.2.11",
     "lint": "^0.7.0",

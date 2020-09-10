@@ -5,20 +5,22 @@
     flex-grow: 1;
 }
 
-/*
-@media (max-width: 959.95px){
-.m-sm-30 {
-    margin: 16px;
-}}
-.m-sm-30 {
-    margin: 30px;
-}*/
+
+//@media (max-width: 959.95px){
+//.m-sm-30 {
+ //   margin: 16px;
+//}}
+//.m-sm-30 {
+ //   margin: 20px;
+//}
+
 
 
 
 .px-6 {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
+
 }
 .pb-4 {
     padding-bottom: 1rem !important;
@@ -31,7 +33,7 @@
     border-radius: 8px;
 }
 .MuiPaper-elevation1 {
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.042), 0px 1px 3px 0px rgba(0, 0, 0, 0.036);
+    box-shadow: 3px 2px 1px -1px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.042), 0px 1px 3px 0px rgba(0, 0, 0, 0.036);
 }
 .MuiPaper-rounded {
     border-radius: 4px;
@@ -258,38 +260,88 @@ label + .MuiInput-formControl {
 
 
 
-
-.form-check-input:not(:checked), .form-check-input:checked {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0;
+.MuiButton-containedPrimary {
+    color: #ffffff;
+    background-color: #1976d2;
 }
-
-[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-     position: absolute; 
-     pointer-events: none; 
-     opacity: 0; 
+.MuiButton-contained {
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.06), 0px 8px 10px 1px rgba(0, 0, 0, 0.042), 0px 3px 14px 2px rgba(0, 0, 0, 0.036);
+    background-color: #e0e0e0;
 }
-
-.form-check-inline .form-check-input {
-    position: static;
-    margin-top: 0;
-    margin-right: .3125rem;
-    margin-left: 0;
-}
-
-input[type=checkbox], input[type=radio] {
+.MuiButton-root {
+    color: rgba(52, 49, 76, 1);
+    padding: 6px 16px;
+    font-size: 14px;
+    min-width: 64px;
     box-sizing: border-box;
-    padding: 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    border-radius: 4px;
+    letter-spacing: 0.02857em;
+    text-transform: none;
 }
-
-button, input {
-    overflow: visible;
-}
-
-button, input, optgroup, select, textarea {
+.MuiButtonBase-root {
+    color: inherit;
+    border: 0;
+    cursor: pointer;
     margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
+
+.MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.MuiIcon-root {
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    user-select: none;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.capitalize {
+    text-transform: capitalize !important;
+}
+.pl-2 {
+    padding-left: 0.5rem !important;
+}
+
+

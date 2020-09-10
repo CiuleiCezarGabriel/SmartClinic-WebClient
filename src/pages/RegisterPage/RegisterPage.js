@@ -124,9 +124,13 @@ function RegisterPage() {
                                             {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
                                                 Register
                                             </button>
+                                            <button class="btn"><a class="btn-primary btn" style={{marginLeft: "1.2rem"}} href="/login"> Login</a></button>
                                     </div>
 
                                 </div>
+
+                            {/*pozica*/}
+                            <img class="mb-4 h-152 w-152" src="/src/assets/images/picture1.png" style={{height: "100%", width: "35%", marginLeft: "10%", marginTop: "3rem"}} alt="Starter"></img>
                             </div>
 
                         </form>

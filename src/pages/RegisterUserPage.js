@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom'
 import { register } from '../actions'
+import './registeruserpage.scss'
 
 function RegisterUserPage() {
 
@@ -50,44 +51,58 @@ function RegisterUserPage() {
     }
 
     return (
-        <div className="col-lg-8 offset-lg-2">while (condition) {
-            
-        }
+        <div className="col-lg-8 offset-lg-2">
             <form name="form" onSubmit={handleSubmit}>
-                <div>
-                    <label>First Name</label>
-                    <input type="text" name="firstName" value={user.firstName} onChange={handleChange} />
+                <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label> {/*First name*/}
+                    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                        <input aria-invalid="false" name="firstName" type="text" class="MuiInputBase-input MuiInput-input" placeholder="First Name" value={user.firstName} onChange={handleChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>Last Name</label>
-                    <input type="text" name="lastName" value={user.lastName} onChange={handleChange} />
+                <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label>
+                    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                        <input aria-invalid="false" name="lastName" type="text" class="MuiInputBase-input MuiInput-input" placeholder="Last Name" value={user.lastName} onChange={handleChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>Username</label>
-                    <input type="text" name="username" value={user.username} onChange={handleChange} />
+                <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label>
+                    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                        <input aria-invalid="false" name="username" type="text" class="MuiInputBase-input MuiInput-input" placeholder="User Name" value={user.username} onChange={handleChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>Password</label>
-                    <input type="password" name="password" value={user.password} onChange={handleChange} />
+                <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label>
+                    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                        <input aria-invalid="false" name="password" type="text" class="MuiInputBase-input MuiInput-input" placeholder="Password" value={user.password} onChange={handleChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>Phone</label>
-                    <input type="text" name="phone" value={user.phone} onChange={handleChange} />
+                <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label>
+                    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                        <input aria-invalid="false" name="phone" type="text" class="MuiInputBase-input MuiInput-input" placeholder="Phone" value={user.phone} onChange={handleChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>Email</label>
-                    <input type="text" name="email" value={user.email} onChange={handleChange} />
+                <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label>
+                    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                        <input aria-invalid="false" name="email" type="text" class="MuiInputBase-input MuiInput-input" placeholder="Email" value={user.email} onChange={handleChange} />
+                    </div>
                 </div>
                 <div>
                     {selected
                         && <div>
-                            <div>
-                                <label>Speciality</label>
-                                <input type="text" name="speciality" value={user.speciality} onChange={handleChange}></input>
+                            <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                                <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label>
+                                <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                                    <input aria-invalid="false" name="speciality" type="text" class="MuiInputBase-input MuiInput-input" placeholder="Speciality" value={user.speciality} onChange={handleChange} />
+                                </div>
                             </div>
-                            <div>
-                                <label>Room</label>
-                                <input type="text" name="room" value={user.room} onChange={handleChange}></input>
+                            <div class="MuiFormControl-root MuiTextField-root mb-4 w-full">
+                                <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"></label>
+                                <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                                    <input aria-invalid="false" name="room" type="text" class="MuiInputBase-input MuiInput-input" placeholder="Room" value={user.room} onChange={handleChange} />
+                                </div>
                             </div>
                         </div>
                     }
@@ -98,12 +113,11 @@ function RegisterUserPage() {
                         Register
                     </button>
                 </div>
-                <label> Choose a role</label>
-                <select name="role" value={user.role} onChange={handleUserSelect}>
+                <label> Choose a role: </label>
+                <select name="role" class="" style={{width: "30%",padding: "8px 15px" }} value={user.role} onChange={handleUserSelect}>
                     <option value="ADMIN">Admin</option>
                     <option value="DOCTOR">Doctor</option>
                 </select>
-                <Link to="/login" className="btn btn-link">Cancel</Link>
             </form>
         </div>
     )

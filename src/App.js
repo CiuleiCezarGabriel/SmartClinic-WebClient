@@ -6,18 +6,19 @@ import { useEffect } from 'react'
 import { PrivateRoute } from './components/PrivateRoute'
 import LoginPage from './pages/LoginPage/LoginPage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
-import PatientPage from './pages/PatientPage'
+import PatientPage from './pages/PatientPage/PatientPage'
 import AdminPage from './pages/AdminPage/AdminPage.js'
 import DoctorPage from './pages/DoctorPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HomePage from './pages/HomePage/HomePage';
-import RegisterUserPage from './pages/RegisterUserPage'
-import QuestionPage from './pages/QuestionPage'
-import AppointmentPage from './pages/AppointmentPage'
+import RegisterUserPage from './pages/RegisterUserPage';
+import QuestionPage from './pages/QuestionPage';
+import AppointmentPage from './pages/AppointmentPage';
 import NavBar from './components/navbar/NavBar';
+//import Stepper from './components/Stepper/Stepper';
 import TopBar from './components/TopBar/TopBar';
-import DoctorList from './pages/DoctorList/DoctorsList.js'
-import PharmacyPage from './pages/PharmacyPage/PharmacyPage.js'
+import DoctorList from './pages/DoctorList/DoctorsList.js';
+import PharmacyPage from './pages/PharmacyPage/PharmacyPage.js';
 import Services from './pages/Services/Services';
 import Dermatologie from './pages/Services/ServicesPages/Dermatologie/Dermatologie';
 import Cardiologie from './pages/Services/ServicesPages/Cardiologie/Cardiologie';
@@ -28,7 +29,7 @@ import Nutritie from './pages/Services/ServicesPages/Nutritie/Nutritie';
 import BottomBar from './components/BottomBar/BottomBar';
 import './app.scss';
 import DiagnosisPage from './pages/Diagnosis/DiagnosisPage';
-
+import Cart from './pages/Cart/Cart';
 
 function App() {
 
@@ -51,6 +52,8 @@ function App() {
                 <div class="m-sm-30">
                     <div class="flex-column justify-center items-center  py-16">
                         <div class="MuiFormControl-root MuiTextField-root max-w-400 MuiFormControl-fullWidth">
+                            
+                           
                             <Router history={history}>
                                 <Switch>
                                     <PrivateRoute path="/patient" component={PatientPage}></PrivateRoute>
@@ -67,6 +70,7 @@ function App() {
                                     <Route path="/Pedriatie" component={Pedriatie}></Route>
                                     <Route path="/Nutritie" component={Nutritie}></Route>
 
+                                    <PrivateRoute path="/cart" component={Cart}></PrivateRoute>
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                     <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
                                     <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>
