@@ -3,9 +3,6 @@ import Question from '../components/question/Question'
 import { fetchQuestions, addQuestion } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -56,12 +53,11 @@ function QuestionPage() {
     }
 
     function handleSubmit(e) {
-
         inputs.question = question
         e.preventDefault();
         dispatch(addQuestion(inputs))
         console.log(inputs)
-        document.getElementById("outlined-search").value = ""
+        document.getElementById("outlined-search").value = " "
     }
     return (
         <div>

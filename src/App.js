@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
 import PatientPage from './pages/PatientPage/PatientPage'
 import AdminPage from './pages/AdminPage/AdminPage.js'
-import DoctorPage from './pages/DoctorPage'
+import DoctorPage from './pages/DoctorPage/DoctorPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HomePage from './pages/HomePage/HomePage';
 import RegisterUserPage from './pages/RegisterUserPage';
@@ -30,6 +30,8 @@ import BottomBar from './components/BottomBar/BottomBar';
 import './app.scss';
 import DiagnosisPage from './pages/Diagnosis/DiagnosisPage';
 import Cart from './pages/Cart/Cart';
+import ShopPage from './pages/ShopPage/ShopPage';
+
 
 function App() {
 
@@ -69,6 +71,7 @@ function App() {
                                     <Route path="/Neurologie" component={Neurologie}></Route>
                                     <Route path="/Pedriatie" component={Pedriatie}></Route>
                                     <Route path="/Nutritie" component={Nutritie}></Route>
+                                    <Route path="/Shop" component={ShopPage}></Route>
 
                                     <PrivateRoute path="/cart" component={Cart}></PrivateRoute>
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>

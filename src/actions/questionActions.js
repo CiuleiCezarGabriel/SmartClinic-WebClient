@@ -122,9 +122,10 @@ export function updateQuestionStatusRequest() {
     }
 }
 
-export function updateQuestionStatusSuccess() {
+export function updateQuestionStatusSuccess(question) {
     return {
-        type: QuestionActionsType.UPDATE_QUESTION_STATUS_SUCCESS
+        type: QuestionActionsType.UPDATE_QUESTION_STATUS_SUCCESS,
+        question
     }
 }
 

@@ -28,7 +28,7 @@ export const PharmacyActionsType = {
 
     FETCH_ALL_DRUGS_REQUEST: 'FETCH_ALL_DRUGS_REQUEST',
     FETCH_ALL_DRUGS_SUCCESS: 'FETCH_ALL_DRUGS_SUCCESS',
-    FETCH_ALL_DRUGS_ERROR: 'FETCH_ALL_DRUGS_ERROR'
+    FETCH_ALL_DRUGS_ERROR: 'FETCH_ALL_DRUGS_ERROR',
 }
 
 export function requestPharmacies() {
@@ -61,6 +61,36 @@ export function fetchPharmacies() {
             .catch(error => {
                 dispatch(fetchPharmaciesError(error))
             })
+    }
+}
+
+export function requestDrugs(){
+    return{
+        type: PharmacyActionsType.FETCH_DRUG_REQUEST,
+    }
+}
+
+export function fetchDrugSuccess(drugs){
+    return{
+        type: PharmacyActionsType.FETCH_DRUG_SUCCESS,
+        drugs
+    }
+}
+
+export function fetchDrugsError(err){
+    return{
+        type: PharmacyActionsType.FETCH_DRUG_ERROR,
+        err
+    }
+}
+
+export function fetchDrugs() {
+    return dispatch => {
+        dispatch(requestDrugs());
+        return PharmacyService.getDrugs()
+            .then(response => responseToJson(response))
+            .then(json => fetchDrugSuccess(json))
+            .catch(error => fetchDrugsError(error))
     }
 }
 
@@ -98,39 +128,39 @@ export function addPharmacy(pharmacy) {
 }
 
 
-export function requestAllDrugs(){
+export function requestAllDrugs() {
     return {
         type: PharmacyActionsType.FETCH_ALL_DRUGS_REQUEST
     }
 }
 
-export function fetchAllDugsSuccess(allDrugs){
-    return{
+export function fetchAllDrugsSuccess(drugs) {
+    return {
         type: PharmacyActionsType.FETCH_ALL_DRUGS_SUCCESS,
-        allDrugs
+        drugs
     }
 
 }
-export function fetchAllDrugsError(err){
-    return{
+export function fetchAllDrugsError(err) {
+    return {
         type: PharmacyActionsType.FETCH_ALL_DRUGS_ERROR,
         err
     }
 }
 
-export function fetchAllDrugs(){
-    return dispatch =>{
-   
+export function fetchAllDrugs() {
+    return dispatch => {
+
         dispatch(requestAllDrugs());
 
         return PharmacyService.fetchAllDrugs()
-                .then(response => responseToJson(response))
-                .then(json => dispatch(fetchAllDugsSuccess(json)))
-                .catch(error => {
-                    console.log(error)
-                    dispatch(fetchAllDrugsError(error))
-                })
-            }
+            .then(response => responseToJson(response))
+            .then(json => dispatch(fetchAllDrugsSuccess(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(fetchAllDrugsError(error))
+            })
+    }
 }
 export function deletePharmacyRequest() {
     return {
@@ -196,4 +226,22 @@ export function addNewDrugToPharmacy(id, drug) {
                 dispatch(addNewDrugToPharmacyError(error))
             })
     }
+}
+
+export function requestPharmacyDrugs(id) { return { type: PharmacyActionsType.FETCH_PHARMACY_DRUGS_REQUEST, id } }
+export function fetchPharmacyDrugsSuccess(drugs) { return { type: PharmacyActionsType.FETCH_PHARMACY_DRUGS_SUCCESS, drugs } }
+export function fetchPharmacyDrugsError(error) { return { type: PharmacyActionsType.FETCH_PHARMACY_DRUGS_ERROR, err } }
+export function fetchPharmacyDrugs(id) {
+    return dispatch =>{
+        dispatch(requestPharmacyDrugs())
+
+        return PharmacyService.fetchDrugsOfPharmacy(id)
+            .then(response => responseToJson(response))
+            .then(json => dispatch(fetchPharmacyDrugsSuccess(json)))
+            .catch(error => {
+                console.log(error)
+                dispatch(fetchPharmacyDrugsError(error))
+            })
+    }
+
 }

@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Question(props) {
+    console.log(props)
     const classes = useStyles();
     const [response, setResponse] = useState(props.response)
     const [status, setStatus] = useState(props.status)
@@ -42,7 +43,7 @@ function Question(props) {
 
     const doctor = useSelector(state => state.authentification.doctor)
 
-    function handleChange(e) {
+    function handleChangeResponse(e) {
         const { value } = e.target;
         setResponse(value);
     }
@@ -59,11 +60,9 @@ function Question(props) {
     }
 
     useEffect(() => {
-        console.log(status)
     }, [status])
 
     useEffect(() => {
-        console.log(response)
     }, [response])
 
     return (
@@ -83,9 +82,7 @@ function Question(props) {
                             onChange={handleStatusSelect}
                         >   
                             <MenuItem value={status}>
-                                <em>
                                     {status}
-                                </em>
                             </MenuItem>
                             <MenuItem value={'UNANSWERED'}>ACCEPT</MenuItem>
                             <MenuItem value={"DELETE"}>DELETE</MenuItem>
@@ -104,7 +101,7 @@ function Question(props) {
                                     Question <label> {props.question} </label>
                                 </div>
                                 <form id="form" onSubmit={handleSubmit}>
-                                    <TextField id="outlined-search" value={response} onChange={handleChange} label="Response" type="search" variant="outlined" />
+                                    <TextField id="outlined-search" value={response}  onChange={handleChangeResponse} label="Response" type="search" variant="outlined" />
                                     <button className="btn btn-primary" style={{ marginLeft: '20px', marginTop: '4px' }}>
                                         Add Response
                                      </button>

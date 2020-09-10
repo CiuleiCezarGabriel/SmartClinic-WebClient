@@ -11,6 +11,9 @@ import { addAppointment } from '../../actions';
 
 function Doctor(props) {
 
+
+    console.log(props)
+
     const [rating, setRating] = useState(props.rating)
     const [newRating, setNewRating] = useState(0)
     const [numberOfRatings, setNumberOfRatings] = useState(props.numberOfRatings)
@@ -52,7 +55,6 @@ function Doctor(props) {
     }
 
     function handleSubmit() {
-
         const param = {
             userId: user._id,
             doctorId: props.doctorId,
@@ -60,12 +62,11 @@ function Doctor(props) {
             rating: newRating
         }
 
-        console.log(param)
         questionService.addRating(param)
         setNumberOfRatings(numberOfRatings + 1)
+        console.log(numberOfRatings)
         let aux = (rating * (numberOfRatings - 1) + newRating) / numberOfRatings
         setRating(Math.round((aux + Number.EPSILON) * 100) / 100)
-
         handleClose()
     }
 
@@ -88,7 +89,7 @@ function Doctor(props) {
     }
 
     useEffect(() => {
-    }, [rating])
+    }, [rating, numberOfRatings])
 
     return (
         <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 item">
@@ -101,9 +102,9 @@ function Doctor(props) {
                         </div>
                     </div>
                     <div class="flex items-center m-2">
-
                         <div>
                             <h4> {rating}/5 </h4>
+                            <p class="mb-0 mt-2 text-muted font-normal capitalize">{numberOfRatings} reviews</p>
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,18 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import io from 'socket.io-client'
 import Chat from '../../components/Chat/Chat'
 import './AdminPage.scss'
+import { fetchQuestions, addQuestion, getUsers, deleteUser } from '../../actions';
 
 let socket;
 const ENDPOINT = 'localhost:5000'
 
 function AdminPage() {
+
+    const dispatch = useDispatch()
+    const questions = useSelector(state => state.users.data)
 
     const [admin, setAdmin] = useState('admin')
     const [rooms, setRooms] = useState([])
@@ -20,8 +25,19 @@ function AdminPage() {
 
         socket.on('roomsOnline', rooms => {
             setRooms(rooms)
+            console.log(rooms)
         });
+
+        dispatch(getUsers())
     }, [])
+
+    useEffect(() => {
+        socket = io(ENDPOINT)
+        socket.on('roomsChanged', rooms => {
+            setRooms(rooms)
+            console.log('11')
+        })
+    }, [rooms])
 
     function openRoom(room) {
         setRoom(room)
@@ -31,7 +47,7 @@ function AdminPage() {
     function openForm(e) {
         e.preventDefault()
     }
-    
+
     function closeForm(e) {
         e.preventDefault()
         setVisible(false)
@@ -43,6 +59,24 @@ function AdminPage() {
 
     return (
         <div>
+
+            {/* <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    
+                </tbody>
+            </Table> */}
+
             {
                 rooms.map((room, i) =>
                     <div key={i}>

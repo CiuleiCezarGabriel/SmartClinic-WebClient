@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom'
 import { register } from '../actions'
 import './registeruserpage.scss'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '25ch',
+        },
+    },
+}));
 
 function RegisterUserPage() {
+    const classes = useStyles();
 
     const [user, setUser] = useState({
         firstName: '',

@@ -1,4 +1,4 @@
-import { UserActionTypes, login, logout, register } from './userActions';
+import { UserActionTypes, login, logout, register, getUsers, deleteUser } from './userActions';
 import { AlertActionType, success, error, clear } from './alertActions'
 import {
     AppointmentActionsType, fetchAppointmentsDoctorConfirmed,
@@ -13,16 +13,18 @@ import {
 import { DoctorActionTypes, getDoctors } from './doctorActions'
 import {
     DiagnosisActionType, addDiagnosis, findDiagnosis,
-    addDrugPrescription, deleteDrugPrescription
+    addDrugPrescription, deleteDrugPrescription, findPrescriptionByDiagnosis,
 } from './diagnosisAction'
 
-import { PharmacyActionsType, fetchPharmacies, addPharmacy, deletePharmacy, addNewDrugToPharmacy, fetchAllDrugs } from './pharmacyActions'
+import { PharmacyActionsType, fetchPharmacies, addPharmacy,
+     deletePharmacy, addNewDrugToPharmacy, fetchAllDrugs, fetchPharmacyDrugs } from './pharmacyActions'
 
 export {
     UserActionTypes,
     login,
     logout,
     register,
+    getUsers,
 
     AlertActionType,
     success,
@@ -52,6 +54,7 @@ export {
     findDiagnosis,
     addDrugPrescription,
     deleteDrugPrescription,
+    findPrescriptionByDiagnosis,
 
     PharmacyActionsType,
     addPharmacy,
@@ -59,4 +62,5 @@ export {
     fetchAllDrugs,
     deletePharmacy,
     addNewDrugToPharmacy,
+    fetchPharmacyDrugs,
 }

@@ -3,6 +3,7 @@ import { PharmacyActionsType } from '../actions/pharmacyActions'
 const pharmaciesInitialState = {
     loadingPharmacy: false,
     drugs: [],
+    drugs_filtered:[],
     data: []
 }
 
@@ -38,6 +39,21 @@ export function pharmacies(state = pharmaciesInitialState, action) {
             return { ...state, drugs: action.drug}
         case PharmacyActionsType.ADD_NEW_DRUG_TO_PHARMACY_ERROR:
             return { ...state}
+
+        case PharmacyActionsType.FETCH_ALL_DRUGS_REQUEST:
+            return {...state, loadingPharmacy:true}
+        case PharmacyActionsType.FETCH_ALL_DRUGS_SUCCESS:
+            return {...state, drugs: action.drugs, loadingPharmacy:false}
+        case PharmacyActionsType.FETCH_ALL_DRUGS_ERROR:
+            return {...state,loadingPharmacy:false};
+
+        case PharmacyActionsType.FETCH_PHARMACY_DRUGS_REQUEST:
+            return {...state, loadingPharmacy:true}
+        case PharmacyActionsType.FETCH_PHARMACY_DRUGS_SUCCESS:
+            //console.log(action.drugs);
+            return {...state, drugs_filtered:action.drugs, loadingPharmacy:false}
+        case PharmacyActionsType.FETCH_PHARMACY_DRUGS_ERROR:
+            return {...state,loadingPharmacy:false}
     }
 
     return state

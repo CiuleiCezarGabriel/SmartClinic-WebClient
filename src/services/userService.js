@@ -4,7 +4,9 @@ export const userService = {
     login,
     logout,
     register,
-    forgotPassword
+    forgotPassword,
+    getUsers,
+    deleteUser
 }
 
 function login(username, password) {
@@ -48,4 +50,26 @@ function forgotPassword(email) {
     }
     return fetch(`${BASE_SERVICE_URL}/user/forgot`, requestOptions)
         .then(response => response.json)
+}
+
+function getUsers() {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }
+    return fetch(`${BASE_SERVICE_URL}/user`, requestOptions)
+}
+
+function deleteUser(id){
+    const requestOptions = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }
+    return fetch(`${BASE_SERVICE_URL}/user/${id}`, requestOptions)
 }
