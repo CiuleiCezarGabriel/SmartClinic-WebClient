@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Item from '../Item/Item'
 import drugImg from '../../assets/images/bbb.jpg'
 import TablePagination from '@material-ui/core/TablePagination';
-import { fetchAllDrugs,fetchPharmacies, fetchPharmacyDrugs } from '../../actions'
+import { fetchAllDrugs, fetchPharmacies, fetchPharmacyDrugs} from '../../actions'
 import { Input } from '@material-ui/core';
 
 import './drug.scss'

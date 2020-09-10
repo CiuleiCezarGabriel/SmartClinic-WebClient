@@ -22,6 +22,7 @@ function login(username, password) {
         .then(response => response.json())
 }
 
+
 function register(user) {
     const requestOptions = {
         method: 'POST',

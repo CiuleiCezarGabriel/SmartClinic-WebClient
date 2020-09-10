@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
-import { addDrugPrescription } from '../../actions'
+import { addDrugPrescription, addDrugToCart } from '../../actions'
 import './item.scss'
 
 const useStyles = makeStyles((theme) => ({
@@ -38,41 +38,69 @@ function Item(props) {
     const addElement = props.elem;
 
     const [open, setOpen] = useState(false);
+    const [open1, setOpen1] = useState(false);
+
     const [drugQuantity, setDrugQuantity] = useState('');
     const [drugInstrunctions, setDrugInstrunctions] = useState('');
     const [add_obj, setAdd_obj] = useState();
+    const [add_obj1, setAdd_obj1] = useState();
+
+    const obj = useSelector(status => status.shopping.cart_obj[0]);
 
     const handleClickOpen = () => {
         setOpen(true);
     };
-
     const handleClose = () => {
         setOpen(false);
     };
 
-    function handleClickAdd(e){
+    const handleClickOpen1 = () => {
+        setOpen1(true);
+    };
+    const handleClose1 = () => {
+        setOpen1(false);
+    };
+
+    function handleClickAdd(id,name,price){
         if(addElement === 'Add to Cart'){
-           
+           handleAddDrugToCart(id,name,price)
         }else
             if(addElement === 'Add to prescription'){
-                handleAddToPrescription(e);
+                handleAddToPrescription(id,name);
             }
     }
 
-    
-    function handleAddToPrescription(e) {
-        const elem = e.target.textContent;
-        const elem_id = elem.substring(19, 43);
-        const elem_name = elem.substring(43, elem.length)
+    function handleAddDrugToCart(id,name,price){
+        setAdd_obj1({
+            name: name,
+            drug: id,
+            price: price
+        });
 
+        handleClickOpen1();
+    }
+    function handleDrugCart(){
+        const add_obj3 = {
+            name: add_obj1.name,
+            price: add_obj1.price,
+            quantity: drugQuantity,
+            drug: add_obj1.price,
+            cart: obj._id
+        }
+        console.log(add_obj3)
+        dispatch(addDrugToCart(add_obj3,obj._id));
+        handleClose1();
+    }
+
+    
+    function handleAddToPrescription(id,name) {
         setAdd_obj({
-            name: elem_name,
-            drug: elem_id
+            name: name,
+            drug: id
         });
 
         handleClickOpen()
     }
-
     const handleAddDrugPrescription = () =>{
         
         const add_obj2 ={
@@ -93,7 +121,6 @@ function Item(props) {
         handleClose();
     }
 
-
     return (
         <div>
             <div class="flex justify-center items-center relative">
@@ -103,9 +130,7 @@ function Item(props) {
                     <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined bg-default" tabindex="0" type="button">
                         <span class="MuiButton-label">
                             <span class="material-icons MuiIcon-root mr-2" aria-hidden="true">shopping_cart</span>
-                            <span onClick={(e) => handleClickAdd(e)}>{addElement}
-                            <span hidden>{drug_id}</span>
-                                <span hidden>{name}</span>
+                            <span onClick={(e) => handleClickAdd(drug_id,name,price)}>{addElement}
                             </span>
                         </span>
                         <span class="MuiTouchRipple-root"></span>
@@ -150,6 +175,33 @@ function Item(props) {
                             rowsMax={6} />
                     </div>
                 </ListItem>
+            </List>
+        </Dialog>
+
+        <Dialog fullWidth open={open1} onClose={handleClose1} TransitionComponent={Transition}>
+            <AppBar className={classes.appBar}>
+                <Toolbar>
+                    <IconButton edge="start" color="inherit" onClick={handleClose1} aria-label="close">
+                        <CloseIcon />
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                        Add Quantity
+                    </Typography>
+                    <Button autoFocus color="inherit" onClick={handleDrugCart}>
+                        Save
+                    </Button>
+                </Toolbar>
+            </AppBar>
+            <List>
+                <ListItem button>
+                    <div class="form-label">
+                        <ListItemText primary="Drug quantity:" />
+                    </div>
+                    <div class='form-text-name'>
+                        <TextField onChange={(e) => setDrugQuantity(e.target.value)} />
+                    </div>
+                </ListItem>
+                <Divider />
             </List>
         </Dialog>
         </div>

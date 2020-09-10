@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
 import Button from '@material-ui/core/Button';
+import DiagnosisPatient from '../DiagnosisPatient/DiagnosisPatient'
 import { deleteDrugPrescription, findPrescriptionByDiagnosis } from '../../actions'
 import './diagnosis.scss'
 
@@ -132,9 +133,7 @@ function DiagnosisPage() {
         } else {
             return (
                 <div>
-                    <div>
-                        Diagnosis Page Patient
-                    </div>
+                    <DiagnosisPatient/>
                 </div>
             )
         }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
@@ -6,11 +6,13 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { logout } from '../../actions'
+import { logout, fetchDrugsByCart } from '../../actions'
 import { useDispatch, useSelector } from 'react-redux'
 import Face from '../../assets/images/face.jpg'
 import './topbar.scss';
 import { history } from '../../utils'
+import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
+import { deleteDrugFromCart } from '../../actions'
 
 const useStyles = makeStyles({
     list: {
@@ -23,7 +25,6 @@ const useStyles = makeStyles({
   
 
 function TopBar() {
-
     const dispatch = useDispatch()
     const classes = useStyles();
     const [openRight, setOpenRight] = React.useState(false);
@@ -32,15 +33,11 @@ function TopBar() {
       if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
         return;
       }
-  
       setOpenRight(open);
     };
 
     function handleLogout() {
         dispatch(logout())
-    }
-    function handleCart() {
-        history.push('/cart');
     }
 
     function handleProfile() {
@@ -56,6 +53,21 @@ function TopBar() {
                 history.push('/');
     }
 
+    useEffect(() =>{
+        dispatch(fetchDrugsByCart(obj._id))
+    },[])
+
+    useEffect(() => {
+    }, [shoppingCart])
+
+    const shoppingCart = useSelector(state => state.shopping.data);
+    console.log(shoppingCart);
+    const obj = useSelector(status => status.shopping.cart_obj[0]);
+
+    function handleDeleteDrugCart(e,id){
+        dispatch(deleteDrugFromCart(id,obj._id));
+    }
+
     const list = () => (
         <div>
           <List>
@@ -65,10 +77,22 @@ function TopBar() {
           </List>
           <Divider />
           <List>
-            {['1', '2', '3'].map((text) => (
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
+            {shoppingCart.map((drugShop) => (
+              <div>
+              <ListItem key={drugShop.name}>
+                  <Button onClick={(e) => handleDeleteDrugCart(e, drugShop._id)}>
+                      <DeleteForeverTwoToneIcon style={{ marginRight: "5%" }} />
+                  </Button>
+                  <ListItemText primary={"Name: " + drugShop.name} />
               </ListItem>
+              <ListItem>
+                  <ListItemText primary={'Quantity: ' + drugShop.quantity} />
+              </ListItem>
+              <ListItem>
+                  <ListItemText primary={'Price: '+ drugShop.price} />
+              </ListItem>
+              <Divider />
+          </div>
             ))}
           </List>
         </div>
@@ -93,7 +117,6 @@ function TopBar() {
                                 <span class="MuiIconButton-label-8230">
                                     <span class="MuiBadge-root-8232">
                                         <React.Fragment key={'right'}>
-                                            <span class="material-icons MuiIcon-root-8247" onClick={() => handleCart()} aria-hidden="true">shopping_cart</span>
                                             <span class="material-icons MuiIcon-root-8247" onClick={toggleDrawer('right', true)} aria-hidden="true">shopping_cart</span>
                                             <span class="MuiBadge-badge-8233 MuiBadge-anchorOriginTopRightRectangle-8238 MuiBadge-colorSecondary-8235 MuiBadge-invisible-8246">0</span>
                                             <SwipeableDrawer

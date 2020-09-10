@@ -1,11 +1,13 @@
 import './navbar.scss';
 import './dropdown.scss';
 import { history } from '../../utils'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Logo from '../../assets/images/SmartClinicCopy.jpg'
 import React, { useEffect } from 'react'
+import {fetchCartByUser, createCart} from '../../actions'
 
 function NavBar() {
+    const dispatch = useDispatch();
 
     const loggedPatient = useSelector(state => state.authentification.loggedPatient)
     const loggedDoctor = useSelector(state => state.authentification.loggedDoctor)
@@ -37,7 +39,18 @@ function NavBar() {
     }
 
     function handlePharmacy() {
-        history.push('/pharmacy')
+        if(user.role=='ADMIN'){
+            history.push('/pharmacy')
+
+        }else{
+            dispatch(fetchCartByUser(user._id)).then(res =>{
+                if(res.cart.length == 0){
+                    history.push('/createCart');
+                }else
+                    history.push('/Shop');
+            })
+        }
+        
     }
 
     function handleAddUser() {
@@ -92,9 +105,6 @@ function NavBar() {
                                 <div class="flex items-center">
                                     <span class="material-icons MuiIcon-root-4348 align-middle text-18 w-36 px-4" aria-hidden="true">shopping_basket</span>
                                     <span class="align-middle sidenavHoverShow jss4374" onClick={() => handlePharmacy()}>Pharmacy</span>
-                                </div>
-                                <div class="item-arrow sidenavHoverShow jss4373 jss4368">
-                                    <span class="material-icons MuiIcon-root-4348 align-middle MuiIcon-fontSizeSmall-4355" aria-hidden="true">chevron_right</span>
                                 </div>
                                 <span class="MuiTouchRipple-root-4357"></span>
                             </button>

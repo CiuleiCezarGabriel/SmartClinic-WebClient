@@ -19,6 +19,8 @@ import {
 import { PharmacyActionsType, fetchPharmacies, addPharmacy,
      deletePharmacy, addNewDrugToPharmacy, fetchAllDrugs, fetchPharmacyDrugs } from './pharmacyActions'
 
+import {ShoppingActionType, fetchDrugsByCart,fetchCartByUser, addDrugToCart,createCart, deleteDrugFromCart} from'./shoppingActions'
+
 export {
     UserActionTypes,
     login,
@@ -63,4 +65,11 @@ export {
     deletePharmacy,
     addNewDrugToPharmacy,
     fetchPharmacyDrugs,
+
+    ShoppingActionType,
+    createCart,
+    addDrugToCart,
+    deleteDrugFromCart,
+    fetchCartByUser,
+    fetchDrugsByCart
 }

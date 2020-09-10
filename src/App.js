@@ -27,10 +27,11 @@ import Neurologie from './pages/Services/ServicesPages/Neurologie/Neurologie';
 import Pedriatie from './pages/Services/ServicesPages/Pedriatie/Pedriatie';
 import Nutritie from './pages/Services/ServicesPages/Nutritie/Nutritie';
 import BottomBar from './components/BottomBar/BottomBar';
-import './app.scss';
 import DiagnosisPage from './pages/Diagnosis/DiagnosisPage';
-import Cart from './pages/Cart/Cart';
 import ShopPage from './pages/ShopPage/ShopPage';
+import CartPage from './pages/ShopPage/CartPage'
+import './app.scss';
+
 
 
 function App() {
@@ -72,8 +73,8 @@ function App() {
                                     <Route path="/Pedriatie" component={Pedriatie}></Route>
                                     <Route path="/Nutritie" component={Nutritie}></Route>
                                     <Route path="/Shop" component={ShopPage}></Route>
+                                    <Route path="/createCart" component={CartPage}></Route>
 
-                                    <PrivateRoute path="/cart" component={Cart}></PrivateRoute>
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                     <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
                                     <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>
