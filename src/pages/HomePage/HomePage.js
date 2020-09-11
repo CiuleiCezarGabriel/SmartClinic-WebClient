@@ -52,8 +52,7 @@ function HomePage() {
                     <h1>Chat</h1>
 
                     <div id="intro">
-                        <label ><b>Name</b></label>
-                        <input placeholder="Type your name.." value={name} onChange={(event) => setName(event.target.value)} required></input>
+                        <input style={{margin:"0.5rem"}}class="form-control1" placeholder="Type your name.." value={name} onChange={(event) => setName(event.target.value)} required></input>
                         <button type="submit" class="btn" onClick={(e) => openFormMessage(e)}>Enter chat</button>
                     </div>
 
