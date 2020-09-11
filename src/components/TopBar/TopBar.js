@@ -53,16 +53,16 @@ function TopBar() {
                 history.push('/');
     }
 
-    useEffect(() =>{
+    {/*useEffect(() =>{
         dispatch(fetchDrugsByCart(obj._id))
-    },[])
+    },[])*/}
 
     useEffect(() => {
     }, [shoppingCart])
 
     const shoppingCart = useSelector(state => state.shopping.data);
     console.log(shoppingCart);
-    const obj = useSelector(status => status.shopping.cart_obj[0]);
+    //const obj = useSelector(status => status.shopping.cart_obj[0]);
 
     function handleDeleteDrugCart(e,id){
         dispatch(deleteDrugFromCart(id,obj._id));
@@ -104,7 +104,7 @@ function TopBar() {
                 <div class="topbar-hold fixed">
                     <div class="flex justify-between items-center h-full">
                         <div class="flex items-center">
-                            <button class="MuiButtonBase-root-8112 MuiIconButton-root-8104" tabindex="0" type="button">
+                            <button class="MuiButtonBase-root-8112 MuiIconButton-root-8104" tabIndex="0" type="button">
                                 <span class="MuiIconButton-label-8111">
                                     <span class="material-icons MuiIcon-root-401" aria-hidden="true" onClick={() => handleLogout()}> power_settings_new </span>
                                     <span class="pl-4" hidden> Logout </span>
@@ -113,7 +113,7 @@ function TopBar() {
                                 </span>
                             </button>
 
-                            <button class="MuiButtonBase-root-8231 MuiIconButton-root-8223" tabindex="0" type="button" style={{ color: "rgba(52, 49, 76, 0.54)" }}>
+                            <button class="MuiButtonBase-root-8231 MuiIconButton-root-8223" tabIndex="0" type="button" style={{ color: "rgba(52, 49, 76, 0.54)" }}>
                                 <span class="MuiIconButton-label-8230">
                                     <span class="MuiBadge-root-8232">
                                         <React.Fragment key={'right'}>

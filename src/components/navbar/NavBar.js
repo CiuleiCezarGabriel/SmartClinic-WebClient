@@ -85,7 +85,7 @@ function NavBar() {
                             </button>
                         </div>
                         <div>
-                            <div class="">
+                            <div>
                                 <span class="material-icons MuiIcon-root-10143 align-middle text-18 w-36 px-4" aria-hidden="true">security</span>
                                 <div class="dropdown">
 

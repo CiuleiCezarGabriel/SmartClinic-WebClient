@@ -10,7 +10,7 @@ function BottomBar() {
     <div class="MuiToolbar-root-2483b MuiToolbar-regular-2485b flexb items-centerb jss2442b MuiToolbar-gutters-2484b">
         <div class="flexb items-centerb containerb w-fullb">
             <span class="m-autob"></span>
-            <p class="m-0b">Design and Developed by a young team. </p>
+            <p class="m-0b">Developed by a young team. </p>
         </div>
     </div>
 </header>

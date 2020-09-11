@@ -74,7 +74,7 @@ function App() {
                                     <Route path="/Nutritie" component={Nutritie}></Route>
                                     <Route path="/Shop" component={ShopPage}></Route>
                                     <Route path="/createCart" component={CartPage}></Route>
-
+                                    
                                     <PrivateRoute path="/registerNewUser" component={RegisterUserPage}></PrivateRoute>
                                     <PrivateRoute path="/questions" component={QuestionPage}></PrivateRoute>
                                     <PrivateRoute path="/appointments" component={AppointmentPage}></PrivateRoute>

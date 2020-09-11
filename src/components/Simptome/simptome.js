@@ -2,15 +2,15 @@ import React from 'react'
 import { logout } from '../../actions'
 import { useDispatch } from 'react-redux'
 import './simptome.scss';
-
+import WelcomeUser from '../WelcomeUser/WelcomeUser'
 
 function Simptome() {
 
 
     return (
         <div>
-        
             <div class="MuiGrid-rootf mb-3f MuiGrid-containerf MuiGrid-spacing-xs-3f" >
+        
 
                 <div class="MuiGrid-rootf MuiGrid-itemf MuiGrid-grid-xs-12f MuiGrid-grid-md-6f" style={{marginTop: "3rem"}}>
                     <div class="MuiPaper-rootf MuiCard-rootf flexf flex-wrapf justify-betweenf items-centerf p-sm-24f bg-paperf MuiPaper-elevation6f MuiPaper-roundedf">

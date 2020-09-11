@@ -7,13 +7,19 @@ import Farmacii from '../../components/Farmacii/Farmacii';
 import { useState, useEffect } from 'react';
 import Chat from '../../components/Chat/Chat';
  import PictureContent from '../../components/PictureContent/PictureContent';
-//import { Slider } from '@material-ui/core';
+import { Slider } from '@material-ui/core';
 import Stepper from '../../components/Stepper/Stepper';
 
 
 
 
+
 function PatientPage() {
+
+
+  
+
+
     const [name, setName] = useState('')
     const [visible, setVisible] = useState(false)
 
@@ -45,13 +51,15 @@ function PatientPage() {
 
     return (
         <div>
-           
-            
-            <PictureContent></PictureContent>
+        <h2 class="umbra"> Smart Clnic</h2>
+        <WelcomeUser></WelcomeUser> 
+
+            {/*<PictureContent></PictureContent>
             <WelcomeUser></WelcomeUser>
             {/*<SliderPatient></SliderPatient>
             <img class="mb-4 h-152 w-152" src="/src/assets/images/real-air.png" style={{ width:"50%", height:"", marginLeft: "20%"  }} alt="Starter"></img>*/}
             <Stepper></Stepper>
+            
             <Simptome></Simptome>
             <Farmacii></Farmacii>
             <button class="open-button" onClick={(e) => openForm(e)}>Chat</button>
