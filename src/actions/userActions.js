@@ -107,10 +107,10 @@ export function getUsers() {
     function failure(error) { return { type: UserActionTypes.GETALL_FAILURE, error } }
 }
 
-export function deleteUser(){
+export function deleteUser(id){
     return dispatch => {
         dispatch(request())
-        return userService.deleteUser()
+        return userService.deleteUser(id)
             .then(response => responseToJson(response))
             .then(json => dispatch(success(json)))
             .catch(error => {

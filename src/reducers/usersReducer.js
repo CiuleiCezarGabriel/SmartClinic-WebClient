@@ -19,8 +19,9 @@ export function users(state = usersInitialState, action) {
         case UserActionTypes.DELETE_REQUEST:
             return { ...state, loadingUsers: true }
         case UserActionTypes.DELETE_SUCCESS:
-            console.log(action)
-            return { ...state, user: action.user, loadingUsers: false }
+
+            const userss = state.data.filter(it => it._id != action.user._id)
+            return { ...state, data: userss, loadingUsers: false }
         case UserActionTypes.DELETE_FAILURE:
             return { ...state, data: [], loadingUsers: false }
     }

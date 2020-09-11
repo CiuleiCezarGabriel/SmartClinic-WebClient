@@ -7,9 +7,6 @@ import { useState, useEffect } from 'react';
 import Chat from '../../components/Chat/Chat';
 import PictureContent from '../../components/PictureContent/PictureContent';
 
-
-//import Slideshow from '../../components/Slideshow/Slideshow';
-
 function HomePage() {
 
     const [name, setName] = useState('')

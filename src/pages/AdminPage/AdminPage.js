@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import io from 'socket.io-client'
 import Chat from '../../components/Chat/Chat'
 import './AdminPage.scss'
-import { fetchQuestions, addQuestion, getUsers, deleteUser } from '../../actions';
+import { fetchQuestions, addQuestion, getUsers, deleteUser, UserActionTypes } from '../../actions';
+import MaterialTable from 'material-table';
+import { useRadioGroup } from '@material-ui/core';
 
 let socket;
 const ENDPOINT = 'localhost:5000'
@@ -12,7 +14,6 @@ const ENDPOINT = 'localhost:5000'
 function AdminPage() {
 
     const dispatch = useDispatch()
-    const questions = useSelector(state => state.users.data)
 
     const [admin, setAdmin] = useState('admin')
     const [rooms, setRooms] = useState([])
@@ -30,6 +31,9 @@ function AdminPage() {
 
         dispatch(getUsers())
     }, [])
+
+    const users = useSelector(state => state.users.data)
+
 
     useEffect(() => {
         socket = io(ENDPOINT)
@@ -53,30 +57,88 @@ function AdminPage() {
         setVisible(false)
     }
 
+    function handleDelete(id) {
+        console.log('111')
+        dispatch(deleteUser(id))
+    }
+
     useEffect(() => {
     }, [visible])
+
+    const [state, setState] = React.useState({
+        columns: [
+            { title: 'Username', field: 'username' },
+            { title: 'FirstName', field: 'firstName' },
+            { title: 'LastName', field: 'lastName' },
+            { title: 'Phone', field: 'phone' },
+            { title: 'Email', field: 'email' },
+            { title: 'Role', field: 'role' },
+            { title: 'Phone', field: 'phone' },
+        ],
+        data: users.map(user => {
+            if (user === null) {
+                return {
+                    username: ' ',
+                    firstName: ' ',
+                    lastName: ' ',
+                    phone: ' ',
+                    email: ' ',
+                    role: ' ',
+                    confirmed: ' '
+                }
+            }
+            return {
+                username: user.username,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                phone: user.phone,
+                email: user.email,
+                role: user.role,
+                confirmed: user.confirmed
+            }
+        })
+    });
+
+    useEffect(() => {
+        setState({
+            columns: [
+                { title: 'Username', field: 'username' },
+                { title: 'FirstName', field: 'firstName' },
+                { title: 'LastName', field: 'lastName' },
+                { title: 'Phone', field: 'phone' },
+                { title: 'Email', field: 'email' },
+                { title: 'Role', field: 'role' },
+                { title: 'Phone', field: 'phone' },
+            ],
+            data: users.map(user => {
+                if (user === null) {
+                    return {
+                        username: ' ',
+                        firstName: ' ',
+                        lastName: ' ',
+                        phone: ' ',
+                        email: ' ',
+                        role: ' ',
+                        confirmed: ' '
+                    }
+                }
+                return {
+                    username: user.username,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    phone: user.phone,
+                    email: user.email,
+                    role: user.role,
+                    confirmed: user.confirmed,
+                    id : user._id
+                }
+            })
+        })
+    }, [users])
 
 
     return (
         <div>
-
-            {/* <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    
-                </tbody>
-            </Table> */}
-
             {
                 rooms.map((room, i) =>
                     <div key={i}>
@@ -113,6 +175,23 @@ function AdminPage() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <MaterialTable
+                    title="Users"
+                    columns={state.columns}
+                    data={state.data}
+                    editable={{
+                        onRowDelete: (oldData) =>
+                            new Promise((resolve) => {
+                                setTimeout(() => {
+                                    resolve();
+                                    console.log(oldData)
+                                    handleDelete(oldData.id)
+                                }, 600);
+                            }),
+                    }}
+                />
             </div>
         </div >
     )

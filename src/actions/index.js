@@ -27,6 +27,7 @@ export {
     logout,
     register,
     getUsers,
+    deleteUser,
 
     AlertActionType,
     success,
